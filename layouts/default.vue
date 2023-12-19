@@ -1,6 +1,7 @@
 <template>
     <div>
-        <span>layouts</span>
+        <MyHead />
         <slot />
+        <MyFooter />
     </div>
 </template>

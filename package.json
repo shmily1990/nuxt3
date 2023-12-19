@@ -18,8 +18,8 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
-    "@pinia/nuxt": "^0.5.1",
-    "ant-design-vue": "^4.0.7"
+    "ant-design-vue": "^4.0.7",
+    "bootstrap": "^5.2.3",
+    "swiper": "^8.4.4"
   }
 }

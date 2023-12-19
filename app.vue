@@ -1,7 +1,10 @@
 <template>
-  <NuxtPage />
+  <div>
+	  <NuxtLayout :name="layout">
+		  <NuxtPage />
+	  </NuxtLayout>
+  </div>
 </template>
 <script setup>
-    const appConfig = useRuntimeConfig();
-    console.log(appConfig);
+    const layout = 'default';
 </script>

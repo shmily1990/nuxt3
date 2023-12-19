@@ -9,11 +9,8 @@ export default defineNuxtConfig({
       meta: [{ name: "description", content: "加速器" }],
     },
   },
-  alias: {
-    pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
-  },
-  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss"],
-  css: ['~/assets/style/base.css'], // 全局css
+  modules: ["@nuxtjs/tailwindcss"],
+  css: ['bootstrap/dist/css/bootstrap.min.css', '~/assets/style/animate.css','~/assets/style/base.css'], // 全局css
   vite: {
 		css: {
 			preprocessorOptions: {
