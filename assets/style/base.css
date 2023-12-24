@@ -50,16 +50,35 @@ body {
   color: #333; /* Change text color as needed */
   margin: 0;
   padding: 0;
+  font-size: 14px;
 }
 
-/* Header styles */
+/* 透明底 */
+.no_bg {
+  background-color: transparent;
 
-/* Footer styles */
-footer {
-  background-color: #ccc; /* Change footer background color as needed */
-  padding: 10px;
-  text-align: center;
 }
+
+/* 半透明底 */
+.hasl_bg
+{
+  background: rgba(255,255,255,0.24);
+  box-shadow: 0px 1px 6px 0px rgba(54,62,69,0.06);
+}
+
+/* 白底 */
+.color_white{
+  color:#fff;
+}
+
+/* 白字 */
+.bg_white{
+  background: #fff;
+}
+
+
+
+
 
 .flex{
   display: flex;
@@ -89,15 +108,13 @@ footer {
 }
 
 .btn_more{
-  padding:0 15px;
-  height: 40px;
+  padding:8px 15px;
   background: #02C7B5;
   border:1px solid #02C7B5;
   border-radius: 20px;
   cursor: pointer;
   color:#fff;
   display: inline-block;
-  line-height: 40px;
   text-align: center;
   transition: all 0.3s;
   position: relative;
@@ -137,4 +154,11 @@ footer {
 .btn_more:hover::before {
   transform: scaleX(1);
   transform-origin: left;
+}
+.btn_gradient{
+  padding:9px 32px;
+  background: linear-gradient(90deg, #33DCBF, #10C7DC);
+border: 1px solid rgba(255,255,255,0.25);
+font-size: 18px;
+border-radius:22px;
 }

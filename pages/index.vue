@@ -3,13 +3,13 @@
     <section class="home-container">
       <swiper
         class="swiper-container"
-        :autoplay="{ delay: 500000, disableOnInteraction: false }"
+        :autoplay="{ delay: 5000, disableOnInteraction: false }"
         :pagination="{ clickable: true }"
         :navigation="true"
         :modules="mods"
       >
         <swiper-slide
-          :style="{ 'background-image': 'url(_nuxt/assets/images/banner.jpg)' }"
+          :style="{ 'background-image': 'url(_nuxt/assets/images/banner.png)' }"
         >
           <div
             class="bannerwen color_white wow zoomIn"
@@ -20,7 +20,7 @@
             <span>这里是描述文字 这里是描述文字 这里是描述文字 </span>
           </div>
         </swiper-slide>
-        <swiper-slide
+        <!-- <swiper-slide
           :style="{ 'background-image': 'url(_nuxt/assets/images/banner.jpg)' }"
         >
           <div
@@ -31,7 +31,7 @@
             <p>用AIoT和SaaS推动环保行业数字化变革</p>
             <span>这里是描述文字 这里是描述文字 这里是描述文字 </span>
           </div>
-        </swiper-slide>
+        </swiper-slide> -->
       </swiper>
     </section>
     <section class="section anewMap" id="section1">
@@ -103,11 +103,11 @@
     </section>
     <section class="seciton solution" id="section5">
       <div class="container">
-        <div class="title">
+        <div class="page_title  wow fadeInUp">
           提供覆盖<span>「 环保行业 」</span>各类场景的解决方案
         </div>
         <div class="index_solution_type flex wrap">
-          <div class="solution_menu col-md-12">
+          <div class="solution_menu col-md-12 col-sm-12 wow fadeInLeft">
             <ul class="flex column center">
               <div class="name">解决方案</div>
               <li class="">
@@ -132,10 +132,9 @@
               </li>
             </ul>
           </div>
-          <div class="solution_introduction col-md-12">
+          <div class="solution_introduction col-md-12 wow fadeInRight">
             <div class="solution_introduction_detial">
-              <h1>空气质量改善轻咨询服务解决方案</h1>
-
+              <h1 class="wow fadeInLeft">空气质量改善轻咨询服务解决方案</h1>
               <p>
                 随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
                 1随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
@@ -154,101 +153,116 @@
       </div>
     </section>
     <section class="section case" id="section6">
-      <div class="">
-        <div class="title">客户案例</div>
+      <div class="wow fadeInUp">
+        <div class="page_title ">客户案例</div>
         <swiper
           class="case_swiper_container"
-          :autoplay="{ delay: 0, disableOnInteraction: false }"
+          :autoplay="{ delay: 50000, disableOnInteraction: false }"
           :modules="mods"
-          :speed="5000"
-          :slidesPerView="5"
+          :speed="20000"
+          :breakpoints="breakpoints" 
           :loop="true"
-      
+          :navigation="true"
+          :spaceBetween="30"
+          :observer="true"
+          :observeparents="true"
         >
-          <swiper-slide>
+          <swiper-slide key="1">
             <div class="case_container">
               <div class="img"><img src="~/assets/images/img1.jpg" /></div>
-              <div class="name">大气走航精准溯源</div>
               <div class="des">
-                这样做事件交办，办结效率轻松提升30%，整改率高达93%
+                <div class="name">大气走航精准溯源</div>
+                <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
+                <div class="bom flex between">
+                  <div class="tip">
+                    <span>走航溯源</span><button>AnewAir</button>
+                  </div>
+                  <a>详情></a>
+                </div>
               </div>
             </div>
           </swiper-slide>
-          <swiper-slide>
+          <swiper-slide key="2">
             <div class="case_container">
-              <div class="img"><img src="~/assets/images/img2.jpg" /></div>
-              <div class="name">大气走航精准溯源</div>
+              <div class="img"><img src="~/assets/images/img1.jpg" /></div>
               <div class="des">
-                这样做事件交办，办结效率轻松提升30%，整改率高达93%
+                <div class="name">大气走航精准溯源</div>
+                <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
+                <div class="bom flex between">
+                  <div class="tip">
+                    <span>走航溯源</span><button>AnewAir</button>
+                  </div>
+                  <a>详情></a>
+                </div>
               </div>
             </div>
           </swiper-slide>
-          <swiper-slide>
+          <swiper-slide key="3">
             <div class="case_container">
-              <div class="img"><img src="~/assets/images/img3.jpg" /></div>
-              <div class="name">大气走航精准溯源</div>
+              <div class="img"><img src="~/assets/images/img1.jpg" /></div>
               <div class="des">
-                这样做事件交办，办结效率轻松提升30%，整改率高达93%
+                <div class="name">大气走航精准溯源</div>
+                <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
+                <div class="bom flex between">
+                  <div class="tip">
+                    <span>走航溯源</span><button>AnewAir</button>
+                  </div>
+                  <a>详情></a>
+                </div>
               </div>
             </div>
           </swiper-slide>
-          <swiper-slide>
+          <swiper-slide key="4">
             <div class="case_container">
-              <div class="img"><img src="~/assets/images/img4.jpg" /></div>
-              <div class="name">大气走航精准溯源</div>
+              <div class="img"><img src="~/assets/images/img1.jpg" /></div>
               <div class="des">
-                这样做事件交办，办结效率轻松提升30%，整改率高达93%
+                <div class="name">大气走航精准溯源</div>
+                <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
+                <div class="bom flex between">
+                  <div class="tip">
+                    <span>走航溯源</span><button>AnewAir</button>
+                  </div>
+                  <a>详情></a>
+                </div>
               </div>
             </div>
           </swiper-slide>
-          <swiper-slide>
+          <swiper-slide key="5">
             <div class="case_container">
-              <div class="img"><img src="~/assets/images/img5.jpg" /></div>
-              <div class="name">大气走航精准溯源</div>
+              <div class="img"><img src="~/assets/images/img1.jpg" /></div>
               <div class="des">
-                这样做事件交办，办结效率轻松提升30%，整改率高达93%
-              </div>
-            </div>
-          </swiper-slide>
-           <swiper-slide>
-            <div class="case_container">
-              <div class="img"><img src="~/assets/images/img5.jpg" /></div>
-              <div class="name">大气走航精准溯源</div>
-              <div class="des">
-                这样做事件交办，办结效率轻松提升30%，整改率高达93%
-              </div>
-            </div>
-          </swiper-slide>
-           <swiper-slide>
-            <div class="case_container">
-              <div class="img"><img src="~/assets/images/img5.jpg" /></div>
-              <div class="name">大气走航精准溯源</div>
-              <div class="des">
-                这样做事件交办，办结效率轻松提升30%，整改率高达93%
-              </div>
-            </div>
-          </swiper-slide>
-           <swiper-slide>
-            <div class="case_container">
-              <div class="img"><img src="~/assets/images/img5.jpg" /></div>
-              <div class="name">大气走航精准溯源</div>
-              <div class="des">
-                这样做事件交办，办结效率轻松提升30%，整改率高达93%
-              </div>
-            </div>
-          </swiper-slide>
-           <swiper-slide>
-            <div class="case_container">
-              <div class="img"><img src="~/assets/images/img5.jpg" /></div>
-              <div class="name">大气走航精准溯源</div>
-              <div class="des">
-                这样做事件交办，办结效率轻松提升30%，整改率高达93%
+                <div class="name">大气走航精准溯源</div>
+                <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
+                <div class="bom flex between">
+                  <div class="tip">
+                    <span>走航溯源</span><button>AnewAir</button>
+                  </div>
+                  <a>详情></a>
+                </div>
               </div>
             </div>
           </swiper-slide>
         </swiper>
       </div>
     </section>
+    <section class="seciton about" id="section7">
+      <div class="container">
+        <div class="page_title wow fadeInUp">认识新禾</div>
+        <div class="about_tip  wow fadeInUp">
+          新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS,新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS,新禾数字科技是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS
+        </div>
+      </div>
+       <PageAbout />
+    </section>
+      <PageHonor />
+    <section class="seciton f_banner" id="section9">
+      <div class="container">
+        <h2 class="wow fadeInDown">免费使用智能算法工具 - 禾气云AnewEITM</h2>
+        <p class="wow fadeInDown">即将发布新品，开放<span>免费使用</span>，敬请期待！</p>
+        <div class="btn_more btn_gradient wow fadeInDown"><span>立即试用</span></div>
+      </div>
+    </section>
+    <footer></footer>
   </div>
 </template>
 <script setup>
@@ -268,7 +282,22 @@ useHead({
     },
   ],
 });
-
+ /** 断点 */
+  let breakpoints = ref(null);
+  breakpoints.value = { 
+    320: {  //当屏幕宽度大于等于320
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    768: {  //当屏幕宽度大于等于768 
+      slidesPerView: 3,
+      spaceBetween: 20
+    },
+    900: {  //当屏幕宽度大于等于1280
+      slidesPerView: 4,
+      spaceBetween: 30
+    }
+  }
 onMounted(() => {
   // console.dir(res)
   // new WOW().init()
@@ -305,49 +334,39 @@ onMounted(() => {
 </script>
 <style scoped lang="less">
 // banner
-.swiper {
+.swiper-container {
   width: 100%;
   height: 100%;
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .bannerwen {
+      p {
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+      }
+      span {
+        font-size: 16px;
+        letter-spacing: 2px;
+        line-height: 50px;
+      }
+    }
+  }
 }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-size: cover;
-  background-position: center center;
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  .bannerwen {
-    p {
-      font-size: 40px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-    span {
-      font-size: 16px;
-      letter-spacing: 2px;
-      line-height: 50px;
-    }
-  }
-}
-
-.title {
-  color: #000414;
-  font-size: 40px;
-  text-align: center;
-  margin-bottom: 60px;
-  span {
-    color: #02c7b5;
-  }
-}
 // 产品介绍
 .intor {
   h2 {
@@ -399,14 +418,17 @@ onMounted(() => {
 .air {
   padding: 80px 0;
   background: url("~/assets/images/bg_air.png") no-repeat center center;
+  background-size: cover;
 }
 
 //solution
-
 .solution {
   background: url(~/assets/images/bg_solution.jpg) no-repeat center center;
-  padding: 80px 0;
-
+  padding: 80px 0 ;
+  background-size: cover;
+  .page_title{
+    margin-top:0;
+  }
   .index_solution_type {
     display: flex;
     flex-direction: row;
@@ -504,12 +526,138 @@ onMounted(() => {
 }
 
 //case
+
+// about
+.about {
+  background: #e5edf3;
+  overflow: hidden;
+  .about_tip {
+    color: #1f2429;
+    text-align: left;
+    font-size: 18px;
+    line-height: 46px;
+    margin-bottom: 60px;
+  }
+}
+
+
+.f_banner {
+  background: url("~/assets/images/f-banner.png") no-repeat center center;
+  padding: 10px;
+  background-size:cover;
+}
+
+@media (min-width: 992px) {
+  .about {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 990px) {
+  .air,.ei{
+    margin: 30px 0;
+  }
+  .solution {
+    .index_solution_type{
+      .solution_menu{
+        padding: 15px;
+      }
+      .solution_introduction{
+        .solution_introduction_detial{
+          padding:15px;
+        }
+      }
+    }
+
+  }
+  .case{
+    .page_title{
+      margin:60px 0 30px
+    }
+    .case_swiper_container{
+      .swiper-slide{
+        .case_container{
+          .des{
+            .bom{
+              span{
+                font-size: 14px;
+                padding-right: 10px;
+                margin-right: 10px;
+              }
+              button{
+                padding:0 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+@media (max-width: 750px) {
+  .solution {
+    .index_solution_type {
+      .solution_menu {
+        width: 100%;
+        margin-bottom: 30px;
+        .name {
+          display: none;
+        }
+        ul {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          li {
+            width: 50%;
+          }
+        }
+      }
+      .solution_introduction {
+        width: 100%;
+
+        .solution_introduction_detial {
+          padding: 30px;
+        }
+      }
+    }
+  }
+  .about {
+    .about_tip {
+      margin-bottom: 50px;
+    }
+  }
+
+}
+
+.f_banner {
+  margin-top: 80px;
+  padding: 90px 0;
+  h2 {
+    font-weight: bold;
+    color: #1f2429;
+    font-size: 40px;
+  }
+  p {
+    color: #637381;
+    font-size: 18px;
+    span {
+      color: #1ab7a9;
+    }
+  }
+  .btn_gradient {
+    margin-top: 40px;
+  }
+}
+</style>
+<style lang="less" >
 .case_swiper_container {
+  padding: 30px 0 100px;
   .swiper-slide {
     background: #fff;
-    border-radius: 8px;
-    -webkit-box-shadow: 0 2px 8px 0 rgba(20, 30, 49, 0.1);
-    box-shadow: 0 2px 8px 0 rgba(20, 30, 49, 0.1);
+    -webkit-box-shadow: 0px 2px 20px 0px rgba(54, 62, 69, 0.09);
+    box-shadow: 0px 2px 20px 0px rgba(54, 62, 69, 0.09);
     cursor: pointer;
     height: 100%;
     margin-right: 32px;
@@ -517,21 +665,118 @@ onMounted(() => {
     transition: -webkit-transform 0.3s linear;
     transition: transform 0.3s linear;
     transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+    border: 2px solid rgba(99, 115, 129, 0.1);
+    border-radius: 8px;
     width: 376px;
     .case_container {
       .img {
-      }
-      .title {
-        font-size: 20px;
-        font-weight: bold;
-        color: #000414;
+        border-radius: 8px 8px 0px 0px;
+        img {
+          border-radius: 8px 8px 0px 0px;
+        }
       }
       .des {
-        font-size: 14px;
-        font-weight: 400;
-        color: #637381;
+        padding: 20px;
+        text-align: left;
+        .name {
+          font-size: 20px;
+          font-weight: bold;
+          color: #000414;
+          height: 30px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        p {
+          margin-top: 8px;
+          font-size: 14px;
+          font-weight: 400;
+          color: #637381;
+        }
+        .bom {
+          border-top: 1px solid #f0f4f7;
+          padding-top: 20px;
+          margin-top: 20px;
+          span {
+            color: #1f2429;
+            font-size: 16px;
+            padding-right: 16px;
+            border-right: 1px solid #ebf0f5;
+            margin-right: 16px;
+          }
+          button {
+            height: 28px;
+            background: #f5f8fa;
+            border-radius: 4px;
+            padding: 0 14px;
+            color: #637381;
+            
+          }
+          a {
+            color: #02c7b5;
+            border-radius: 2px;
+            width:70px;
+            text-align: center;
+            // line-height: 100%;
+          }
+        }
       }
     }
+    &:hover {
+      -webkit-box-shadow: 0 8px 32px 0 rgba(20, 30, 49, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(20, 30, 49, 0.1);
+      -webkit-transform: translateY(-16px);
+      transform: translateY(-16px);
+      cursor: pointer;
+      a {
+        background: #02c7b5;
+        color: #fff !important;
+      }
+    }
+  }
+  .swiper-button-prev {
+    width: 46px !important;
+    height: 46px;
+    background: #ffffff;
+    border: 1px solid rgba(99, 115, 129, 0.1);
+    border-radius: 50%;
+  }
+}
+.case_swiper_container {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 46px;
+    height: 46px;
+    background: #ffffff;
+    border: 1px solid rgba(99, 115, 129, 0.1);
+    border-radius: 50%;
+    color: #b3bdc7;
+    top: auto;
+    bottom: 10px;
+    &::after {
+      font-size: 20px;
+    }
+    &:hover {
+      border: 1px solid rgba(2, 199, 181, 0.2);
+      color: #02c7b5;
+      -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+      &::after {
+        font-size: 25px;
+        -webkit-transition: font-size 0.5s ease;
+        transition: font-size 0.5s ease;
+      }
+    }
+  }
+  .swiper-button-prev {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -35px;
+  }
+  .swiper-button-next {
+    right: 50%;
+    transform: translateX(50%);
+    margin-right: -35px;
   }
 }
 </style>

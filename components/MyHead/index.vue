@@ -1,31 +1,26 @@
 <template>
-  <header class="header flex">
+  <header
+    :class="['header', 'flex', headFixed ? 'bg_white headFixed' : 'no_bg ']"
+  >
     <div class="h_logo">
-        <nuxt-link>
-          <img
-            src="~/assets/images/logo.png"
-            class="logo-img logo1"
-            alt=""
-          />
-        </nuxt-link>
+      <nuxt-link class="logo white_logo" to="/">
+        <img src="~/assets/images/logo.png" class="logo-img logo1" alt="" />
+      </nuxt-link>
+       <nuxt-link class="logo dark_logo"  to="/">
+        <img src="~/assets/images/logo-dark.png" class="logo-img logo1" alt="" />
+      </nuxt-link>
     </div>
     <nav class="h_toubu">
       <div class="nav nav01">
         <ul class="navbar_nav flex" data-in="fadeInDown" data-out="fadeOutUp">
           <li v-for="(nav, index) in navList" :key="index">
-            <div class="nav-item">
-              <div class="nav-item-title">
-                <nuxt-link
-                  :class="{ active: routePath == nav.link }"
-                  :to="nav.link"
-                >
-                  {{ nav.name
-                  }}<span class="mark-lable">{{
-                    nav.markLable
-                  }}</span></nuxt-link
-                >
-              </div>
-            </div>
+            <nuxt-link
+              :class="{ active: routePath == nav.link }"
+              :to="nav.link"
+            >
+              {{ nav.name
+              }}<span class="mark-lable">{{ nav.markLable }}</span></nuxt-link
+            >
           </li>
         </ul>
       </div>
@@ -56,19 +51,19 @@
 </template>
 
 <script setup>
+const headFixed = ref(0);
 const navIndex = ref(0);
 const navList = ref([
-  { name: "AnewMap", link: "/", markLable: "TM" },
-  { name: "AnewAir", link: "/product", markLable: "TM" },
-  { name: "AnewCip", link: "#", markLable: "TM" },
+  { name: "AnewMap", link: "/anewMap", markLable: "TM" },
+  { name: "AnewAir", link: "/anewAir", markLable: "TM" },
+  { name: "AnewCip", link: "/anewCip", markLable: "TM" },
   { name: "解决方案", link: "/example" },
-  { name: "客户安全", link: "/news" },
+  { name: "客户案例", link: "/case" },
   { name: "了解新禾", link: "/about" },
-  { name: "联系我们", link: "/about" },
+  { name: "联系我们", link: "/contactUs" },
 ]);
 const m_nav = ref(0);
 const m_navClick = () => {
-  console.log("88888");
   m_nav.value = 1;
 };
 //关闭手机侧导航
@@ -76,14 +71,32 @@ const m_navOffClick = () => {
   console.log("88888");
   m_nav.value = 0;
 };
+
+const content = ref();
+const doScroll = (event) => {
+  // const scrollHeight = event.target.scrollHeight
+  const scrollTop = document.documentElement.scrollTop;
+  // const clientHeight = event.target.clientHeight
+  if (scrollTop >= 100) {
+    console.log("haha", window.innerWidth);
+    headFixed.value = 1;
+  } else {
+    headFixed.value = 0;
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", doScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", doScroll);
+});
 </script>
 
 <style lang="less">
-.header-white{
-    background: #fff;
-box-shadow: 0px 1px 6px 0px rgba(54,62,69,0.06);
 
-}
+
 .header {
   width: 100%;
   z-index: 999;
@@ -92,8 +105,16 @@ box-shadow: 0px 1px 6px 0px rgba(54,62,69,0.06);
   position: fixed;
   left: 0;
   top: 0;
-  .h_logo{
-    padding:0 20px;
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+  .h_logo {
+    padding: 0 20px;
+    .logo{
+      transition: all .3s;
+    }
+    .dark_logo{
+      display: none;
+    }
   }
   .nav {
     -webkit-transition: 0.5s;
@@ -103,19 +124,20 @@ box-shadow: 0px 1px 6px 0px rgba(54,62,69,0.06);
     height: 100%;
     line-height: 80px;
     display: block;
+    a {
+      display: inline-block;
+      transition: all 0.5s ease 0s;
+      color: #fff;
+    }
     li {
       margin: 0 21px;
       position: relative;
-      a {
-        display: inline-block;
-        transition: all 0.5s ease 0s;
-        color:#fff
-      }
+
       &::after {
         content: "";
         width: 100%;
         height: 0px;
-        background: #02C7B5;
+        background: #02c7b5;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -128,11 +150,40 @@ box-shadow: 0px 1px 6px 0px rgba(54,62,69,0.06);
         }
         a {
           transform: scale(1.1);
-          color:#02C7B5;
+          color: #02c7b5;
         }
       }
     }
   }
+}
+
+.headFixed {
+   box-shadow: 0px 1px 6px 0px rgba(54,62,69,0.06);
+   .h_logo{
+    .white_logo{
+      display: none;
+    }
+    .dark_logo{
+      display: block;
+    }
+   }
+  .nav{
+    a{
+      color: #0E1924;
+    }
+  }
+  #navToggle {
+    span{
+      background: #0E1924 !important;
+      &::before{
+         background: #0E1924 !important;
+      }
+      &::after{
+         background: #0E1924 !important;
+      }
+    }
+  }
+ 
 }
 
 .m_nav {
@@ -220,11 +271,11 @@ box-shadow: 0px 1px 6px 0px rgba(54,62,69,0.06);
         -webkit-transition: all 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0ms;
         transition: all 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0ms;
       }
-        &:nth-child(7) {
+      &:nth-child(7) {
         -webkit-transition: all 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0ms;
         transition: all 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0ms;
       }
-        &:nth-child(8) {
+      &:nth-child(8) {
         -webkit-transition: all 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0ms;
         transition: all 1.6s cubic-bezier(0.77, 0, 0.175, 1) 0ms;
       }

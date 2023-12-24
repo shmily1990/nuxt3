@@ -1,0 +1,71 @@
+<template>
+       <section class="seciton honor" id="section8">
+      <div class="container">
+        <div class="page_title  wow fadeInUp">权威认证</div>
+        <ul class="flex between  wow fadeInUp">
+          <li>
+            <img src="~/assets/images/honor1.png" />
+            <p>质量管理体系</p>
+          </li>
+          <li>
+            <img src="~/assets/images/honor2.png" />
+            <p>环境管理体系</p>
+          </li>
+          <li>
+            <img src="~/assets/images/honor3.png" />
+            <p>职业健康安全管理体系</p>
+          </li>
+          <li>
+            <img src="~/assets/images/honor4.png" />
+            <p>科技型中小企业</p>
+          </li>
+          <li>
+            <img src="~/assets/images/honor5.png" />
+            <p>软件产品和软件企业认证</p>
+          </li>
+        </ul>
+        <div class="btn_more wow fadeInUp"><span>了解新禾 >></span></div>
+      </div>
+    </section>
+</template>
+
+<style lang="less" scoped>
+// honor
+.honor {
+  .container {
+    text-align: center;
+    ul {
+      li {
+        text-align: center;
+        img {
+          margin: 0px auto 15px;
+        }
+        p {
+          font-size: 16px;
+          color: #1f2429;
+        }
+      }
+    }
+    .btn_more {
+      margin-top: 40px;
+    }
+  }
+}
+
+
+
+
+@media (max-width: 750px) {
+
+   .honor {
+    ul {
+      flex-wrap: wrap;
+      li {
+        width: 33.33%;
+      }
+    }
+  }
+
+
+}
+</style>
