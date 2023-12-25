@@ -8,15 +8,15 @@
                         <div class="platform-name">空气质量改善服务智能云平台</div>
                         <div class="platform-description">帮助管理者快速、全面了解大气污染发生发展的全时空变化信息，建立环境敏感区域与污染源之间的全证据链关联分析，分场景给出精准管控方案并动态评估管控效果。</div>
                         <div class="btns flex p-4">
-                            <div class="btn">产品咨询</div>
-                            <div class="btn">应用案例</div>
+                            <div class="btn">产品咨询<i class="iconfont icon-gengduo-xiangyou"></i></div>
+                            <div class="btn">应用案例<i class="iconfont icon-gengduo-xiangyou"></i></div>
                         </div>
                     </div>
                     <img src="~/assets/images/map-banner-img.png" class="wow fadeInRight" />
                 </div>
-                <div class="bottom-card flex">
-                    <div class="item" v-for="(item, index) in list" :key="index">
-                        <i></i>
+                <div class="feature-card flex">
+                    <div class="feature-item" v-for="(item, index) in list" :key="index">
+                        <img src="`~/assets/images/map/feature-card-01.png`" />
                         <span>{{item.label}}</span>
                     </div>
                 </div>
@@ -221,8 +221,14 @@ const list = ref([
         padding: 0;
     }
 }
-.bottom-card {
+.feature-card {
     justify-content: space-around;
+    .feature-item {
+        text-align: center;
+        img {
+            margin: 0 auto;
+        }
+    }
 }
 .page {
     &-title {

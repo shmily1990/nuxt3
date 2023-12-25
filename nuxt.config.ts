@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     },
   },
   modules: ["@nuxtjs/tailwindcss"],
-  css: ['bootstrap/dist/css/bootstrap.min.css', '~/assets/style/animate.css','~/assets/style/base.css'], // 全局css
+  css: ['bootstrap/dist/css/bootstrap.min.css', '~/assets/style/animate.css','~/assets/fonts/iconfont.css', '~/assets/style/base.css'], // 全局css
   vite: {
 		css: {
 			preprocessorOptions: {
