@@ -1,17 +1,85 @@
 /* Resetting default browser styles */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -21,13 +89,23 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
 /* Remove list styles (bullet points) from ul, ol elements */
-ul, ol {
+ul,
+ol {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -36,7 +114,8 @@ ul, ol {
 /* Set default link styles */
 a {
   text-decoration: none;
-  color: #333; /* Change color as needed */
+  color: #333;
+  /* Change color as needed */
   text-decoration: none !important;
 }
 
@@ -46,8 +125,10 @@ a {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #fff; /* Change background color as needed */
-  color: #333; /* Change text color as needed */
+  background-color: #fff;
+  /* Change background color as needed */
+  color: #333;
+  /* Change text color as needed */
   margin: 0;
   padding: 0;
   font-size: 14px;
@@ -60,19 +141,18 @@ body {
 }
 
 /* 半透明底 */
-.hasl_bg
-{
-  background: rgba(255,255,255,0.24);
-  box-shadow: 0px 1px 6px 0px rgba(54,62,69,0.06);
+.hasl_bg {
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0px 1px 6px 0px rgba(54, 62, 69, 0.06);
 }
 
 /* 白底 */
-.color_white{
-  color:#fff;
+.color_white {
+  color: #fff;
 }
 
 /* 白字 */
-.bg_white{
+.bg_white {
   background: #fff;
 }
 
@@ -80,40 +160,46 @@ body {
 
 
 
-.flex{
+.flex {
   display: flex;
   align-items: center;
 }
-.center{
+
+.center {
   justify-content: center;
 }
-.between{
-  justify-content:space-between;
+
+.between {
+  justify-content: space-between;
 }
-.column{
+
+.column {
   flex-direction: column;
 }
-.wrap{
+
+.wrap {
   flex-wrap: wrap;
 }
-.color_white{
-  color:#fff;
+
+.color_white {
+  color: #fff;
 }
-.bg_white{
+
+.bg_white {
   background: #fff;
 }
 
-.main_color{
+.main_color {
   color: #02C7B5;
 }
 
-.btn_more{
-  padding:8px 15px;
+.btn_more {
+  padding: 8px 15px;
   background: #02C7B5;
-  border:1px solid #02C7B5;
+  border: 1px solid #02C7B5;
   border-radius: 20px;
   cursor: pointer;
-  color:#fff;
+  color: #fff;
   display: inline-block;
   text-align: center;
   transition: all 0.3s;
@@ -121,6 +207,7 @@ body {
   z-index: 1;
   overflow: hidden;
 }
+
 .btn_more::before {
   content: "";
   position: absolute;
@@ -138,27 +225,61 @@ body {
   -o-transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-.btn_more span{
+
+.btn_more span {
   position: relative;
-    z-index: 5;
+  z-index: 5;
 }
-.btn_more:hover{
+
+.btn_more:hover {
   background: #fff;
   border: 1px solid #02C7B5;
   border-radius: 20px;
-  color:#02C7B5;
+  color: #02C7B5;
 }
-.btn_more:hover{
-  color:#02C7B5;
+
+.btn_more:hover {
+  color: #02C7B5;
 }
+
 .btn_more:hover::before {
   transform: scaleX(1);
   transform-origin: left;
 }
-.btn_gradient{
-  padding:9px 32px;
+
+.btn_gradient {
+  padding: 9px 32px;
   background: linear-gradient(90deg, #33DCBF, #10C7DC);
-border: 1px solid rgba(255,255,255,0.25);
-font-size: 18px;
-border-radius:22px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 18px;
+  border-radius: 22px;
+}
+
+.btn_parmay {
+  padding: 8px 23px;
+  background: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0px 3px 11px 0px rgba(2, 199, 181, 0.3);
+  border-radius: 8px;
+  font-size: 16px;
+  color: #1F2429;
+  display: flex;
+  transition: all 0.3s;
+}
+
+.btn_parmay i{
+  margin-left: 16px;
+}
+
+.btn_parmay_main {
+  background: #02C7B5;
+  color: #FFFFFF;
+  border: 1px solid #02C7B5;
+}
+.btn_parmay:hover{
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #02C7B5;
+box-shadow: 0px 3px 11px 0px rgba(2,199,181,0.3);
+color:#02C7B5;
 }

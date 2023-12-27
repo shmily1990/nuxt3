@@ -7,27 +7,28 @@
                         <div class="platform-name">园区精细化监管及预警平台-AnewCIP</div>
                         <div class="platform-description">实现园区有毒有害及恶臭异味态势感知、预警监控、污染研判、企业评价、档案管理、移动互联等场景应用，助力园区以最小的管理成本实现环境管理与企业经济协同发展</div>
                         <div class="btns flex p-4">
-                            <div class="btn">产品咨询</div>
-                            <div class="btn">应用案例</div>
+                            <div class="btn">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
+                            <div class="btn">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="adv-card container flex">
+        <div class="page_title">开发中....</div>
+        <!-- <section class="adv-card container flex">
             <div class="adv-item" v-for="(item, index) in list" :key="index">
                 <i></i>
                 <span>{{item.label}}</span>
             </div>
         </section>
         <section class="page container">
-            <div class="page-title">核心优势</div>
+            <div class="page_title">核心优势</div>
             <div class="page-content">
                 <img src="~/assets/images/map/cip_youshi.png" />
             </div>
         </section>
         <section class="page srceen">
-            <div class="page-title">两大场景</div>
+            <div class="page_title">两大场景</div>
             <div class="page-content container">
                 <div class="screen-item">
                     <div class="screen-head flex">
@@ -94,7 +95,7 @@
             </div>
         </section>
         <section class="page">
-            <div class="page-title">客户案例</div>
+            <div class="page_title">客户案例</div>
             <div class="page-content container">
                 <div class="case-list flex gap-30">
                     <div class="case-list-item">
@@ -109,7 +110,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
 </template>
 <script setup>

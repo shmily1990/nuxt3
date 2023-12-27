@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container wrap">
-      <div class="left_col col-lg-8 col-md-8 col-sm-12  col-xm-12">
+      <div class="left_col col-lg-8 col-md-8 col-sm-12 col-xm-12">
         <div class="product item">
           <div class="title">产品中心</div>
           <ul class="list">
@@ -47,24 +47,28 @@
           <div>扫描二维码<br />联系在线客服</div>
         </div>
       </div>
+      <div class="foot_copyRright flex center">
+        <a>©2023 新禾数字科技 anew.cloud</a>
+        <a>苏ICP备2022033295号-1</a>
+        <a>版权所有 新禾数字科技(无锡)有限公司</a>
+      </div>
     </div>
   </footer>
 </template>
 
 <script setup>
 const productList = ref([
-  { name: "AnewEl", link: "/" },
-  { name: "AnewMap", link: "/", markLable: "TM" },
-  { name: "AnewAir", link: "/product", markLable: "TM" },
-  { name: "AnewCip", link: "#", markLable: "TM" },
+  { name: "AnewMap", link: "/anewMap", markLable: "TM" },
+  { name: "AnewAir", link: "/anewAir", markLable: "TM" },
+  { name: "AnewCip", link: "/", markLable: "TM" },
 ]);
 const caseList = ref([
   { name: "新禾解决方案中心", link: "/example" },
-  { name: "新禾案例中心", link: "/news" },
+  { name: "新禾案例中心", link: "/case" },
 ]);
 const aboutList = ref([
   { name: "了解新禾", link: "/about" },
-  { name: "联系我们", link: "/about" },
+  { name: "联系我们", link: "/contactUs" },
 ]);
 const tel = ref("18912483668");
 </script>
@@ -72,9 +76,10 @@ const tel = ref("18912483668");
 <style lang="less">
 .footer {
   background: #f0f4f7;
-  padding: 60px 0;
+  padding: 60px 0 10px;
   // display: flex;
   // justify-content: center;
+ 
   .container {
     display: flex;
     .left_col {
@@ -88,14 +93,13 @@ const tel = ref("18912483668");
         }
         .list {
           margin-top: 16px;
-            color: #637381;
-            font-size: 16px;
-            line-height: 30px;
+          color: #637381;
+          font-size: 16px;
+          line-height: 30px;
           li {
             a {
               color: #637381;
               font-size: 16px;
-             
             }
           }
         }
@@ -108,14 +112,38 @@ const tel = ref("18912483668");
         color: #637381;
         font-size: 14px;
         text-align: center;
-        img{
-            margin:0 auto;
+        img {
+          margin: 0 auto;
+        }
+      }
+    }
+    .foot_copyRright {
+      width: 100%;
+      font-size: 14px;
+       margin-top:60px;
+      a {
+        color: #9eacb9;
+        padding: 0 18px;
+        position: relative;
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 16px;
+          background: #9dacb9;
+          opacity: 0.2;
+          position: absolute;
+          right: 0;
+        }
+        &:last-child{
+          &::after{
+            display: none;
+          }
         }
       }
     }
   }
 }
-
 
 .page_title {
   color: #000414;
@@ -124,6 +152,32 @@ const tel = ref("18912483668");
   margin: 70px 0 60px;
   span {
     color: #02c7b5;
+  }
+  h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      width: 20px;
+      height: 4px;
+      background: #44a0fc;
+      display: inline-block;
+      position: relative;
+      margin: 0 26px;
+      transform: rotate(45deg);
+      &::after {
+        content: "";
+        background: #02c7b5;
+        display: block;
+        width: 20px;
+        height: 4px;
+        position: absolute;
+        top: 8px;
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
   }
 }
 </style>

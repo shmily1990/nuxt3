@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "38728991",
+      "name": "业务支撑",
+      "font_class": "yewuzhicheng",
+      "unicode": "e7c3",
+      "unicode_decimal": 59331
+    },
+    {
+      "icon_id": "38728992",
+      "name": "分析深度",
+      "font_class": "fenxishendu",
+      "unicode": "e7c2",
+      "unicode_decimal": 59330
+    },
+    {
+      "icon_id": "38728993",
+      "name": "客户满意",
+      "font_class": "kehumanyi",
+      "unicode": "e7c1",
+      "unicode_decimal": 59329
+    },
+    {
+      "icon_id": "38728994",
+      "name": "技术架构",
+      "font_class": "jishujiagou",
+      "unicode": "e7be",
+      "unicode_decimal": 59326
+    },
+    {
+      "icon_id": "38658787",
+      "name": "观看视频",
+      "font_class": "guankanshipin",
+      "unicode": "e77c",
+      "unicode_decimal": 59260
+    },
+    {
+      "icon_id": "38658775",
+      "name": "按钮-箭头",
+      "font_class": "anniu-jiantou",
+      "unicode": "e77d",
+      "unicode_decimal": 59261
+    },
+    {
       "icon_id": "30137207",
       "name": "实时预警-站点",
       "font_class": "shishiyujing-zhandian",

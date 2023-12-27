@@ -54,6 +54,8 @@
       li {
         max-width: 354px;
         position: relative;
+         transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
         &:nth-child(1) {
           .li_item {
             .name {
@@ -125,6 +127,11 @@
               color: #156fb7;
             }
           }
+        }
+        &:hover{
+              -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
         }
       }
     }

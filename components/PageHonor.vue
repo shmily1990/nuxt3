@@ -36,6 +36,7 @@
     text-align: center;
     ul {
       li {
+        width:20%;
         text-align: center;
         img {
           margin: 0px auto 15px;

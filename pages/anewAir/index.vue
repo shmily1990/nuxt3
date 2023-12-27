@@ -4,26 +4,27 @@
             <div class="container">
                 <div class="banner">
                     <div class="left">
-                        <div class="name">AnewAirTM</div>
+                        <div class="name flex"><img src="~/assets/images/map/air_logo1.png" /> AnewAirTM</div>
                         <div class="platform-name">大气污染智能管控终端</div>
                         <div class="platform-description">帮助管理者快速、全面了解大气污染发生发展的全时空变化信息，建立环境敏感区域与污染源之间的全证据链关联分析，分场景给出精准管控方</div>
                         <div class="btns flex">
-                            <div class="btn">产品咨询</div>
-                            <div class="btn">应用案例</div>
+                            <div class=" btn_parmay btn_parmay_main">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
+                            <div class=" btn_parmay">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
                         </div>
                     </div>
                     <img src="~/assets/images/map/air_pad.png" class="wow fadeInRight" />
                 </div>
-                <div class="bottom-card flex">
-                    <div class="item" v-for="(item, index) in list" :key="index">
-                        <i></i>
-                        <span>{{item.label}}</span>
-                    </div>
-                </div>
+                        <div class="feature-card flex between">
+          <div class="feature-item" v-for="(item, index) in list" :key="index">
+            <img src="~/assets/images/map/feature-card-01.png" />
+            <span>{{ item.label }}</span>
+          </div>
+        </div>
             </div>
         </section>
+            
         <section class="page container">
-            <div class="page-title">核心优势</div>
+            <div class="page_title"><h2><i></i>核心优势<i></i></h2></div>
             <div class="page-content">
                 <div class="info flex">
                     <div class="info-col-left">
@@ -63,7 +64,7 @@
             </div>
         </section>
         <section class="page">
-            <div class="page-title">三大场景</div>
+             <div class="page_title"><h2><i></i>三大场景<i></i></h2></div>
             <div class="page-content container">
                 <div class="screen-item">
                     <div class="screen-head flex">
@@ -149,7 +150,7 @@
             </div>
         </section>
         <section class="page bgcolor">
-            <div class="page-title">客户价值</div>
+             <div class="page_title"><h2><i></i>客户价值<i></i></h2></div>
             <div class="page-content container">
                 <img src="~/assets/images/map/air_khjz.png" />
             </div>
@@ -160,27 +161,27 @@
 const list = ref([
     {
         icon: '',
-        label: '全局信息掌控'
+        label: '掌控全局'
     },
     {
         icon: '',
-        label: '微信智能推送'
+        label: '助力达标'
     },
     {
         icon: '',
-        label: '智能精细预报'
+        label: '开箱即用'
     },
     {
         icon: '',
-        label: '智能报警分析'
+        label: '在线更新'
     },
     {
         icon: '',
-        label: '污染专项管控'
+        label: '服务专业'
     },
     {
         icon: '',
-        label: '云端指挥调度'
+        label: '多屏互动'
     }
 ])
 </script>
@@ -219,8 +220,12 @@ const list = ref([
         }
     }
 }
+.page{
+    overflow: hidden;
+}
 .bgcolor {
     background: #FFF9F0;
+    overflow: hidden;
 }
 .gap-30 {
     gap: 30px;
@@ -238,9 +243,9 @@ const list = ref([
 }
 .product-head {
     width: 100%;
-    height: 920px;
     background: url('~/assets/images/map/air_banner-bg.png') no-repeat center center;
     // background: linear-gradient(0deg, #FFFFFF 0%, #D6EEFE 40%, #B0D1F1 100%);
+    overflow: hidden;
 }
 .banner {
     padding-top: 168px;
@@ -259,6 +264,10 @@ const list = ref([
             color: #000414;
             font-family: HarmonyOS Sans SC;
             font-weight: 500;
+            img{
+                margin-right: 20px;
+            }
+            
         }
         .platform-name {
             font-size: 40px;
@@ -280,33 +289,11 @@ const list = ref([
         padding-top: 68px;
         margin: 0;
     }
-    .btn {
-        width: 140px;
-        line-height: 48px;
-        background: #02C7B5;
-        box-shadow: 0px 3px 11px 0px rgba(2,199,181,0.3);
-        border-radius: 8px;
-        font-size: 16px;
-        color: #FFFFFF;
-        padding: 0;
-    }
 }
 .bottom-card {
     justify-content: space-around;
 }
-.page {
-    &-title {
-        line-height: 168px;
-        font-size: 40px;
-        font-family: Source Han Sans CN;
-        font-weight: 500;
-        color: #000414;
-        text-align: center;
-        // padding: 20px 0;
-        position: relative;
-        
-    }
-}
+
 .p-bg {
     width: 45%;
     height: 408px;
@@ -505,5 +492,16 @@ const list = ref([
 }
 .right-0 {
 	right: 0;
+}
+.feature-card {
+   margin:100px 0 40px;
+  .feature-item {
+    text-align: center;
+    img {
+      margin: 5px auto;
+    }
+    color: #1f2429;
+    font-size: 18px;
+  }
 }
 </style>

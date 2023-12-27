@@ -3,41 +3,9 @@
     <section class="banner">
         <!-- <img src="~/assets/images/contactUs/banner.png" /> -->
         <div class="banner-content">
-            <div class="title">联系我们</div>
-            <div class="sub-title">CONTACT US</div>
+            <div class="title">解决方案</div>
+            <div class="sub-title">example</div>
         </div>
-    </section>
-    <section class="container qr-card">
-      <div class="cards">
-        <div class="card-item">
-            <div class="title">商务咨询</div>
-            <img src="~/assets/images/contactUs/qr-1.png" />
-            <div class="des">
-                扫描二维码留下您的信息 <br>稍后会有专人联系您
-            </div>
-        </div>
-        <div class="card-item">
-            <div class="title">在线客服</div>
-            <img src="~/assets/images/contactUs/qr-2.png" />
-            <div class="des">
-                扫描二维码<br>联系在线客服
-            </div>
-        </div>
-        <div class="card-item">
-            <div class="title">新禾数科</div>
-            <img src="~/assets/images/contactUs/qr-3.png" />
-            <div class="des">
-                扫描二维码<br>关注公众号
-            </div>
-        </div>
-        <div class="card-item">
-            <div class="title">加入我们</div>
-            <img src="~/assets/images/contactUs/qr-1.png" />
-            <div class="des">
-                扫描二维码<br>联系招聘人员
-            </div>
-        </div>
-      </div>
     </section>
   </div>
 </template>

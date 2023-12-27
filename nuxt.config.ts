@@ -2,12 +2,15 @@
 import postcsspxtoviewport from 'postcss-px-to-viewport'
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  devServer: {
+    port: 3001
+  },
   app: {
     head: {
       charset: "UTF-8",
       viewport: "width=device-width, initial-scale=1.0",
-      title: "加速器",
-      meta: [{ name: "description", content: "加速器" }],
+      title: "新禾数字科技有限公司",
+      meta: [{ name: "description", content: "大气环保" }],
       script: [
         {
           // type: "text/javascript",

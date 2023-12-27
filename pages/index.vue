@@ -4,12 +4,13 @@
       <swiper
         class="swiper-container"
         :autoplay="{ delay: 5000, disableOnInteraction: false }"
-        :pagination="{ clickable: true }"
         :navigation="true"
         :modules="mods"
       >
         <swiper-slide
-          :style="{ 'background-image': 'url(_nuxt/assets/images/banner.png)' }"
+          :style="{
+            'background-image': 'url(/images/index_banner.gif)',
+          }"
         >
           <div
             class="bannerwen color_white wow zoomIn"
@@ -33,6 +34,7 @@
           </div>
         </swiper-slide> -->
       </swiper>
+      <i class="icon_arrow iconfont icon-shubiao"   @click="go('#section1')" ></i>
     </section>
     <section class="section anewMap" id="section1">
       <div class="container flex wrap">
@@ -103,38 +105,123 @@
     </section>
     <section class="seciton solution" id="section5">
       <div class="container">
-        <div class="page_title  wow fadeInUp">
+        <div class="page_title wow fadeInUp">
           提供覆盖<span>「 环保行业 」</span>各类场景的解决方案
         </div>
         <div class="index_solution_type flex wrap">
           <div class="solution_menu col-md-12 col-sm-12 wow fadeInLeft">
             <ul class="flex column center">
               <div class="name">解决方案</div>
-              <li class="">
-                <img src="~/assets/images/ico_anli_qzx.png" /><span
-                  >轻咨询</span
-                >
+              <li :class="{ current: solutNum == 1 }" @click="solutClick(1)">
+                <div class="item_name">
+                  <img src="~/assets/images/ico_anli_qzx.png" /><span
+                    >轻咨询</span
+                  >
+                </div>
+                <i>>></i>
               </li>
-              <li class="">
-                <img src="~/assets/images/ico_anli_data.png" /><span
-                  >AnewData</span
-                >
+              <li :class="{ current: solutNum == 2 }" @click="solutClick(2)">
+                <div class="item_name">
+                  <img src="~/assets/images/ico_anli_data.png" /><span
+                    >AnewData</span
+                  >
+                </div>
+                <i>>></i>
               </li>
-              <li class="">
-                <img src="~/assets/images/ico_anli_zouh.png" /><span
-                  >移动走航</span
-                >
+              <li :class="{ current: solutNum == 3 }" @click="solutClick(3)">
+                <div class="item_name">
+                  <img src="~/assets/images/ico_anli_zouh.png" /><span
+                    >移动走航</span
+                  >
+                </div>
+                <i>>></i>
               </li>
-              <li class="current">
-                <img src="~/assets/images/ico_anli_yuanqu.png" /><span
-                  >智慧园区</span
-                >
+              <li :class="{ current: solutNum == 4 }" @click="solutClick(4)">
+                <div class="item_name">
+                  <img src="~/assets/images/ico_anli_yuanqu.png" /><span
+                    >智慧园区</span
+                  >
+                </div>
+                <i>>></i>
               </li>
             </ul>
           </div>
           <div class="solution_introduction col-md-12 wow fadeInRight">
-            <div class="solution_introduction_detial">
+            <!--轻咨询-->
+            <div
+              :class="[
+                'solution_introduction_detial',
+                'solut_detail1',
+                { current: solutNum == 1 },
+              ]"
+            >
               <h1 class="wow fadeInLeft">空气质量改善轻咨询服务解决方案</h1>
+              <p>
+                随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
+                1随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
+              </p>
+              <div class="key_box">
+                <ul class="flex">
+                  <li><i></i>关键词</li>
+                  <li><i></i>关键词</li>
+                  <li><i></i>关键词</li>
+                  <li><i></i>关键词</li>
+                </ul>
+              </div>
+            </div>
+            <!--AnewData-->
+            <div
+              :class="[
+                'solution_introduction_detial',
+                'solut_detail2',
+                { 'current wow fadeInRight': solutNum == 2 },
+              ]"
+            >
+              <h1 class="wow fadeInLeft" data-wow-infinite="true">AnewData</h1>
+              <p>
+                随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
+                1随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
+              </p>
+              <div class="key_box">
+                <ul class="flex">
+                  <li><i></i>关键词</li>
+                  <li><i></i>关键词</li>
+                  <li><i></i>关键词</li>
+                  <li><i></i>关键词</li>
+                </ul>
+              </div>
+            </div>
+            <!--移动走航-->
+            <div
+              :class="[
+                'solution_introduction_detial',
+                'solut_detail3',
+                { current: solutNum == 3 },
+              ]"
+            >
+              <h1 class="wow fadeInLeft">移动走航</h1>
+              <p>
+                随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
+                1随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
+              </p>
+              <div class="key_box">
+                <ul class="flex">
+                  <li><i></i>关键词</li>
+                  <li><i></i>关键词</li>
+                  <li><i></i>关键词</li>
+                  <li><i></i>关键词</li>
+                </ul>
+              </div>
+            </div>
+            <!--智慧园区-->
+            <div
+              :class="[
+                'solution_introduction_detial',
+                'solut_detail4',
+                { current: solutNum == 4 },
+              ]"
+            >
+              <h1 class="wow fadeInLeft">智慧园区</h1>
               <p>
                 随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
                 1随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
@@ -154,13 +241,13 @@
     </section>
     <section class="section case" id="section6">
       <div class="wow fadeInUp">
-        <div class="page_title ">客户案例</div>
+        <div class="page_title">客户案例</div>
         <swiper
           class="case_swiper_container"
-          :autoplay="{ delay: 50000, disableOnInteraction: false }"
+          :autoplay="{ delay: 0, disableOnInteraction: false }"
           :modules="mods"
           :speed="20000"
-          :breakpoints="breakpoints" 
+          :breakpoints="breakpoints"
           :loop="true"
           :navigation="true"
           :spaceBetween="30"
@@ -248,18 +335,22 @@
     <section class="seciton about" id="section7">
       <div class="container">
         <div class="page_title wow fadeInUp">认识新禾</div>
-        <div class="about_tip  wow fadeInUp">
+        <div class="about_tip wow fadeInUp">
           新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS,新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS,新禾数字科技是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS
         </div>
       </div>
-       <PageAbout />
+      <PageAbout />
     </section>
-      <PageHonor />
+    <PageHonor />
     <section class="seciton f_banner" id="section9">
       <div class="container">
         <h2 class="wow fadeInDown">免费使用智能算法工具 - 禾气云AnewEITM</h2>
-        <p class="wow fadeInDown">即将发布新品，开放<span>免费使用</span>，敬请期待！</p>
-        <div class="btn_more btn_gradient wow fadeInDown"><span>立即试用</span></div>
+        <p class="wow fadeInDown">
+          即将发布新品，开放<span>免费使用</span>，敬请期待！
+        </p>
+        <div class="btn_more btn_gradient wow fadeInDown">
+          <span>立即试用</span>
+        </div>
       </div>
     </section>
     <footer></footer>
@@ -272,6 +363,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper";
 const mods = ref([Autoplay, Pagination, Navigation, EffectFade]);
+
 useHead({
   // 外部引入js
   script: [
@@ -282,22 +374,41 @@ useHead({
     },
   ],
 });
- /** 断点 */
-  let breakpoints = ref(null);
-  breakpoints.value = { 
-    320: {  //当屏幕宽度大于等于320
-      slidesPerView: 2,
-      spaceBetween: 10
-    },
-    768: {  //当屏幕宽度大于等于768 
-      slidesPerView: 3,
-      spaceBetween: 20
-    },
-    900: {  //当屏幕宽度大于等于1280
-      slidesPerView: 4,
-      spaceBetween: 30
+/** 断点 */
+let breakpoints = ref(null);
+breakpoints.value = {
+  320: {
+    //当屏幕宽度大于等于320
+    slidesPerView: 2,
+    spaceBetween: 10,
+  },
+  768: {
+    //当屏幕宽度大于等于768
+    slidesPerView: 3,
+    spaceBetween: 20,
+  },
+  900: {
+    //当屏幕宽度大于等于1280
+    slidesPerView: 4,
+    spaceBetween: 30,
+  },
+};
+
+const solutNum = ref(1);
+
+
+const go=(selector)=>{
+      document.querySelector(selector).scrollIntoView({
+        // 不想要滚动动画,则设置为"instant"
+        behavior: 'smooth', // 滚动动画
+        block: 'center'
+      });
     }
-  }
+
+// 解决方案点击
+const solutClick = (index) => {
+  solutNum.value = index;
+};
 onMounted(() => {
   // console.dir(res)
   // new WOW().init()
@@ -334,6 +445,38 @@ onMounted(() => {
 </script>
 <style scoped lang="less">
 // banner
+.home-container {
+  position: relative;
+}
+.icon_arrow {
+  font-size: 70px;
+  color: #fff;
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  // transition:jump  0.5s;
+  animation-name: jump;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+    /* 最初位置 */
+  }
+  50% {
+    transform: translateY(-10px);
+    /* 上跳的位置 */
+  }
+  100% {
+    transform: translateY(0);
+    /* 回到最初位置 */
+  }
+}
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -424,10 +567,10 @@ onMounted(() => {
 //solution
 .solution {
   background: url(~/assets/images/bg_solution.jpg) no-repeat center center;
-  padding: 80px 0 ;
+  padding: 80px 0;
   background-size: cover;
-  .page_title{
-    margin-top:0;
+  .page_title {
+    margin-top: 0;
   }
   .index_solution_type {
     display: flex;
@@ -461,6 +604,7 @@ onMounted(() => {
           border: 1px solid #ffffff;
           display: flex;
           flex-direction: row;
+          justify-content: space-between;
           align-items: center;
           font-size: 18px;
           font-weight: 500;
@@ -470,8 +614,29 @@ onMounted(() => {
           line-height: 68px;
           margin-top: 24px;
           padding: 0 16px;
-          img {
-            margin-right: 8px;
+          transition: all 0.5s linear;
+          -webkit-transition: all 0.5s linear;
+          .item_name {
+            display: flex;
+            align-items: center;
+            img {
+              margin-right: 8px;
+              flex-shrink: 0;
+            }
+          }
+          i {
+            opacity: 0;
+            transition: all 0.5s;
+          }
+
+          &.current,
+          &:hover {
+            border: 2px solid rgba(2, 199, 181, 0.28);
+            box-shadow: 0px 2px 14px 0px rgba(2, 199, 181, 0.24);
+            color: #02c7b5;
+            i {
+              opacity: 1;
+            }
           }
         }
       }
@@ -479,24 +644,53 @@ onMounted(() => {
     .solution_introduction {
       width: 67%;
       backdrop-filter: blur(30px);
-      background: rgba(255, 255, 255, 0.3);
-      border: 2px solid rgba(255, 255, 255, 0.8);
+
       border-radius: 8px;
+      overflow: hidden;
       .solution_introduction_detial {
+        background: rgba(255, 255, 255, 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.8);
         padding: 80px;
         height: 100%;
-        position: relative;
+        position: absolute;
+        left: 200%;
+        top: 0;
+
+        transition: all 0.5s linear;
+        -webkit-transition: all 0.5s linear;
+
+        &::after {
+          content: "";
+          width: 200px;
+          height: 180px;
+          display: block;
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          transition: all 0.3s ease-in-out;
+        }
         &:nth-child(1) {
           &::after {
-            content: "";
-            width: 200px;
-            height: 180px;
             background: url("~/assets/images/icon_qzx.png") no-repeat center
               center;
-            display: block;
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
+          }
+        }
+        &:nth-child(2) {
+          &::after {
+            background: url("~/assets/images/icon_data.png") no-repeat center
+              center;
+          }
+        }
+        &:nth-child(3) {
+          &::after {
+            background: url("~/assets/images/icon_zouh.png") no-repeat center
+              center;
+          }
+        }
+        &:nth-child(4) {
+          &::after {
+            background: url("~/assets/images/icon_yuanq.png") no-repeat center
+              center;
           }
         }
 
@@ -520,6 +714,16 @@ onMounted(() => {
             margin-right: 14px;
           }
         }
+        &.current {
+          left: 0;
+        }
+        &:hover {
+          box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 20%), -8px -8px 20px 0 #fff;
+          transform: translateY(-3px);
+          &::after {
+            transform: scale(1.15);
+          }
+        }
       }
     }
   }
@@ -540,11 +744,10 @@ onMounted(() => {
   }
 }
 
-
 .f_banner {
-  background: url("~/assets/images/f-banner.png") no-repeat center center;
+  background: url("~/assets/images/f-banner2.jpg") no-repeat center center;
   padding: 10px;
-  background-size:cover;
+  background-size: cover;
 }
 
 @media (min-width: 992px) {
@@ -554,38 +757,38 @@ onMounted(() => {
 }
 
 @media (max-width: 990px) {
-  .air,.ei{
+  .air,
+  .ei {
     margin: 30px 0;
   }
   .solution {
-    .index_solution_type{
-      .solution_menu{
+    .index_solution_type {
+      .solution_menu {
         padding: 15px;
       }
-      .solution_introduction{
-        .solution_introduction_detial{
-          padding:15px;
+      .solution_introduction {
+        .solution_introduction_detial {
+          padding: 15px;
         }
       }
     }
-
   }
-  .case{
-    .page_title{
-      margin:60px 0 30px
+  .case {
+    .page_title {
+      margin: 60px 0 30px;
     }
-    .case_swiper_container{
-      .swiper-slide{
-        .case_container{
-          .des{
-            .bom{
-              span{
+    .case_swiper_container {
+      .swiper-slide {
+        .case_container {
+          .des {
+            .bom {
+              span {
                 font-size: 14px;
                 padding-right: 10px;
                 margin-right: 10px;
               }
-              button{
-                padding:0 10px;
+              button {
+                padding: 0 10px;
               }
             }
           }
@@ -593,7 +796,6 @@ onMounted(() => {
       }
     }
   }
-  
 }
 
 @media (max-width: 750px) {
@@ -628,7 +830,6 @@ onMounted(() => {
       margin-bottom: 50px;
     }
   }
-
 }
 
 .f_banner {
@@ -710,12 +911,11 @@ onMounted(() => {
             border-radius: 4px;
             padding: 0 14px;
             color: #637381;
-            
           }
           a {
             color: #02c7b5;
             border-radius: 2px;
-            width:70px;
+            width: 70px;
             text-align: center;
             // line-height: 100%;
           }
