@@ -20,8 +20,10 @@
   },
   "dependencies": {
     "ant-design-vue": "^4.0.7",
+    "autoprefixer": "^10.4.16",
     "bootstrap": "^5.2.3",
-    "postcss-px-to-viewport": "^1.1.1",
+    "postcss": "^8.4.32",
+    "postcss-pxtorem": "^5.1.1",
     "swiper": "^8.4.4"
   }
 }

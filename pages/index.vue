@@ -18,7 +18,7 @@
             data-wow-duration="2s"
           >
             <p>用AIoT和SaaS推动环保行业数字化变革</p>
-            <span>这里是描述文字 这里是描述文字 这里是描述文字 </span>
+            <span>已稳定服务近百家生态环境局、监测中心、工业园区、大气管控服务商、<br>运维商等政府、企业客户</span>
           </div>
         </swiper-slide>
         <!-- <swiper-slide
@@ -42,26 +42,28 @@
           <img src="~/assets/images/pic_map.png" />
         </div>
         <div class="intor col-lg-4 col-md-12 wow fadeInRight">
-          <h2>空气质量改善服务智能云平台-AnewMapTM</h2>
+          <h2>空气质量改善服务智能云平台-AnewMap™</h2>
           <p>我们服务于</p>
-          <h3><i>88</i>大气环境综合服务商</h3>
+          <h3><i class="iconfont icon-youliangtian"></i>空气质量改善第三方服务商</h3>
           <div class="txt">
-            为第三方服务厂商量身定做，实现了数智化决策模型与业务场景的深度融合，超越经验系统，提升决策效率，降低决策成本，以全新的认知能力
+            AnewMap™3.0是专门为第三方服务厂商量身定做的，依托新禾团队十数年的行业经验，实现了数智化决策模型与业务场景的深度融合，超越经验系统，提升决策效率，降低决策成本，以全新的认知能力，赋能平台助您更智能地处理复杂业务。AnewMap™3.0助力您跻身中国一流环境服务商，真正为您实现“省钱、省心、真智能”！
           </div>
-          <a class="btn_more"><span>了解更多 >></span></a>
+          <a class="btn_more"><span @click="router.push('/anewMap')">了解更多 >></span></a>
         </div>
       </div>
     </section>
     <section class="section air" id="section2">
       <div class="container flex wrap">
         <div class="intor col-lg-3 col-md-12 wow fadeInLeft">
-          <h2>大气污染智能管控终端-AnewAirTM</h2>
-          <p>我们服务于</p>
-          <h3><i>88</i>政府环保部门管理者</h3>
-          <div class="txt">
-            为第三方服务厂商量身定做，实现了数智化决策模型与业务场景的深度融合，超越经验系统，提升决策效率，降低决策成本，以全新的认知能力
+          <div style="width: max-content;">
+            <img align="left" class="intor-logo" src="~/assets/images/map/air_logo1.png" />
+             <span class="intor-title p-l-2">大气污染智能管控<br>终端-AnewAir™</span>
           </div>
-          <a class="btn_more color_white"><span>了解更多 >></span></a>
+          <p>我们服务于</p>
+          <h3><i class="iconfont icon-zhengfuguanlizhe"></i>政府部门环境管理者</h3>
+          <div class="txt">
+            帮助管理者快速、全面了解大气污染发生发展的全时空变化信息，建立环境敏感区域与污染源之间的全证据链关联分析，分场景给出精准管控方案并动态实施评估管控效果等。其开箱即用，持续更新等特性，更使其成为您常用常新的贴身数字化助手！</div>
+          <a class="btn_more color_white"><span  @click="router.push('/anewAir')">了解更多 >></span></a>
         </div>
         <div
           class="img-intor col-lg-9 col-md-12 wow flipInX"
@@ -77,26 +79,29 @@
           <img src="~/assets/images/pic_CIP.png" />
         </div>
         <div class="intor col-lg-4 col-md-12 wow fadeInRight">
-          <h2>园区精细化管理及预警平台-AnewCIPTM</h2>
+          <h2>园区精细化管理及预警平台-AnewCIP™</h2>
           <p>我们服务于</p>
-          <h3><i>88</i>园区及企业客户</h3>
+          <h3><i class="iconfont icon-yuanqugailan"></i>工业园区及企业客户</h3>
           <div class="txt">
-            实现园区有毒有害及恶臭异味态势感知、预警监控、污染研判、企业评价、档案管理、移动互联等场景应用，助力园区以最小的管理成本实现环
+            实现园区有毒有害及恶臭异味态势感知、预警监控、污染研判、企业分级、应急指挥等，助力园区以最小的管理成本实现环境管理与企业经济协同发展，助力您打造国家级零碳园区、绿色园区！
           </div>
-          <a class="btn_more"><span>了解更多 >></span></a>
+          <a class="btn_more"><span @click="router.push('/anewCip')">了解更多 >></span></a>
         </div>
       </div>
     </section>
     <section class="section ei" id="section4">
       <div class="container flex wrap">
         <div class="intor col-lg-4 col-md-12 wow fadeInLeft">
-          <h2>禾气云-AnewEITM</h2>
-          <p>我们服务于</p>
-          <h3><i>88</i>大气环保行业从业人员</h3>
-          <div class="txt">
-            这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案。
+          <div style="width: max-content;">
+            <img align="left" class="intor-logo" src="~/assets/images/map/ei_logo1.png" />
+             <span class="intor-title p-l-2">禾气云-AnewEI™</span>
           </div>
-          <a class="btn_more"><span>即将发布，点此预约 >></span> </a>
+          <p>我们服务于</p>
+          <h3><i class="iconfont icon-huanbaocongyerenyuan"></i>大气环保行业专业人员</h3>
+          <div class="txt">
+            禾气云在GPT时代，运用大数据、人工智能的方法帮助每一位大气环保专业人员了解数据、应用算法，让环境数据分析更简单，降低技术人员使用门槛，聚焦问题、解决问题，提供一系列大气环保领域内的小而精的解决方案！
+          </div>
+          <a class="btn_more" href="https://work.weixin.qq.com/kfid/kfcb9bde46a45113692" target="_blank"><span>即将发布，点此预约 >></span> </a>
         </div>
         <div class="img-intor col-lg-8 col-md-12 wow fadeInRight">
           <img src="~/assets/images/pic_ei.png" />
@@ -115,34 +120,35 @@
               <li :class="{ current: solutNum == 1 }" @click="solutClick(1)">
                 <div class="item_name">
                   <img src="~/assets/images/ico_anli_qzx.png" /><span
-                    >轻咨询</span
+                    >轻咨询服务</span
                   >
                 </div>
-                <i>>></i>
+                <img src="~/assets/images/tableq.png" class="tableq" />
+                <!-- <i>>></i> -->
               </li>
               <li :class="{ current: solutNum == 2 }" @click="solutClick(2)">
                 <div class="item_name">
                   <img src="~/assets/images/ico_anli_data.png" /><span
-                    >AnewData</span
+                    >大气大数据平台</span
                   >
                 </div>
-                <i>>></i>
+                <img src="~/assets/images/tableq.png" class="tableq" />
               </li>
               <li :class="{ current: solutNum == 3 }" @click="solutClick(3)">
                 <div class="item_name">
                   <img src="~/assets/images/ico_anli_zouh.png" /><span
-                    >移动走航</span
+                    >走航溯源</span
                   >
                 </div>
-                <i>>></i>
+                <img src="~/assets/images/tableq.png" class="tableq" />
               </li>
               <li :class="{ current: solutNum == 4 }" @click="solutClick(4)">
                 <div class="item_name">
                   <img src="~/assets/images/ico_anli_yuanqu.png" /><span
-                    >智慧园区</span
+                    >园区监管</span
                   >
                 </div>
-                <i>>></i>
+                <img src="~/assets/images/tableq.png" class="tableq" />
               </li>
             </ul>
           </div>
@@ -157,15 +163,14 @@
             >
               <h1 class="wow fadeInLeft">空气质量改善轻咨询服务解决方案</h1>
               <p>
-                随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
-                1随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
+                在空气质量持续改善的时代背景下，城市环境管理者面临经济增长与空气质量达标的双重压力。传统的劳动密集型服务难以满足环境管理者日益提升的精准治污、科学治污需求，以标准化机制、数字化平台、智能化算法、指标化评估为核心的轻咨询服务，为您提供了更高性价比的解决方案，让您能够体验更专业、更高效、更管用的新一代空气质量改善服务！
               </p>
               <div class="key_box">
                 <ul class="flex">
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
+                  <li><i class="iconfont icon-biaozhunhuajizhi"></i>标准化机制</li>
+                  <li><i class="iconfont icon-shuzihuapingtai"></i>数字化平台</li>
+                  <li><i class="iconfont icon-zhinenghuasuanfa"></i>智能化算法</li>
+                  <li><i class="iconfont icon-zhibiaopinggu"></i>指标化评估</li>
                 </ul>
               </div>
             </div>
@@ -177,17 +182,16 @@
                 { 'current wow fadeInRight': solutNum == 2 },
               ]"
             >
-              <h1 class="wow fadeInLeft" data-wow-infinite="true">AnewData</h1>
+              <h1 class="wow fadeInLeft" data-wow-infinite="true">城市（区县）大气大数据平台解决方案</h1>
               <p>
-                随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
-                1随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
+                为加强城市空气质量达标管理，生态环境部门建设了众多业务系统，从而也形成了众多的业务孤岛、数据烟囱，随着生态环境数字化转型的不断深入，数据融合、业务闭环的要求越来越迫切，新禾大气大数据平台解决方案，结合十数年的城市大气管理业务经验，通过最新的云计算、大数据及人工智能技术，有效联通业务系统、打通数据孤岛，实现城市（区县）大气大数据的数字孪生应用！
               </p>
               <div class="key_box">
                 <ul class="flex">
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
+                  <li><i class="iconfont icon-shujuronghe"></i>数据融合</li>
+                  <li><i class="iconfont icon-guanlibihuan"></i>业务闭环</li>
+                  <li><i class="iconfont icon-guanligaoxiao"></i>管理高效</li>
+                  <li><i class="iconfont icon-shuziluansheng"></i>数字孪生</li>
                 </ul>
               </div>
             </div>
@@ -199,17 +203,16 @@
                 { current: solutNum == 3 },
               ]"
             >
-              <h1 class="wow fadeInLeft">移动走航</h1>
+              <h1 class="wow fadeInLeft">移动走航与溯源评估数字化解决方案</h1>
               <p>
-                随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
-                1随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
+                近年来，走航监测作为颗粒物及臭氧污染排查的重要手段，得到广泛应用，但传统的走航监测仅能识别高值、生成简单走航报告，难以满足精准溯源及评估污染贡献占比等精准、量化的管控需求。新禾结合走航监测数据、气象数据、污染源清单、源谱库数据等，应用机器学习算法及环境模型，实现了科学规划走航路线，智能识别异常点、生成疑似污染源清单、定量评估污染贡献占比，助您构建数字化精准走航溯源创新应用！
               </p>
               <div class="key_box">
                 <ul class="flex">
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
+                  <li><i class="iconfont icon-yuanpushibie"></i>源谱识别</li>
+                  <li><i class="iconfont icon-jingzhunsuyuan"></i>精准溯源</li>
+                  <li><i class="iconfont icon-zhibiaopinggu"></i>定量评估</li>
+                  <li><i class="iconfont icon-guanlibihuan"></i>管理闭环</li>
                 </ul>
               </div>
             </div>
@@ -221,17 +224,16 @@
                 { current: solutNum == 4 },
               ]"
             >
-              <h1 class="wow fadeInLeft">智慧园区</h1>
+              <h1 class="wow fadeInLeft">智慧园区精细化监管及风险预警解决方案</h1>
               <p>
-                随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
-                1随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时
+                目前，工业园区快速发展过程中带来的安全风险大、环境影响大等问题越来越突出，新禾智慧园区精细化监管及风险预警解决方案助您建立“日常不扰、无据不查、轻微不罚”的园区非现场监管模式，减少对企业现场检查，在保障生态环境的前提下持续推动企业良性发展，最终助您打造国家级安全园区、绿色园区、零碳园区！
               </p>
               <div class="key_box">
                 <ul class="flex">
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
-                  <li><i></i>关键词</li>
+                  <li><i class="iconfont icon-fengxianyujing"></i>风险预警</li>
+                  <li><i class="iconfont icon-yiweisuyuan"></i>异味溯源</li>
+                  <li><i class="iconfont icon-lvseyuanqu"></i>绿色园区</li>
+                  <li><i class="iconfont icon-jingjifazhan"></i>经济发展</li>
                 </ul>
               </div>
             </div>
@@ -258,73 +260,88 @@
             <div class="case_container">
               <div class="img"><img src="~/assets/images/img1.jpg" /></div>
               <div class="des">
-                <div class="name">大气走航精准溯源</div>
-                <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
+                <div class="name">数据推送</div>
+                <p>员工省力，老板省心！全新数据推送等你解锁</p>
                 <div class="bom flex between">
                   <div class="tip">
-                    <span>走航溯源</span><button>AnewAir</button>
+                    <span>数据推送</span><button>AnewMap</button>
                   </div>
-                  <a>详情></a>
+                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/wGnkvnSP1z4X9Fte4CpB4A')">详情></a>
                 </div>
               </div>
             </div>
           </swiper-slide>
           <swiper-slide key="2">
             <div class="case_container">
-              <div class="img"><img src="~/assets/images/img1.jpg" /></div>
+              <div class="img"><img src="~/assets/images/img2.jpg" /></div>
               <div class="des">
-                <div class="name">大气走航精准溯源</div>
+                <div class="name">Q市生态环境局</div>
                 <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
                 <div class="bom flex between">
                   <div class="tip">
-                    <span>走航溯源</span><button>AnewAir</button>
+                    <span>事件调度</span><button>AnewMap</button>
                   </div>
-                  <a>详情></a>
+                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/o-JZc7Lqx8SthMquQHUBSw')">详情></a>
                 </div>
               </div>
             </div>
           </swiper-slide>
           <swiper-slide key="3">
             <div class="case_container">
-              <div class="img"><img src="~/assets/images/img1.jpg" /></div>
+              <div class="img"><img src="~/assets/images/img3.jpg" /></div>
               <div class="des">
                 <div class="name">大气走航精准溯源</div>
-                <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
+                <p>数字赋能走航溯源，重塑精准监管流程</p>
                 <div class="bom flex between">
                   <div class="tip">
                     <span>走航溯源</span><button>AnewAir</button>
                   </div>
-                  <a>详情></a>
+                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/fMa6C0Gm7hztaq3D-YDz1Q')">详情></a>
                 </div>
               </div>
             </div>
           </swiper-slide>
           <swiper-slide key="4">
             <div class="case_container">
-              <div class="img"><img src="~/assets/images/img1.jpg" /></div>
+              <div class="img"><img src="~/assets/images/img4.jpg" /></div>
               <div class="des">
-                <div class="name">大气走航精准溯源</div>
-                <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
+                <div class="name">华南某市生态环境局</div>
+                <p>颗粒物浓度连续三年下降，看看工地分级是怎么做到的</p>
                 <div class="bom flex between">
                   <div class="tip">
-                    <span>走航溯源</span><button>AnewAir</button>
+                    <span>工地分级</span><button>AnewMap</button>
                   </div>
-                  <a>详情></a>
+                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/Vak1MyGofmQtot2BGuS_WQ')">详情></a>
                 </div>
               </div>
             </div>
           </swiper-slide>
           <swiper-slide key="5">
             <div class="case_container">
-              <div class="img"><img src="~/assets/images/img1.jpg" /></div>
+              <div class="img"><img src="~/assets/images/img5.jpg" /></div>
               <div class="des">
-                <div class="name">大气走航精准溯源</div>
-                <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
+                <div class="name">空气质量智能预报</div>
+                <p>智能预报、人工订正、微信推送...AnewMap™3.0打造空气质量预报新范式</p>
                 <div class="bom flex between">
                   <div class="tip">
-                    <span>走航溯源</span><button>AnewAir</button>
+                    <span>智能预报</span><button>AnewMap</button>
                   </div>
-                  <a>详情></a>
+                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/2K9lLn9KqYXULXJuMB4t4Q')">详情></a>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide key="6">
+            <div class="case_container">
+              <div class="img"><img src="~/assets/images/img6.png" /></div>
+              <div class="des">
+                <div class="name">污染源管控</div>
+                <p>助力精准监管污染源，有效控制重污染天在1%以内</p>
+                <div class="bom flex between">
+                  <div class="tip">
+                    <span>污染源管控</span><button>AnewAir</button>
+                  </div>
+                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/MemL6mXoOUlRjZLw3IlbZQ')">详情></a>
                 </div>
               </div>
             </div>
@@ -336,7 +353,7 @@
       <div class="container">
         <div class="page_title wow fadeInUp">认识新禾</div>
         <div class="about_tip wow fadeInUp">
-          新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS,新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS,新禾数字科技是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS
+          	新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS推动环保行业数字化变革，以SaaS方式提供端到端的软件及咨询服务，以订阅形成低成本、高质量、可持续交付，用AIoT收集最广泛的行业运行数据，将行业业务场景与物联网、大数据、AI技术深度融合，形成管用的行业数字化解决方案。
         </div>
       </div>
       <PageAbout />
@@ -344,12 +361,12 @@
     <PageHonor />
     <section class="seciton f_banner" id="section9">
       <div class="container">
-        <h2 class="wow fadeInDown">免费使用智能算法工具 - 禾气云AnewEITM</h2>
+        <h2 class="wow fadeInDown">免费试用空气质量改善服务智能云平台<br> - AnewMap™</h2>
         <p class="wow fadeInDown">
-          即将发布新品，开放<span>免费使用</span>，敬请期待！
+          新品发布，抢先<span>免费试用</span>
         </p>
         <div class="btn_more btn_gradient wow fadeInDown">
-          <span>立即试用</span>
+          <span  @click="jumpWechat">立即试用</span>
         </div>
       </div>
     </section>
@@ -363,7 +380,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper";
 const mods = ref([Autoplay, Pagination, Navigation, EffectFade]);
-
+const router = useRouter()
+const showVideo = ref(false)
 useHead({
   // 外部引入js
   script: [
@@ -374,6 +392,12 @@ useHead({
     },
   ],
 });
+const jumpWechat = () => {
+  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank')
+}
+const jumpCaseDetail = (url) => {
+  window.open(url, '_blank')
+}
 /** 断点 */
 let breakpoints = ref(null);
 breakpoints.value = {
@@ -420,27 +444,6 @@ onMounted(() => {
     live: true,
   });
   wow.init();
-  console.log(new WOW(), 1223);
-  // let swiper = new Swiper(".mySwiper", {
-  //     slidesPerView: 5, // 轮播区域展示的数量
-  //     spaceBetween: 30,
-  //     mousewheel: true,
-  //     keyboard: true,
-  //     loop: true, // 循环播放
-  //     speed: 2500,
-  //     autoplay: { // 自动播放
-  //       delay: 2500,
-  //       disableOnInteraction: false,
-  //     },
-  //     navigation: {
-  //         prevEl: ".swiper-button-prev",
-  //         nextEl: ".swiper-button-next",
-  //     },
-  //     // pagination: {
-  //     //   el: ".swiper-pagination",
-  //     //   clickable: true,
-  //     // }
-  // });
 });
 </script>
 <style scoped lang="less">
@@ -516,6 +519,14 @@ onMounted(() => {
     font-size: 40px;
     color: #1f2429;
     line-height: 45px;
+  }
+  &-title {
+    font-size: 40px;
+    color: #1f2429;
+  }
+  &-logo {
+    margin-top: 8px;
+    padding-right: 10px;
   }
   p {
     font-size: 14px;
@@ -624,7 +635,7 @@ onMounted(() => {
               flex-shrink: 0;
             }
           }
-          i {
+          .tableq {
             opacity: 0;
             transition: all 0.5s;
           }
@@ -634,7 +645,7 @@ onMounted(() => {
             border: 2px solid rgba(2, 199, 181, 0.28);
             box-shadow: 0px 2px 14px 0px rgba(2, 199, 181, 0.24);
             color: #02c7b5;
-            i {
+            .tableq {
               opacity: 1;
             }
           }
@@ -709,9 +720,14 @@ onMounted(() => {
           li {
             border: 1px solid #ffffff;
             border-radius: 4px;
-            padding: 8px 18px;
+            padding: 2px 13px;
             background: rgba(255, 255, 255, 0.3);
             margin-right: 14px;
+            color: #637381;
+            i {
+              font-size: 14px;
+              color: #12CABA;
+            }
           }
         }
         &.current {
@@ -872,8 +888,10 @@ onMounted(() => {
     .case_container {
       .img {
         border-radius: 8px 8px 0px 0px;
+        
         img {
           border-radius: 8px 8px 0px 0px;
+          width: 100%;
         }
       }
       .des {
@@ -893,6 +911,7 @@ onMounted(() => {
           font-size: 14px;
           font-weight: 400;
           color: #637381;
+          height: 50px;
         }
         .bom {
           border-top: 1px solid #f0f4f7;
@@ -978,5 +997,10 @@ onMounted(() => {
     transform: translateX(50%);
     margin-right: -35px;
   }
+}
+.section .iconfont {
+    font-size: 30px;
+    color: #02C7B5;
+    vertical-align: middle;
 }
 </style>

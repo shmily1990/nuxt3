@@ -10,11 +10,17 @@
   </div>
 </template>
 <script setup>
+useHead({
+  title: "空气质量改善_大气溯源_大气大数据平台-新禾解决方案中心",
+  meta: [{ name: "description",  content: "新禾数科以具备自主知识产权的SaaS云计算技术、环境模型及机器学习AI算法为核心技术，融合AIoT多源数据，实现数据感知、预报预警、研判分析、指挥调度、综合评估、云端一体等应用场景，针对大气污染源智能监管领域，开发了多种独特的数字化解决方案。" },
+    { name: "keywords", content: "空气质量改善，环保数字化，大气大数据，大气溯源"}
+  ],
+});
 </script>
 <style lang="less" scoped>
 .banner {
   width: 100%;
-  height: 400px;
+  height: 480px;
   background: url("~/assets/images/contactUs/banner.png") no-repeat center
     center;
   display: flex;

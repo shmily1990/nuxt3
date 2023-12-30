@@ -42,11 +42,14 @@
   </div>
 </template>
 <script setup>
+useHead({
+  title: "联系我们"
+});
 </script>
 <style lang="less" scoped>
 .banner {
   width: 100%;
-  height: 400px;
+  height: 480px;
   background: url("~/assets/images/contactUs/banner.png") no-repeat center
     center;
   display: flex;

@@ -4,21 +4,26 @@
       <div class="container">
         <div class="banner flex">
           <div class="left">
-            <div class="name">AnewMapTM</div>
+            <div class="name">AnewMap™</div>
             <div class="platform-name">空气质量改善服务智能云平台</div>
             <div class="platform-description">
-              帮助管理者快速、全面了解大气污染发生发展的全时空变化信息，建立环境敏感区域与污染源之间的全证据链关联分析，分场景给出精准管控方案并动态评估管控效果。
+              为第三方服务厂商量身定做，实现了数智化决策模型与业务场景的深度融合，超越经验系统，提升决策效率，降低决策成本，以全新的认知能力，赋能平台助您更智能地处理复杂业务。
             </div>
 
-             <div class="btns flex">
-                            <div class=" btn_parmay btn_parmay_main">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
-                            <div class=" btn_parmay">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
-                        </div>
+            <div class="btns flex">
+                <div class=" btn_parmay btn_parmay_main" @click="jumpWechat">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
+                <div class=" btn_parmay" @click="router.push('/case')">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
+            </div>
           </div>
-          <img
-            src="~/assets/images/map-banner-img.png"
-            class="wow fadeInRight"
-          />
+          <div class="relative videoPic">
+            <img
+              src="~/assets/images/map-banner-img.png"
+              class="wow fadeInRight"
+            />
+            <div class="playerBtn" @click="showVideo = true">
+              <i class="iconfont icon-guankanshipin"></i>观看视频
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -38,13 +43,13 @@
       </div>
     </section>
     <section class="page container">
-      <div class="page_title">核心优势</div>
+      <div class="page_title"><h2><i></i>核心优势<i></i></h2></div>
       <div class="page-content">
         <img src="~/assets/images/map/map_ys.png" />
       </div>
     </section>
     <section class="page goods">
-      <div class="page_title">六大场景</div>
+      <div class="page_title"><h2><i></i>六大场景<i></i></h2></div>
       <div class="page-content">
         <div class="item item1 relative">
           <div class="container">
@@ -57,7 +62,7 @@
               </div>
               <div class="sub-title">信息汇聚、掌控全局、成果尽显</div>
               <div class="desrciption">
-                这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案。
+                通过地图大屏展示，汇聚各类数据，针对不同专题将重要信息与成果实时展示，随时掌控全局，提升决策效率。
               </div>
             </div>
           </div>
@@ -71,7 +76,7 @@
               </div>
               <div class="sub-title">模板中心、数据修订、人工审核</div>
               <div class="desrciption">
-                这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案。
+                通过配置图表模板，实现自动化推送图文至微信群，释放人员精力，定时输出内容，获取最新数据动态。
               </div>
             </div>
             <div class="goods_img">
@@ -91,7 +96,7 @@
               </div>
               <div class="sub-title">多源慧聚、短临预报、实时订正</div>
               <div class="desrciption">
-                这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案。
+                提供多种预报数据源，快捷切换查看预报数据；并支持人工修订小时预报数据，结合本地化数据，对预报结果准确度评估。
               </div>
             </div>
           </div>
@@ -99,13 +104,13 @@
         </div>
         <div class="item item4 relative">
           <div class="container">
-            <div class="introduction">
+            <div class="introduction" style="width:25%">
               <div class="title">
-                <span class="order">04</span><span>数据推送</span>
+                <span class="order">04</span><span>高值分析</span>
               </div>
               <div class="sub-title">模板中心、数据修订、人工审核</div>
               <div class="desrciption">
-                这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案。
+                通过配置各因子报警规则，实现在线自动化监控，触发报警后进行消息通知。在平台中对该报警小时、报警站点、报警因子进行可视化分析，输出溯源结果，联动污染源信息筛选重点污染源名单，为高值原因提供建设性方向。
               </div>
             </div>
             <div class="goods_img">
@@ -125,7 +130,7 @@
               </div>
               <div class="sub-title">在线台账、污染专项、在线表单</div>
               <div class="desrciption">
-                这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案。
+                空气质量地图可视化筛选出污染源名单，对其进行管控、日常检查等管理动作，联动事件调度人员并记录工作日志。
               </div>
             </div>
           </div>
@@ -139,7 +144,7 @@
               </div>
               <div class="sub-title">智慧调度、整改跟踪、事件统计</div>
               <div class="desrciption">
-                这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案，这里是描述文案。
+                通过与云端配套小程序联动，实现事件调度场景闭环，进行指挥调度、事件统计、整改跟踪、回头看等工作。
               </div>
             </div>
             <div class="goods_img">
@@ -151,7 +156,7 @@
       </div>
     </section>
     <section class="page">
-      <div class="page_title">客户案例</div>
+      <div class="page_title"><h2><i></i>客户案例<i></i></h2></div>
       <div class="page-content container">
         <div class="case-list">
           <ul class="flex gap-30 center">
@@ -159,27 +164,39 @@
               <div class="list-item-img">
                 <img src="~/assets/images/map/map_case01.png" />
               </div>
-              <div class="list-item__title">清远项目</div>
+              <div class="list-item__title"><i class="iconfont icon-shishiyujing-zhandian"></i> 清远项目</div>
             </li>
             <li class="case-list-item">
               <div class="list-item-img">
                 <img src="~/assets/images/map/map_case02.png" />
               </div>
-              <div class="list-item__title">清远项目</div>
+              <div class="list-item__title"><i class="iconfont icon-shishiyujing-zhandian"></i> 清远项目</div>
             </li>
             <li class="case-list-item">
               <div class="list-item-img">
                 <img src="~/assets/images/map/map_case03.png" />
               </div>
-              <div class="list-item__title">清远项目</div>
+              <div class="list-item__title"><i class="iconfont icon-shishiyujing-zhandian"></i> 常州项目</div>
             </li>
           </ul>
         </div>
       </div>
     </section>
+    <video-player v-model:visable="showVideo" />
   </div>
 </template>
 <script setup>
+useHead({
+  title: "空气质量改善服务智能云平台_AnewMap",
+  meta: [{ name: "description",  content: "AnewMap是为第三方服务厂商量身定做的，依托新禾团队十数年的行业经验，实现了数智化决策模型与业务场景的深度融合，超越经验系统，提升决策效率，降低决策成本，以全新的认知能力，赋能平台助您更智能地处理复杂业务。" },
+    { name: "keywords", content: "空气质量平台，AnewMap，空气质量改善服务"}
+  ],
+});
+const router = useRouter()
+const showVideo = ref(false)
+const jumpWechat = () => {
+  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank')
+}
 const list = ref([
   {
     icon: "",
@@ -208,6 +225,25 @@ const list = ref([
 ]);
 </script>
 <style lang="less" scoped>
+.videoPic {
+  .playerBtn {
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border: 1px solid #03E8BE;
+    border-radius: 19px;
+    position: absolute;
+    left: 63%;
+    top: 26%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  &:hover {
+    .playerBtn {
+      opacity: 1;
+    }
+  }
+}
 .gap-30 {
   gap: 30px;
 }
@@ -235,16 +271,16 @@ const list = ref([
         font-size: 18px;
         color: #ffffff;
       }
-      &:hover {
-        box-shadow: 0 8px 32px 0 rgba(20, 30, 49, 0.1);
-        transform: translateY(-16px);
-        cursor: pointer;
-        img {
-        //   webkit-transform: scale(1.05);
-        //   -ms-transform: scale(1.05);
-        //   transform: scale(1.05);
-        }
-      }
+      // &:hover {
+      //   box-shadow: 0 8px 32px 0 rgba(20, 30, 49, 0.1);
+      //   transform: translateY(-16px);
+      //   cursor: pointer;
+      //   img {
+      //   //   webkit-transform: scale(1.05);
+      //   //   -ms-transform: scale(1.05);
+      //   //   transform: scale(1.05);
+      //   }
+      // }
     }
   }
 }
@@ -260,7 +296,7 @@ const list = ref([
 
   .left {
     position: absolute;
-    width: 30%;
+    width: 24%;
     // top: 20%;
     .name {
       font-size: 36px;
@@ -339,6 +375,7 @@ const list = ref([
   }
   .introduction {
     padding-top: 3%;
+    width: 25%;
     .title {
       font-size: 40px;
       font-weight: bold;

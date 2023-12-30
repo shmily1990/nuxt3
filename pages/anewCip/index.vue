@@ -4,31 +4,35 @@
             <div class="container">
                 <div class="banner">
                     <div class="banner-tips">
-                        <div class="platform-name">园区精细化监管及预警平台-AnewCIP</div>
+                        <div class="platform-name">园区精细化监管及预警平台-AnewCIP™</div>
                         <div class="platform-description">实现园区有毒有害及恶臭异味态势感知、预警监控、污染研判、企业评价、档案管理、移动互联等场景应用，助力园区以最小的管理成本实现环境管理与企业经济协同发展</div>
                         <div class="btns flex p-4">
-                            <div class="btn">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
-                            <div class="btn">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
+                            <div class="btn_parmay btn_parmay_main" @click="jumpWechat">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
+                            <div class="btn_parmay" @click="router.push('/case')">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="page_title">开发中....</div>
-        <!-- <section class="adv-card container flex">
-            <div class="adv-item" v-for="(item, index) in list" :key="index">
-                <i></i>
-                <span>{{item.label}}</span>
+        <section class="adv-card container">
+            <div class="feature-card flex between">
+                <div class="feature-item" v-for="(item, index) in list" :key="index">
+                    <img src="~/assets/images/map/icon_cip_01.png" v-if="index === 0" />
+                    <img src="~/assets/images/map/icon_cip_02.png" v-if="index === 1" />
+                    <img src="~/assets/images/map/icon_cip_03.png" v-if="index === 2" />
+                    <img src="~/assets/images/map/icon_cip_04.png" v-if="index === 3" />
+                    <span>{{ item.label }}</span>
+                </div>
             </div>
         </section>
         <section class="page container">
-            <div class="page_title">核心优势</div>
+            <div class="page_title"><h2><i></i>核心优势<i></i></h2></div>
             <div class="page-content">
                 <img src="~/assets/images/map/cip_youshi.png" />
             </div>
         </section>
         <section class="page srceen">
-            <div class="page_title">两大场景</div>
+            <div class="page_title"><h2><i></i>两大场景<i></i></h2></div>
             <div class="page-content container">
                 <div class="screen-item">
                     <div class="screen-head flex">
@@ -95,7 +99,7 @@
             </div>
         </section>
         <section class="page">
-            <div class="page_title">客户案例</div>
+            <div class="page_title"><h2><i></i>客户案例<i></i></h2></div>
             <div class="page-content container">
                 <div class="case-list flex gap-30">
                     <div class="case-list-item">
@@ -110,38 +114,61 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
+        <video-player v-model:visable="showVideo" />
     </div>
 </template>
 <script setup>
+useHead({
+  title: "园区精细化监管及预警平台_AnewCIP",
+  meta: [{ name: "description",  content: "AnewCIP可以实现园区有毒有害及恶臭异味态势感知、预警监控、污染研判、企业评价、档案管理、移动互联等场景应用，助力园区环境、民生、安全等问题实现精细化、智慧化管理，以最小的管理成本实现环境管理与企业经济协同发展。" },
+    { name: "keywords", content: "智慧园区，园区监管平台，AnewCIP"}
+  ],
+});
+const router = useRouter()
+const showVideo = ref(false)
+const jumpWechat = () => {
+  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank')
+}
 const list = ref([
     {
         icon: '',
-        label: '全局信息掌控'
+        label: '问题发生秒级发现'
     },
     {
         icon: '',
-        label: '微信智能推送'
+        label: '恶臭异味工段溯源'
     },
     {
         icon: '',
-        label: '智能精细预报'
+        label: '管理责任到岗到人'
     },
     {
         icon: '',
-        label: '智能报警分析'
-    },
-    {
-        icon: '',
-        label: '污染专项管控'
-    },
-    {
-        icon: '',
-        label: '云端指挥调度'
+        label: '园区经济效益提升'
     }
 ])
 </script>
 <style lang="less" scoped>
+.videoPic {
+  .playerBtn {
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border: 1px solid #03E8BE;
+    border-radius: 19px;
+    position: absolute;
+    left: 63%;
+    top: 26%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  &:hover {
+    .playerBtn {
+      opacity: 1;
+    }
+  }
+}
 .m-t-140 {
     margin-top: 140px;
 }
@@ -169,6 +196,7 @@ const list = ref([
     width: 100%;
     height: 920px;
     background: url('~/assets/images/map/toppic.png') no-repeat center center;
+    background-size: cover;
     // background: linear-gradient(0deg, #FFFFFF 0%, #D6EEFE 40%, #B0D1F1 100%);
 }
 .banner {
@@ -307,5 +335,16 @@ const list = ref([
     // height: 720px;
     width: 100%;
     // background: url('~/assets/images/map/cip_screen_bg.png') no-repeat center center;
+}
+.feature-card {
+   margin:100px 0 40px;
+  .feature-item {
+    text-align: center;
+    img {
+      margin: 5px auto;
+    }
+    color: #1f2429;
+    font-size: 18px;
+  }
 }
 </style>

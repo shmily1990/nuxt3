@@ -7,14 +7,13 @@
           <ul class="list">
             <li v-for="(nav, index) in productList" :key="index">
               <nuxt-link :to="nav.link">
-                {{ nav.name
-                }}<span class="mark-lable">{{ nav.markLable }}</span></nuxt-link
-              >
+                {{ nav.name}}
+              </nuxt-link>
             </li>
           </ul>
         </div>
         <div class="case item">
-          <div class="title">解决方案与实践案例</div>
+          <div class="title">解决方案与客户案例</div>
           <ul class="list">
             <li v-for="(nav, index) in caseList" :key="index">
               <nuxt-link :to="nav.link"> {{ nav.name }}</nuxt-link>
@@ -33,7 +32,7 @@
           <div class="title">咨询电话</div>
           <ul class="list">
             <div class="work-time">工作日9:00-18:00</div>
-            <div class="tel">{{ tel }}</div>
+            <div class="tel flex"><i class="iconfont icon-zixundianhua" style="font-size:27px;color: #02C7B5;"></i>{{ tel }}</div>
           </ul>
         </div>
       </div>
@@ -48,9 +47,9 @@
         </div>
       </div>
       <div class="foot_copyRright flex center">
-        <a>©2023 新禾数字科技 anew.cloud</a>
-        <a>苏ICP备2022033295号-1</a>
-        <a>版权所有 新禾数字科技(无锡)有限公司</a>
+        <a href="www.anew.cloud">©2023 新禾数字科技 anew.cloud</a>
+        <a href="https://beian.miit.gov.cn" target="_blank">苏ICP备2022033295号-1</a>
+        <a href="www.anew.cloud">版权所有 新禾数字科技(无锡)有限公司</a>
       </div>
     </div>
   </footer>
@@ -58,13 +57,13 @@
 
 <script setup>
 const productList = ref([
-  { name: "AnewMap", link: "/anewMap", markLable: "TM" },
-  { name: "AnewAir", link: "/anewAir", markLable: "TM" },
-  { name: "AnewCip", link: "/", markLable: "TM" },
+  { name: "AnewMap™", link: "/anewMap" },
+  { name: "AnewAir™", link: "/anewAir" },
+  { name: "AnewCIP™", link: "/anewCip" },
 ]);
 const caseList = ref([
   { name: "新禾解决方案中心", link: "/example" },
-  { name: "新禾案例中心", link: "/case" },
+  { name: "新禾客户案例中心", link: "/case" },
 ]);
 const aboutList = ref([
   { name: "了解新禾", link: "/about" },
@@ -100,6 +99,12 @@ const tel = ref("18912483668");
             a {
               color: #637381;
               font-size: 16px;
+              &:hover {
+                color: #02C7B5;
+              }
+            }
+            a:active {
+              color: #01ABAB;
             }
           }
         }

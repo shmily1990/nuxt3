@@ -24,12 +24,22 @@
             <p>软件产品和软件企业认证</p>
           </li>
         </ul>
-        <div class="btn_more wow fadeInUp"><span>了解新禾 >></span></div>
+        <div class="btn_more wow fadeInUp" v-show="props.showBtn"><span @click="router.push('/about')">了解新禾 >></span></div>
       </div>
     </section>
 </template>
+<script setup>
+const props = defineProps({
+		showBtn: {
+			type: Boolean,
+			default: true
+		}
+})
+const router = useRouter()
+</script>
 
 <style lang="less" scoped>
+
 // honor
 .honor {
   .container {

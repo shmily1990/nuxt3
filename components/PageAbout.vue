@@ -50,6 +50,7 @@
     background: url("~/assets/images/bg_xinhe.jpg") no-repeat center center;
     // background-size: cover;
     object-fit: fill;
+    background-size: cover;
     ul {
       li {
         max-width: 354px;

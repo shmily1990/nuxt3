@@ -86,6 +86,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: HarmonyOS_Sans_Regular, 思源黑体, PingFangSC-Regular, Microsoft YaHei, Arial, Sans-serif !important;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -282,4 +283,21 @@ body {
   border: 1px solid #02C7B5;
 box-shadow: 0px 3px 11px 0px rgba(2,199,181,0.3);
 color:#02C7B5;
+}
+.sanjiao {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent; /* 顶部透明 */
+  border-bottom: 10px solid transparent; /* 底部透明 */
+  border-left: 10px solid #8CC54D; /* 左边红色，可以根据需要修改颜色和大小 */
+  padding-right: 16px;
+}
+.nuxt-link-active {
+  color: #01ABAB;
+}
+.nuxt-link-default {
+  color: #637381;
+  &:hover {
+    color: #02C7B5;
+  }
 }

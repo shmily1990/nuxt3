@@ -19,7 +19,7 @@
               :to="nav.link"
             >
               {{ nav.name
-              }}<span class="mark-lable">{{ nav.markLable }}</span></nuxt-link
+              }}</nuxt-link
             >
           </li>
         </ul>
@@ -51,12 +51,14 @@
 </template>
 
 <script setup>
+const router = useRouter()
+console.log(router)
 const headFixed = ref(0);
 const navIndex = ref(0);
 const navList = ref([
-  { name: "AnewMap", link: "/anewMap", markLable: "TM" },
-  { name: "AnewAir", link: "/anewAir", markLable: "TM" },
-  { name: "AnewCip", link: "/anewCip", markLable: "TM" },
+  { name: "AnewMap™", link: "/anewMap" },
+  { name: "AnewAir™", link: "/anewAir" },
+  { name: "AnewCIP™", link: "/anewCip" },
   { name: "解决方案", link: "/example" },
   { name: "客户案例", link: "/case" },
   { name: "了解新禾", link: "/about" },
@@ -68,7 +70,6 @@ const m_navClick = () => {
 };
 //关闭手机侧导航
 const m_navOffClick = () => {
-  console.log("88888");
   m_nav.value = 0;
 };
 
@@ -95,13 +96,16 @@ onUnmounted(() => {
 </script>
 
 <style lang="less">
-
+.mark-lable {
+  display: inline-block;
+  transform: translateY(-3px);
+}
 
 .header {
   width: 100%;
   z-index: 999;
   height: 80px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   position: fixed;
   left: 0;
   top: 0;

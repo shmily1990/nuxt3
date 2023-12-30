@@ -4,19 +4,30 @@
             <div class="container">
                 <div class="banner">
                     <div class="left">
-                        <div class="name flex"><img src="~/assets/images/map/air_logo1.png" /> AnewAirTM</div>
+                        <div class="name flex"><img src="~/assets/images/map/air_logo1.png" /> AnewAir™</div>
                         <div class="platform-name">大气污染智能管控终端</div>
-                        <div class="platform-description">帮助管理者快速、全面了解大气污染发生发展的全时空变化信息，建立环境敏感区域与污染源之间的全证据链关联分析，分场景给出精准管控方</div>
+                        <div class="platform-description">帮助管理者快速、全面了解大气污染发生发展的全时空变化信息，建立环境敏感区域与污染源之间的全证据链关联分析，分场景给出精准管控方案并动态评估管控效果。</div>
                         <div class="btns flex">
-                            <div class=" btn_parmay btn_parmay_main">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
-                            <div class=" btn_parmay">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
+                            <div class=" btn_parmay btn_parmay_main" @click="jumpWechat">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
+                            <div class=" btn_parmay" @click="router.push('/case')">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
                         </div>
                     </div>
-                    <img src="~/assets/images/map/air_pad.png" class="wow fadeInRight" />
+                    <div class="relative videoPic">
+                        <img src="~/assets/images/map/air_pad.png" class="wow fadeInRight" />
+                        <div class="playerBtn" @click="showVideo = true">
+                        <i class="iconfont icon-guankanshipin"></i>观看视频
+                        </div>
+                    </div>
+                    
                 </div>
                         <div class="feature-card flex between">
           <div class="feature-item" v-for="(item, index) in list" :key="index">
-            <img src="~/assets/images/map/feature-card-01.png" />
+            <img src="~/assets/images/map/feature-card-01.png" v-if="index === 0" />
+            <img src="~/assets/images/map/icon_air_02.png" v-if="index === 1" />
+            <img src="~/assets/images/map/icon_air_03.png" v-if="index === 2" />
+            <img src="~/assets/images/map/icon_air_04.png" v-if="index === 3" />
+            <img src="~/assets/images/map/icon_air_05.png" v-if="index === 4" />
+            <img src="~/assets/images/map/icon_air_06.png" v-if="index === 5" /> 
             <span>{{ item.label }}</span>
           </div>
         </div>
@@ -34,7 +45,7 @@
                     <div class="info-col-line">
                         <img src="~/assets/images/map/map_ys_left.png" />
                     </div>
-                    <div class="info-col-mid"><span>业务</span></div>
+                    <div class="info-col-mid"><div style="width:50px;">业务</div></div>
                     <div class="info-col-line">
                         <img src="~/assets/images/map/map_ys_right.png" />
                     </div>
@@ -43,22 +54,57 @@
                         <div>聚焦高频、高价值业务场景，更落地</div>
                     </div>
                 </div>
-                <img src="~/assets/images/map/air_vs.png" />
+                
                 <div class="info flex">
                     <div class="info-col-left">
-                        <h3>数据孤岛，业务壁垒</h3>
-                        <div>业务系统林立，信息无法打通</div>
+                        <h3>感知局限，交互复杂</h3>
+                        <div>无法实时感知，用户体验欠佳</div>
                     </div>
                     <div class="info-col-line">
                         <img src="~/assets/images/map/map_ys_left.png" />
                     </div>
-                    <div class="info-col-mid"><span>业务</span></div>
+                    <div class="info-col-mid"><div style="width:50px;">产品</div></div>
                     <div class="info-col-line">
                         <img src="~/assets/images/map/map_ys_right.png" />
                     </div>
                     <div class="info-col-right">
-                        <h3>场景闭环，真正管用</h3>
-                        <div>聚焦高频、高价值业务场景，更落地</div>
+                        <h3>掌上办公，一触即达</h3>
+                        <div>移动式体验，领导关注随处分享</div>
+                    </div>
+                </div>
+                <img src="~/assets/images/map/air_vs.png" />
+                <div class="info flex">
+                    <div class="info-col-left">
+                        <h3>周期难控，成本高昂</h3>
+                        <div>采购流程复杂，实施周期漫长</div>
+                    </div>
+                    <div class="info-col-line">
+                        <img src="~/assets/images/map/map_ys_left.png" />
+                    </div>
+                    <div class="info-col-mid"><div style="width:50px;">交付</div></div>
+                    <div class="info-col-line">
+                        <img src="~/assets/images/map/map_ys_right.png" />
+                    </div>
+                    <div class="info-col-right">
+                        <h3>无需部署，开箱即用</h3>
+                        <div>采购路径短，产品快速交付</div>
+                    </div>
+                </div>
+                <div class="info flex">
+                    <div class="info-col-left">
+                        <h3>运维为主，升级困难</h3>
+                        <div>售后体验一般，项目验收即结束</div>
+                    </div>
+                    <div class="info-col-line">
+                        <img src="~/assets/images/map/map_ys_left.png" />
+                    </div>
+                    <div class="info-col-mid"><div style="width:50px;">服务</div></div>
+                    <div class="info-col-line">
+                        <img src="~/assets/images/map/map_ys_right.png" />
+                    </div>
+                    <div class="info-col-right">
+                        <h3>客户成功，专业咨询</h3>
+                        <div>以客户为中心，持续运营，协同共创</div>
                     </div>
                 </div>
             </div>
@@ -78,18 +124,22 @@
                     <div class="srceen-content flex justify-content-end">
                         <div class="introduction left-0">
                             <div class="introduction-list-item flex">
+                                <div class="sanjiao"></div>
                                 <div class="col-left">数据感知</div>
                                 <div class="col-right">多源数据融合，分钟级刷新</div>
                             </div>
                             <div class="introduction-list-item flex">
+                                <div class="sanjiao"></div>
                                 <div class="col-left">达标形势</div>
                                 <div class="col-right">AQI达标率、优良天数、年度PM2.5、年度达标规划</div>
                             </div>
                             <div class="introduction-list-item flex">
+                                <div class="sanjiao"></div>
                                 <div class="col-left">区域排名</div>
                                 <div class="col-right">订阅关心城市，排名信息尽在掌握</div>
                             </div>
                             <div class="introduction-list-item flex">
+                                <div class="sanjiao"></div>
                                 <div class="col-left">咨询报告</div>
                                 <div class="col-right">轻咨询在线编制，领导关注随处分享</div>
                             </div>
@@ -99,29 +149,33 @@
                 </div>
                 <div class="screen-item">
                     <div class="screen-head flex">
-                        <div class="order">01</div>
+                        <div class="order">02</div>
                         <div class="screen-des flex">
-                            <div class="screen-title">日常场景</div>
+                            <div class="screen-title">应急场景</div>
                             <div class="audio"></div>
-                            <div class="tips">今年考核指标怎么样？排名如何？污染成因？</div>
+                            <div class="tips">今天有没超标风险？管哪里？如何管？</div>
                         </div>
                     </div>
                     <div class="srceen-content flex">
                         <img src="~/assets/images/map/air_ys_02.png" />
                         <div class="introduction right-0">
                             <div class="introduction-list-item flex">
+                                <div class="sanjiao"></div>
                                 <div class="col-left">智能预报</div>
                                 <div class="col-right">AI机器学习模型，小时级精准预报，臭氧余量表在线评估</div>
                             </div>
                             <div class="introduction-list-item flex">
+                                <div class="sanjiao"></div>
                                 <div class="col-left">实时调度</div>
                                 <div class="col-right">分钟数据&因子余量实时播报，指导管控调度</div>
                             </div>
                             <div class="introduction-list-item flex">
+                                <div class="sanjiao"></div>
                                 <div class="col-left">区域传输</div>
                                 <div class="col-right">小尺度溯源模型，百米级精细溯源，动态追溯污染气团来源</div>
                             </div>
                             <div class="introduction-list-item flex">
+                                <div class="sanjiao"></div>
                                 <div class="col-left">夜间巡查</div>
                                 <div class="col-right">污染源信息动态更新，环境污染无所遁形</div>
                             </div>
@@ -132,16 +186,16 @@
                     <div class="screen-head flex">
                         <div class="order">03</div>
                         <div class="screen-des flex">
-                            <div class="screen-title">日常场景</div>
+                            <div class="screen-title">通用场景</div>
                             <div class="audio"></div>
-                            <div class="tips">今年考核指标怎么样？排名如何？污染成因？</div>
+                            <div class="tips">如何轻松掌握行业动态</div>
                         </div>
                     </div>
                     <div class="srceen-content flex justify-content-end">
                         <div class="introduction left-0">
-                            <div class="introduction-list-item flex">
-                                <div class="col-left">环保资讯信息</div>
-                                <div class="col-right">多源数据融合，分钟级刷新</div>
+                            <div class="introduction-list-item">
+                                <div class="col-left flex"><div class="sanjiao"></div><span>环保资讯信息</span></div>
+                                <div class="col-right__last">热点资讯、政策法规、环保问答、帮助<br>管理者轻松掌握行业动态</div>
                             </div>
                         </div>
                         <img src="~/assets/images/map/air_ys_03.png" />
@@ -155,9 +209,21 @@
                 <img src="~/assets/images/map/air_khjz.png" />
             </div>
         </section>
+        <video-player v-model:visable="showVideo" />
     </div>
 </template>
 <script setup>
+useHead({
+  title: "大气污染智能管控终端_AnewAir",
+  meta: [{ name: "description",  content: "AnewAir可以帮助管理者快速、全面了解大气污染发生发展的全时空变化信息，建立环境敏感区域与污染源之间的全证据链关联分析，分场景给出精准管控方案并动态评估管控效果。开箱即用，持续更新，同时AnewAir团队可提供贴心、专业的咨询服务，让大气污染防治更高效，更得心应手！" },
+    { name: "keywords", content: "大气污染管控，AnewAir，环境污染管控"}
+  ],
+});
+const router = useRouter()
+const showVideo = ref(false)
+const jumpWechat = () => {
+  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank')
+}
 const list = ref([
     {
         icon: '',
@@ -186,8 +252,28 @@ const list = ref([
 ])
 </script>
 <style lang="less" scoped>
+.videoPic {
+  .playerBtn {
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border: 1px solid #03E8BE;
+    border-radius: 19px;
+    position: absolute;
+    left: 63%;
+    top: 53%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  &:hover {
+    .playerBtn {
+      opacity: 1;
+    }
+  }
+}
 .info {
     justify-content: center;
+    margin-bottom: 40px;
     .info-col-mid {
         font-size: 24px;
         font-weight: 500;
@@ -246,6 +332,7 @@ const list = ref([
     background: url('~/assets/images/map/air_banner-bg.png') no-repeat center center;
     // background: linear-gradient(0deg, #FFFFFF 0%, #D6EEFE 40%, #B0D1F1 100%);
     overflow: hidden;
+    background-size: cover;
 }
 .banner {
     padding-top: 168px;
@@ -397,6 +484,17 @@ const list = ref([
             padding: 0 20px;
             font-size: 20px;
             color: #fff;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -9px;
+                transform: translateY(-50%);
+                border-top: 10px solid transparent; /* 顶部透明 */
+                border-bottom: 10px solid transparent; /* 底部透明 */
+                border-right: 10px solid #94CA59; /* 右侧红色，可以根据需要修改颜色和大小 */
+            }
         }
         .order {
             width: 60px;
@@ -445,6 +543,54 @@ const list = ref([
             }
         }
     }
+    &:nth-child(2) {
+        .screen-title {
+            color: #F47D4F;
+        }
+        .tips {
+            background: #F47D4F;
+            &::before {
+                border-right: 10px solid #F47D4F; /* 右侧红色，可以根据需要修改颜色和大小 */
+            }
+        }
+        .order {
+            color: #F47D4F;
+        }
+        .srceen-content {
+            .introduction-list-item {
+                .sanjiao {
+                    border-left: 10px solid #F47D4F;
+                }
+                .col-left {
+                    color: #F47D4F;
+                }
+            }
+        }
+    }
+    &:nth-child(3) {
+        .screen-title {
+            color: #00A8CE;
+        }
+        .tips {
+            background: #00A8CE;
+            &::before {
+                border-right: 10px solid #00A8CE; /* 右侧红色，可以根据需要修改颜色和大小 */
+            }
+        }
+        .order {
+            color: #00A8CE;
+        }
+        .srceen-content {
+            .introduction-list-item {
+                .sanjiao {
+                    border-left: 10px solid #00A8CE;
+                }
+                .col-left {
+                    color: #00A8CE;
+                }
+            }
+        }
+    }
 }
 .srceen {
     margin-top: 72px;
@@ -484,6 +630,9 @@ const list = ref([
                     top: 12px;
                     position: absolute;
                 }
+            }
+            .col-right__last {
+                position: initial;
             }
         }
 }

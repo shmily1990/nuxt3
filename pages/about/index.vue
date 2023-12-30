@@ -2,8 +2,7 @@
   <div id="page_about">
     <section class="nybanner flex center">
       <div class="banner-content">
-        <div class="title wow fadeInUp">联系我们</div>
-        <div class="sub-title">CONTACT US</div>
+        <img src="~/assets/images/map/topbanner_text.png" />
       </div>
     </section>
     <!--认识新禾-->
@@ -14,16 +13,15 @@
           <div class="know_xinhe_t">
             <div class="flex wrap">
               <img src="~/assets/images/text_logo.png" />
-              <span
-                >新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，</span
+              <span>新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS推动环保行业数字化变革，以SaaS方式提供端到端的软件及咨询服务，以订阅形成低成本、高质量、可持续交付，用AIoT收集最广泛的行业运行数据，将行业业务场景与物联网、大数据、AI技术深度融合，形成管用的行业数字化解决方案。</span
               >
             </div>
             <p>
-              新禾数字科技（无锡）有限公司由广州禾信仪器股份有限公司产业投资，广州禾信既是新禾数科投资人，也是新禾渠道商和产品服务客户之一,新禾数字科技（无锡）有限公司由广州禾信仪器股份有限公司产业投资，广州禾信既是新禾数科投资人，也是新禾渠道商和产品服务客户之一
+              	新禾数字科技（无锡）有限公司由广州禾信仪器股份有限公司产业投资，广州禾信既是新禾数科投资人，也是新禾渠道商和产品服务客户之一。广州禾信仪器股份有限公司（2021年科创板上市，股票代码：688622）国家火炬计划重点高新技术企业，禾信公司专注于质谱仪的自主研发、国产化及产业化，掌握质谱核心技术并具有先进工艺装配能力，是国内质谱仪领域从事自主研发的少数企业之一，面向环境监测、医疗健康、食品安全、工业生产等领域，公司提供了多种质谱产品及技术服务解决方案。
             </p>
             <img src="~/assets/images/nyabout1.jpg" />
             <p>
-              为了建设“美丽中国”，打赢“生态环境保卫战”，全国数十万环境保护从业者投身于此，夜以继日、兢兢业业，降低一毫克、减少一个污染,新禾数字科技（无锡）有限公司由广州禾信仪器股份有限公司产业投资，广州禾信既是新禾数科投资人，也是新禾渠道商和产品服务客户之一
+              	为了建设“美丽中国”，打赢“生态环境保卫战”，全国数十万环境保护从业者投身于此，夜以继日、兢兢业业，降低一毫克、减少一个污染天……“新禾数科”致力于用数据智能改变环保行业的工作方式，让从业者的工作更轻松、更高效、更快乐，让全体国人的生活环境更清新、更健康、更美好！
             </p>
           </div>
         </div>
@@ -110,25 +108,35 @@
             <ul class="flex">
                 <li>
                     <img src="~/assets/images/ruanzhu_pic.png" /> 
-                    <span>获得7项软件著作权</span>
+                    <span>软件著作权</span>
                 </li>
                 <li>
                     <img src="~/assets/images/shangbiao_pic.png" /> 
-                    <span>4项商标注册</span>
+                    <span>商标注册</span>
                 </li>
                 <li>
                     <img src="~/assets/images/ruanzhu_pic.png" /> 
-                    <span>获得3件发明专利</span>
+                    <span>发明专利</span>
                 </li>
             </ul>
         </div>
 
     </section>
+    <PageHonor :showBtn="false" />
   </div>
 </template>
 <script setup>
+useHead({
+  title: "了解新禾-新禾数科介绍",
+  meta: [{ name: "description",  content: "新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，致力于用AIoT和SaaS推动环保行业数字化变革，以SaaS方式提供端到端的软件及咨询服务，以订阅形成低成本、高质量、可持续交付，用AIoT收集最广泛的行业运行数据，将行业业务场景与物联网、大数据、AI技术深度融合，形成管用的行业数字化解决方案。" },
+    { name: "keywords", content: "新禾数科，新禾数字科技，环保数字化"}
+  ],
+});
 </script>
 <style lang="less" scoped>
+#page_about {
+  margin-bottom: 70px;
+}
 .nybanner {
   background-color: #fff;
   background-position: center;
@@ -140,7 +148,7 @@
   position: relative;
   text-align: center;
   background-image: url("~/assets/images/topbanner.jpg");
-  height: 400px;
+  height: 480px;
   .banner-content {
     color: #fff;
     .title {
@@ -268,9 +276,13 @@
 .technology{
     ul{
         li{
+          display: flex;
+          flex-direction: column;
             span{
                 line-height: 28px;
                 display: inline-block;
+                text-align: center;
+                padding-top: 24px;
                 &::before,&::after{
                    width:17px;
                    height: 28px;

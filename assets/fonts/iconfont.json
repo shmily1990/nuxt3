@@ -6,6 +6,118 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "38747840",
+      "name": "标准化机制",
+      "font_class": "biaozhunhuajizhi",
+      "unicode": "e78c",
+      "unicode_decimal": 59276
+    },
+    {
+      "icon_id": "38747841",
+      "name": "风险预警",
+      "font_class": "fengxianyujing",
+      "unicode": "e78d",
+      "unicode_decimal": 59277
+    },
+    {
+      "icon_id": "38747842",
+      "name": "数字化平台",
+      "font_class": "shuzihuapingtai",
+      "unicode": "e78b",
+      "unicode_decimal": 59275
+    },
+    {
+      "icon_id": "38747846",
+      "name": "绿色园区",
+      "font_class": "lvseyuanqu",
+      "unicode": "e789",
+      "unicode_decimal": 59273
+    },
+    {
+      "icon_id": "38747843",
+      "name": "数字孪生",
+      "font_class": "shuziluansheng",
+      "unicode": "e78a",
+      "unicode_decimal": 59274
+    },
+    {
+      "icon_id": "38747845",
+      "name": "管理高效",
+      "font_class": "guanligaoxiao",
+      "unicode": "e788",
+      "unicode_decimal": 59272
+    },
+    {
+      "icon_id": "38747844",
+      "name": "数据融合",
+      "font_class": "shujuronghe",
+      "unicode": "e787",
+      "unicode_decimal": 59271
+    },
+    {
+      "icon_id": "38747847",
+      "name": "指标评估",
+      "font_class": "zhibiaopinggu",
+      "unicode": "e785",
+      "unicode_decimal": 59269
+    },
+    {
+      "icon_id": "38747849",
+      "name": "管理闭环",
+      "font_class": "guanlibihuan",
+      "unicode": "e786",
+      "unicode_decimal": 59270
+    },
+    {
+      "icon_id": "38747851",
+      "name": "应急支撑少",
+      "font_class": "yingjizhichengshao",
+      "unicode": "e782",
+      "unicode_decimal": 59266
+    },
+    {
+      "icon_id": "38747850",
+      "name": "源谱识别",
+      "font_class": "yuanpushibie",
+      "unicode": "e783",
+      "unicode_decimal": 59267
+    },
+    {
+      "icon_id": "38747848",
+      "name": "经济发展",
+      "font_class": "jingjifazhan",
+      "unicode": "e784",
+      "unicode_decimal": 59268
+    },
+    {
+      "icon_id": "38747852",
+      "name": "智能化算法",
+      "font_class": "zhinenghuasuanfa",
+      "unicode": "e781",
+      "unicode_decimal": 59265
+    },
+    {
+      "icon_id": "38747855",
+      "name": "企业监管",
+      "font_class": "qiyejianguan",
+      "unicode": "e77f",
+      "unicode_decimal": 59263
+    },
+    {
+      "icon_id": "38747853",
+      "name": "异味溯源",
+      "font_class": "yiweisuyuan",
+      "unicode": "e780",
+      "unicode_decimal": 59264
+    },
+    {
+      "icon_id": "38747854",
+      "name": "精准溯源",
+      "font_class": "jingzhunsuyuan",
+      "unicode": "e77e",
+      "unicode_decimal": 59262
+    },
+    {
       "icon_id": "38728991",
       "name": "业务支撑",
       "font_class": "yewuzhicheng",
