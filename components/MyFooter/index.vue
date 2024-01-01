@@ -7,7 +7,7 @@
           <ul class="list">
             <li v-for="(nav, index) in productList" :key="index">
               <nuxt-link :to="nav.link">
-                {{ nav.name}}
+                {{ nav.name }}
               </nuxt-link>
             </li>
           </ul>
@@ -32,7 +32,7 @@
           <div class="title">咨询电话</div>
           <ul class="list">
             <div class="work-time">工作日9:00-18:00</div>
-            <div class="tel flex"><i class="iconfont icon-zixundianhua" style="font-size:27px;color: #02C7B5;"></i>{{ tel }}</div>
+            <div class="tel flex"><i class="iconfont icon-zixundianhua" style="font-size: 27px; color: #02c7b5"></i>{{ tel }}</div>
           </ul>
         </div>
       </div>
@@ -47,9 +47,9 @@
         </div>
       </div>
       <div class="foot_copyRright flex center">
-        <a href="www.anew.cloud">©2023 新禾数字科技 anew.cloud</a>
+        <a>©2023 新禾数字科技 anew.cloud</a>
         <a href="https://beian.miit.gov.cn" target="_blank">苏ICP备2022033295号-1</a>
-        <a href="www.anew.cloud">版权所有 新禾数字科技(无锡)有限公司</a>
+        <a>版权所有 新禾数字科技(无锡)有限公司</a>
       </div>
     </div>
   </footer>
@@ -57,19 +57,19 @@
 
 <script setup>
 const productList = ref([
-  { name: "AnewMap™", link: "/anewMap" },
-  { name: "AnewAir™", link: "/anewAir" },
-  { name: "AnewCIP™", link: "/anewCip" },
+  { name: 'AnewMap™', link: '/anewMap' },
+  { name: 'AnewAir™', link: '/anewAir' },
+  { name: 'AnewCIP™', link: '/anewCip' },
 ]);
 const caseList = ref([
-  { name: "新禾解决方案中心", link: "/example" },
-  { name: "新禾客户案例中心", link: "/case" },
+  { name: '新禾解决方案中心', link: '/example' },
+  { name: '新禾客户案例中心', link: '/case' },
 ]);
 const aboutList = ref([
-  { name: "了解新禾", link: "/about" },
-  { name: "联系我们", link: "/contactUs" },
+  { name: '了解新禾', link: '/about' },
+  { name: '联系我们', link: '/contactUs' },
 ]);
-const tel = ref("18912483668");
+const tel = ref('18912483668');
 </script>
 
 <style lang="less">
@@ -78,7 +78,7 @@ const tel = ref("18912483668");
   padding: 60px 0 10px;
   // display: flex;
   // justify-content: center;
- 
+
   .container {
     display: flex;
     .left_col {
@@ -96,15 +96,16 @@ const tel = ref("18912483668");
           font-size: 16px;
           line-height: 30px;
           li {
+            margin-bottom: 8px;
             a {
               color: #637381;
               font-size: 16px;
               &:hover {
-                color: #02C7B5;
+                color: #02c7b5;
               }
             }
             a:active {
-              color: #01ABAB;
+              color: #01abab;
             }
           }
         }
@@ -125,13 +126,13 @@ const tel = ref("18912483668");
     .foot_copyRright {
       width: 100%;
       font-size: 14px;
-       margin-top:60px;
+      margin-top: 60px;
       a {
         color: #9eacb9;
         padding: 0 18px;
         position: relative;
         &::after {
-          content: "";
+          content: '';
           display: inline-block;
           width: 1px;
           height: 16px;
@@ -140,8 +141,8 @@ const tel = ref("18912483668");
           position: absolute;
           right: 0;
         }
-        &:last-child{
-          &::after{
+        &:last-child {
+          &::after {
             display: none;
           }
         }
@@ -152,9 +153,9 @@ const tel = ref("18912483668");
 
 .page_title {
   color: #000414;
-  font-size: 40px;
   text-align: center;
   margin: 70px 0 60px;
+  font-weight: bold;
   span {
     color: #02c7b5;
   }
@@ -171,7 +172,7 @@ const tel = ref("18912483668");
       margin: 0 26px;
       transform: rotate(45deg);
       &::after {
-        content: "";
+        content: '';
         background: #02c7b5;
         display: block;
         width: 20px;
@@ -183,6 +184,13 @@ const tel = ref("18912483668");
         transform: rotate(-45deg);
       }
     }
+  }
+  h3 {
+    font-size: 16px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #637381;
+    margin-top: 20px;
   }
 }
 </style>

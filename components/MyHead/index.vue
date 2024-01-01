@@ -1,12 +1,10 @@
 <template>
-  <header
-    :class="['header', 'flex', headFixed ? 'bg_white headFixed' : 'no_bg ']"
-  >
+  <header :class="['header', 'flex', navStyle, headFixed ? 'bg_white headFixed' : 'no_bg ']">
     <div class="h_logo">
       <nuxt-link class="logo white_logo" to="/">
         <img src="~/assets/images/logo.png" class="logo-img logo1" alt="" />
       </nuxt-link>
-       <nuxt-link class="logo dark_logo"  to="/">
+      <nuxt-link class="logo dark_logo" to="/">
         <img src="~/assets/images/logo-dark.png" class="logo-img logo1" alt="" />
       </nuxt-link>
     </div>
@@ -14,13 +12,7 @@
       <div class="nav nav01">
         <ul class="navbar_nav flex" data-in="fadeInDown" data-out="fadeOutUp">
           <li v-for="(nav, index) in navList" :key="index">
-            <nuxt-link
-              :class="{ active: routePath == nav.link }"
-              :to="nav.link"
-            >
-              {{ nav.name
-              }}</nuxt-link
-            >
+            <nuxt-link :class="{ active: fullPath == nav.link }" :to="nav.link"> {{ nav.name }}</nuxt-link>
           </li>
         </ul>
       </div>
@@ -42,8 +34,7 @@
       <li class=""><a href="/">首 页</a></li>
       <li v-for="(nav, index) in navList" :key="index">
         <nuxt-link :class="{ active: routePath == nav.link }" :to="nav.link">
-          {{ nav.name
-          }}<span class="mark-lable">{{ nav.markLable }}</span></nuxt-link
+          {{ nav.name }}<span class="mark-lable">{{ nav.markLable }}</span></nuxt-link
         >
       </li>
     </ul>
@@ -51,19 +42,31 @@
 </template>
 
 <script setup>
-const router = useRouter()
-console.log(router)
+const router = useRouter();
+console.log(router);
 const headFixed = ref(0);
 const navIndex = ref(0);
 const navList = ref([
-  { name: "AnewMap™", link: "/anewMap" },
-  { name: "AnewAir™", link: "/anewAir" },
-  { name: "AnewCIP™", link: "/anewCip" },
-  { name: "解决方案", link: "/example" },
-  { name: "客户案例", link: "/case" },
-  { name: "了解新禾", link: "/about" },
-  { name: "联系我们", link: "/contactUs" },
+  { name: 'AnewMap™', link: '/anewMap' },
+  { name: 'AnewAir™', link: '/anewAir' },
+  { name: 'AnewCIP™', link: '/anewCip' },
+  { name: '解决方案', link: '/example' },
+  { name: '客户案例', link: '/case' },
+  { name: '了解新禾', link: '/about' },
+  { name: '联系我们', link: '/contactUs' },
 ]);
+const fullPath = computed(() => {
+  return useRoute()?.fullPath;
+});
+const navStyle = computed(() => {
+  const fullPath = useRoute()?.fullPath;
+  if (fullPath === '/' || fullPath === '/anewCip') {
+    return 'bg_transparent';
+  } else if (fullPath === '/anewMap' || fullPath === '/anewAir') {
+    return 'bg_blur';
+  }
+  return 'bg_white';
+});
 const m_nav = ref(0);
 const m_navClick = () => {
   m_nav.value = 1;
@@ -79,7 +82,7 @@ const doScroll = (event) => {
   const scrollTop = document.documentElement.scrollTop;
   // const clientHeight = event.target.clientHeight
   if (scrollTop >= 100) {
-    console.log("haha", window.innerWidth);
+    console.log('haha', window.innerWidth);
     headFixed.value = 1;
   } else {
     headFixed.value = 0;
@@ -87,11 +90,11 @@ const doScroll = (event) => {
 };
 
 onMounted(() => {
-  window.addEventListener("scroll", doScroll);
+  window.addEventListener('scroll', doScroll);
 });
 
 onUnmounted(() => {
-  window.removeEventListener("scroll", doScroll);
+  window.removeEventListener('scroll', doScroll);
 });
 </script>
 
@@ -104,7 +107,7 @@ onUnmounted(() => {
 .header {
   width: 100%;
   z-index: 999;
-  height: 80px;
+  height: 62px;
   // border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   position: fixed;
   left: 0;
@@ -113,10 +116,10 @@ onUnmounted(() => {
   transition: background 0.2s ease-in-out;
   .h_logo {
     padding: 0 20px;
-    .logo{
-      transition: all .3s;
+    .logo {
+      transition: all 0.3s;
     }
-    .dark_logo{
+    .dark_logo {
       display: none;
     }
   }
@@ -126,7 +129,7 @@ onUnmounted(() => {
     -o-transition: 0.5s;
     transition: 0.5s;
     height: 100%;
-    line-height: 80px;
+    line-height: 62px;
     display: block;
     a {
       display: inline-block;
@@ -137,57 +140,73 @@ onUnmounted(() => {
       margin: 0 21px;
       position: relative;
 
-      &::after {
-        content: "";
-        width: 100%;
-        height: 0px;
-        background: #02c7b5;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        transition: all 0.3s ease 0s;
-        border-radius: 2px;
-      }
-      &:hover {
-        &::after {
-          height: 5px;
-        }
+      &:hover,
+      .active {
         a {
           transform: scale(1.1);
           color: #02c7b5;
+          &::after {
+            height: 5px;
+          }
+        }
+      }
+      a {
+        &::after {
+          content: '';
+          width: 100%;
+          height: 0px;
+          background: #02c7b5;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: all 0.3s ease 0s;
+          border-radius: 2px;
+        }
+        &.active {
+          color: #02c7b5;
+          &::after {
+            height: 5px;
+          }
         }
       }
     }
   }
 }
-
+// 半透明
+.bg_blur {
+  background: rgba(255, 255, 255, 0.24);
+}
 .headFixed {
-   box-shadow: 0px 1px 6px 0px rgba(54,62,69,0.06);
-   .h_logo{
-    .white_logo{
+  background: #fff !important;
+}
+.headFixed,
+.bg_white,
+.bg_blur {
+  box-shadow: 0px 1px 6px 0px rgba(54, 62, 69, 0.06);
+  .h_logo {
+    .white_logo {
       display: none;
     }
-    .dark_logo{
+    .dark_logo {
       display: block;
     }
-   }
-  .nav{
-    a{
-      color: #0E1924;
+  }
+  .nav {
+    a {
+      color: #0e1924;
     }
   }
   #navToggle {
-    span{
-      background: #0E1924 !important;
-      &::before{
-         background: #0E1924 !important;
+    span {
+      background: #0e1924 !important;
+      &::before {
+        background: #0e1924 !important;
       }
-      &::after{
-         background: #0E1924 !important;
+      &::after {
+        background: #0e1924 !important;
       }
     }
   }
- 
 }
 
 .m_nav {
@@ -306,7 +325,7 @@ onUnmounted(() => {
   }
   .header #navToggle span:before,
   .header #navToggle span:after {
-    content: "";
+    content: '';
     position: relative;
     width: 100%;
     height: 2px;

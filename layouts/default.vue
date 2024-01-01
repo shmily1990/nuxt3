@@ -1,11 +1,47 @@
 <template>
-    <div>
-        <MyHead />
-        <slot />
-        <MyFooter />
-    </div>
+  <div @scroll="handleScroll">
+    <MyHead />
+    <slot />
+    <MyFooter />
+    <RightSideBar v-if="isShow" />
+  </div>
 </template>
-<script setup>
+<script>
+import { defineComponent, watch, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
+export default defineComponent({
+  setup() {
+    const route = useRoute();
+    const isShow = ref(false);
+    watch(
+      route,
+      (to) => {
+        const path = to.fullPath;
+        isShow.value = false;
+      },
+      { flush: 'pre', immediate: true, deep: true },
+    );
+    const handleScroll = (v) => {
+      const scrollTop = document.documentElement.scrollTop;
+      if (scrollTop > 700) {
+        isShow.value = true;
+      } else {
+        isShow.value = false;
+      }
+    };
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll);
+    });
+    onBeforeUnmount(() => {
+      window.removeEventListener('scroll');
+    });
+    return {
+      isShow,
+      handleScroll,
+    };
+  },
+});
 // if (process.client) {
 //     const setRem = () => {
 //     // 1920 默认大小16px; 1920px = 120rem ;每个元素px基础上/16

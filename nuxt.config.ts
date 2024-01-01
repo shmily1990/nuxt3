@@ -25,6 +25,11 @@ export default defineNuxtConfig({
           src: "/js/baidu.js",
           body: true
         },
+        {
+          type: 'text/javascript',
+          src: 'https://webapi.amap.com/maps?v=2.0&key=b93046e346afb688ccb7e8161e76f66a',
+          body: true,
+        }
       ],
       link: [
         { rel: 'icon', type: "image/png", href: '/favicon.png' }

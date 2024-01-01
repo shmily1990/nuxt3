@@ -1,24 +1,15 @@
 <template>
   <div id="container-full">
     <section class="home-container">
-      <swiper
-        class="swiper-container"
-        :autoplay="{ delay: 5000, disableOnInteraction: false }"
-        :navigation="true"
-        :modules="mods"
-      >
+      <swiper class="swiper-container" :autoplay="{ delay: 5000, disableOnInteraction: false }" :modules="mods">
         <swiper-slide
           :style="{
             'background-image': 'url(/images/index_banner.gif)',
           }"
         >
-          <div
-            class="bannerwen color_white wow zoomIn"
-            data-wow-delay=".1s"
-            data-wow-duration="2s"
-          >
+          <div class="bannerwen color_white wow zoomIn" data-wow-delay=".1s" data-wow-duration="2s">
             <p>用AIoT和SaaS推动环保行业数字化变革</p>
-            <span>已稳定服务近百家生态环境局、监测中心、工业园区、大气管控服务商、<br>运维商等政府、企业客户</span>
+            <span>已稳定服务近百家生态环境局、监测中心、工业园区、大气管控服务商、<br />运维商等政府、企业客户</span>
           </div>
         </swiper-slide>
         <!-- <swiper-slide
@@ -34,7 +25,7 @@
           </div>
         </swiper-slide> -->
       </swiper>
-      <i class="icon_arrow iconfont icon-shubiao"   @click="go('#section1')" ></i>
+      <i class="icon_arrow iconfont icon-shubiao" @click="go('#section1')"></i>
     </section>
     <section class="section anewMap" id="section1">
       <div class="container flex wrap">
@@ -55,20 +46,18 @@
     <section class="section air" id="section2">
       <div class="container flex wrap">
         <div class="intor col-lg-3 col-md-12 wow fadeInLeft">
-          <div style="width: max-content;">
+          <div style="width: max-content">
             <img align="left" class="intor-logo" src="~/assets/images/map/air_logo1.png" />
-             <span class="intor-title p-l-2">大气污染智能管控<br>终端-AnewAir™</span>
+            <span class="intor-title p-l-2">大气污染智能管控<br />终端-AnewAir™</span>
           </div>
           <p>我们服务于</p>
           <h3><i class="iconfont icon-zhengfuguanlizhe"></i>政府部门环境管理者</h3>
           <div class="txt">
-            帮助管理者快速、全面了解大气污染发生发展的全时空变化信息，建立环境敏感区域与污染源之间的全证据链关联分析，分场景给出精准管控方案并动态实施评估管控效果等。其开箱即用，持续更新等特性，更使其成为您常用常新的贴身数字化助手！</div>
-          <a class="btn_more color_white"><span  @click="router.push('/anewAir')">了解更多 >></span></a>
+            帮助管理者快速、全面了解大气污染发生发展的全时空变化信息，建立环境敏感区域与污染源之间的全证据链关联分析，分场景给出精准管控方案并动态实施评估管控效果等。其开箱即用，持续更新等特性，更使其成为您常用常新的贴身数字化助手！
+          </div>
+          <a class="btn_more color_white"><span @click="router.push('/anewAir')">了解更多 >></span></a>
         </div>
-        <div
-          class="img-intor col-lg-9 col-md-12 wow flipInX"
-          data-wow-infinite="true"
-        >
+        <div class="img-intor col-lg-9 col-md-12 wow flipInX" data-wow-infinite="true">
           <img src="~/assets/images/air-pad.png" />
         </div>
       </div>
@@ -92,9 +81,9 @@
     <section class="section ei" id="section4">
       <div class="container flex wrap">
         <div class="intor col-lg-4 col-md-12 wow fadeInLeft">
-          <div style="width: max-content;">
+          <div style="width: max-content">
             <img align="left" class="intor-logo" src="~/assets/images/map/ei_logo1.png" />
-             <span class="intor-title p-l-2">禾气云-AnewEI™</span>
+            <span class="intor-title p-l-2">禾气云-AnewEI™</span>
           </div>
           <p>我们服务于</p>
           <h3><i class="iconfont icon-huanbaocongyerenyuan"></i>大气环保行业专业人员</h3>
@@ -110,57 +99,33 @@
     </section>
     <section class="seciton solution" id="section5">
       <div class="container">
-        <div class="page_title wow fadeInUp">
-          提供覆盖<span>「 环保行业 」</span>各类场景的解决方案
-        </div>
+        <div class="page_title font40 wow fadeInUp">提供覆盖<span>「 环保行业 」</span>各类场景的解决方案</div>
         <div class="index_solution_type flex wrap">
           <div class="solution_menu col-md-12 col-sm-12 wow fadeInLeft">
             <ul class="flex column center">
               <div class="name">解决方案</div>
               <li :class="{ current: solutNum == 1 }" @click="solutClick(1)">
-                <div class="item_name">
-                  <img src="~/assets/images/ico_anli_qzx.png" /><span
-                    >轻咨询服务</span
-                  >
-                </div>
+                <div class="item_name"><img src="~/assets/images/ico_anli_qzx.png" /><span>轻咨询服务</span></div>
                 <img src="~/assets/images/tableq.png" class="tableq" />
                 <!-- <i>>></i> -->
               </li>
               <li :class="{ current: solutNum == 2 }" @click="solutClick(2)">
-                <div class="item_name">
-                  <img src="~/assets/images/ico_anli_data.png" /><span
-                    >大气大数据平台</span
-                  >
-                </div>
+                <div class="item_name"><img src="~/assets/images/ico_anli_data.png" /><span>大气大数据平台</span></div>
                 <img src="~/assets/images/tableq.png" class="tableq" />
               </li>
               <li :class="{ current: solutNum == 3 }" @click="solutClick(3)">
-                <div class="item_name">
-                  <img src="~/assets/images/ico_anli_zouh.png" /><span
-                    >走航溯源</span
-                  >
-                </div>
+                <div class="item_name"><img src="~/assets/images/ico_anli_zouh.png" /><span>走航溯源</span></div>
                 <img src="~/assets/images/tableq.png" class="tableq" />
               </li>
               <li :class="{ current: solutNum == 4 }" @click="solutClick(4)">
-                <div class="item_name">
-                  <img src="~/assets/images/ico_anli_yuanqu.png" /><span
-                    >园区监管</span
-                  >
-                </div>
+                <div class="item_name"><img src="~/assets/images/ico_anli_yuanqu.png" /><span>园区监管</span></div>
                 <img src="~/assets/images/tableq.png" class="tableq" />
               </li>
             </ul>
           </div>
           <div class="solution_introduction col-md-12 wow fadeInRight">
             <!--轻咨询-->
-            <div
-              :class="[
-                'solution_introduction_detial',
-                'solut_detail1',
-                { current: solutNum == 1 },
-              ]"
-            >
+            <div :class="['solution_introduction_detial', 'solut_detail1', { current: solutNum == 1 }]">
               <h1 class="wow fadeInLeft">空气质量改善轻咨询服务解决方案</h1>
               <p>
                 在空气质量持续改善的时代背景下，城市环境管理者面临经济增长与空气质量达标的双重压力。传统的劳动密集型服务难以满足环境管理者日益提升的精准治污、科学治污需求，以标准化机制、数字化平台、智能化算法、指标化评估为核心的轻咨询服务，为您提供了更高性价比的解决方案，让您能够体验更专业、更高效、更管用的新一代空气质量改善服务！
@@ -175,14 +140,8 @@
               </div>
             </div>
             <!--AnewData-->
-            <div
-              :class="[
-                'solution_introduction_detial',
-                'solut_detail2',
-                { 'current wow fadeInRight': solutNum == 2 },
-              ]"
-            >
-              <h1 class="wow fadeInLeft" data-wow-infinite="true">城市（区县）大气大数据平台解决方案</h1>
+            <div :class="['solution_introduction_detial', 'solut_detail2', { current: solutNum == 2 }]">
+              <h1 class="wow fadeInLeft">城市（区县）大气大数据平台解决方案</h1>
               <p>
                 为加强城市空气质量达标管理，生态环境部门建设了众多业务系统，从而也形成了众多的业务孤岛、数据烟囱，随着生态环境数字化转型的不断深入，数据融合、业务闭环的要求越来越迫切，新禾大气大数据平台解决方案，结合十数年的城市大气管理业务经验，通过最新的云计算、大数据及人工智能技术，有效联通业务系统、打通数据孤岛，实现城市（区县）大气大数据的数字孪生应用！
               </p>
@@ -196,13 +155,7 @@
               </div>
             </div>
             <!--移动走航-->
-            <div
-              :class="[
-                'solution_introduction_detial',
-                'solut_detail3',
-                { current: solutNum == 3 },
-              ]"
-            >
+            <div :class="['solution_introduction_detial', 'solut_detail3', { current: solutNum == 3 }]">
               <h1 class="wow fadeInLeft">移动走航与溯源评估数字化解决方案</h1>
               <p>
                 近年来，走航监测作为颗粒物及臭氧污染排查的重要手段，得到广泛应用，但传统的走航监测仅能识别高值、生成简单走航报告，难以满足精准溯源及评估污染贡献占比等精准、量化的管控需求。新禾结合走航监测数据、气象数据、污染源清单、源谱库数据等，应用机器学习算法及环境模型，实现了科学规划走航路线，智能识别异常点、生成疑似污染源清单、定量评估污染贡献占比，助您构建数字化精准走航溯源创新应用！
@@ -217,13 +170,7 @@
               </div>
             </div>
             <!--智慧园区-->
-            <div
-              :class="[
-                'solution_introduction_detial',
-                'solut_detail4',
-                { current: solutNum == 4 },
-              ]"
-            >
+            <div :class="['solution_introduction_detial', 'solut_detail4', { current: solutNum == 4 }]">
               <h1 class="wow fadeInLeft">智慧园区精细化监管及风险预警解决方案</h1>
               <p>
                 目前，工业园区快速发展过程中带来的安全风险大、环境影响大等问题越来越突出，新禾智慧园区精细化监管及风险预警解决方案助您建立“日常不扰、无据不查、轻微不罚”的园区非现场监管模式，减少对企业现场检查，在保障生态环境的前提下持续推动企业良性发展，最终助您打造国家级安全园区、绿色园区、零碳园区！
@@ -243,105 +190,92 @@
     </section>
     <section class="section case" id="section6">
       <div class="wow fadeInUp">
-        <div class="page_title">客户案例</div>
+        <div class="page_title font40">客户案例</div>
         <swiper
           class="case_swiper_container"
-          :autoplay="{ delay: 0, disableOnInteraction: false }"
+          :autoplay="{ delay: 2500, disableOnInteraction: false }"
           :modules="mods"
-          :speed="20000"
+          :speed="2000"
           :breakpoints="breakpoints"
-          :loop="true"
           :navigation="true"
           :spaceBetween="30"
           :observer="true"
           :observeparents="true"
         >
           <swiper-slide key="1">
-            <div class="case_container">
+            <div class="case_container" @click="jumpCaseDetail('https://mp.weixin.qq.com/s/wGnkvnSP1z4X9Fte4CpB4A')">
               <div class="img"><img src="~/assets/images/img1.jpg" /></div>
               <div class="des">
                 <div class="name">数据推送</div>
                 <p>员工省力，老板省心！全新数据推送等你解锁</p>
                 <div class="bom flex between">
-                  <div class="tip">
-                    <span>数据推送</span><button>AnewMap</button>
-                  </div>
-                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/wGnkvnSP1z4X9Fte4CpB4A')">详情></a>
+                  <div class="tip"><span>数据推送</span><button>AnewMap</button></div>
+                  <a>详情></a>
                 </div>
               </div>
             </div>
           </swiper-slide>
           <swiper-slide key="2">
-            <div class="case_container">
+            <div class="case_container" @click="jumpCaseDetail('https://mp.weixin.qq.com/s/o-JZc7Lqx8SthMquQHUBSw')">
               <div class="img"><img src="~/assets/images/img2.jpg" /></div>
               <div class="des">
                 <div class="name">Q市生态环境局</div>
                 <p>这样做事件交办，办结效率轻松提升30%，整改率高达93%</p>
                 <div class="bom flex between">
-                  <div class="tip">
-                    <span>事件调度</span><button>AnewMap</button>
-                  </div>
+                  <div class="tip"><span>事件调度</span><button>AnewMap</button></div>
                   <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/o-JZc7Lqx8SthMquQHUBSw')">详情></a>
                 </div>
               </div>
             </div>
           </swiper-slide>
           <swiper-slide key="3">
-            <div class="case_container">
+            <div class="case_container" @click="jumpCaseDetail('https://mp.weixin.qq.com/s/fMa6C0Gm7hztaq3D-YDz1Q')">
               <div class="img"><img src="~/assets/images/img3.jpg" /></div>
               <div class="des">
                 <div class="name">大气走航精准溯源</div>
                 <p>数字赋能走航溯源，重塑精准监管流程</p>
                 <div class="bom flex between">
-                  <div class="tip">
-                    <span>走航溯源</span><button>AnewAir</button>
-                  </div>
-                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/fMa6C0Gm7hztaq3D-YDz1Q')">详情></a>
+                  <div class="tip"><span>走航溯源</span><button>AnewAir</button></div>
+                  <a>详情></a>
                 </div>
               </div>
             </div>
           </swiper-slide>
           <swiper-slide key="4">
-            <div class="case_container">
+            <div class="case_container" @click="jumpCaseDetail('https://mp.weixin.qq.com/s/Vak1MyGofmQtot2BGuS_WQ')">
               <div class="img"><img src="~/assets/images/img4.jpg" /></div>
               <div class="des">
                 <div class="name">华南某市生态环境局</div>
                 <p>颗粒物浓度连续三年下降，看看工地分级是怎么做到的</p>
                 <div class="bom flex between">
-                  <div class="tip">
-                    <span>工地分级</span><button>AnewMap</button>
-                  </div>
-                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/Vak1MyGofmQtot2BGuS_WQ')">详情></a>
+                  <div class="tip"><span>工地分级</span><button>AnewMap</button></div>
+                  <a>详情></a>
                 </div>
               </div>
             </div>
           </swiper-slide>
           <swiper-slide key="5">
-            <div class="case_container">
+            <div class="case_container" @click="jumpCaseDetail('https://mp.weixin.qq.com/s/2K9lLn9KqYXULXJuMB4t4Q')">
               <div class="img"><img src="~/assets/images/img5.jpg" /></div>
               <div class="des">
                 <div class="name">空气质量智能预报</div>
                 <p>智能预报、人工订正、微信推送...AnewMap™3.0打造空气质量预报新范式</p>
                 <div class="bom flex between">
-                  <div class="tip">
-                    <span>智能预报</span><button>AnewMap</button>
-                  </div>
-                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/2K9lLn9KqYXULXJuMB4t4Q')">详情></a>
+                  <div class="tip"><span>智能预报</span><button>AnewMap</button></div>
+                  <a>详情></a>
                 </div>
               </div>
             </div>
           </swiper-slide>
           <swiper-slide key="6">
-            <div class="case_container">
+            <div class="case_container" @click="jumpCaseDetail('https://mp.weixin.qq.com/s/MemL6mXoOUlRjZLw3IlbZQ')">
               <div class="img"><img src="~/assets/images/img6.png" /></div>
               <div class="des">
                 <div class="name">污染源管控</div>
                 <p>助力精准监管污染源，有效控制重污染天在1%以内</p>
                 <div class="bom flex between">
-                  <div class="tip">
-                    <span>污染源管控</span><button>AnewAir</button>
-                  </div>
-                  <a @click="jumpCaseDetail('https://mp.weixin.qq.com/s/MemL6mXoOUlRjZLw3IlbZQ')">详情></a>
+                  <div class="tip"><span>污染源管控</span><button>AnewAir</button></div>
+                  <a>详情></a>
                 </div>
               </div>
             </div>
@@ -353,7 +287,7 @@
       <div class="container">
         <div class="page_title wow fadeInUp">认识新禾</div>
         <div class="about_tip wow fadeInUp">
-          	新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS推动环保行业数字化变革，以SaaS方式提供端到端的软件及咨询服务，以订阅形成低成本、高质量、可持续交付，用AIoT收集最广泛的行业运行数据，将行业业务场景与物联网、大数据、AI技术深度融合，形成管用的行业数字化解决方案。
+          新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS推动环保行业数字化变革，以SaaS方式提供端到端的软件及咨询服务，以订阅形成低成本、高质量、可持续交付，用AIoT收集最广泛的行业运行数据，将行业业务场景与物联网、大数据、AI技术深度融合，形成管用的行业数字化解决方案。
         </div>
       </div>
       <PageAbout />
@@ -361,12 +295,13 @@
     <PageHonor />
     <section class="seciton f_banner" id="section9">
       <div class="container">
-        <h2 class="wow fadeInDown">免费试用空气质量改善服务智能云平台<br> - AnewMap™</h2>
-        <p class="wow fadeInDown">
-          新品发布，抢先<span>免费试用</span>
-        </p>
-        <div class="btn_more btn_gradient wow fadeInDown">
-          <span  @click="jumpWechat">立即试用</span>
+        <h2 class="wow fadeInDown">
+          免费试用空气质量改善服务智能云平台<br />
+          - AnewMap™
+        </h2>
+        <p class="wow fadeInDown">新品发布，抢先<span>免费试用</span></p>
+        <div class="btn_more btn_gradient">
+          <span @click="jumpWechat">立即试用</span>
         </div>
       </div>
     </section>
@@ -374,30 +309,30 @@
   </div>
 </template>
 <script setup>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation, EffectFade } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper';
 const mods = ref([Autoplay, Pagination, Navigation, EffectFade]);
-const router = useRouter()
-const showVideo = ref(false)
+const router = useRouter();
+const showVideo = ref(false);
 useHead({
   // 外部引入js
   script: [
     {
       // type: "text/javascript",
-      src: "/js/wow.min.js",
+      src: '/js/wow.min.js',
       body: true,
     },
   ],
 });
 const jumpWechat = () => {
-  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank')
-}
+  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank');
+};
 const jumpCaseDetail = (url) => {
-  window.open(url, '_blank')
-}
+  window.open(url, '_blank');
+};
 /** 断点 */
 let breakpoints = ref(null);
 breakpoints.value = {
@@ -420,14 +355,13 @@ breakpoints.value = {
 
 const solutNum = ref(1);
 
-
-const go=(selector)=>{
-      document.querySelector(selector).scrollIntoView({
-        // 不想要滚动动画,则设置为"instant"
-        behavior: 'smooth', // 滚动动画
-        block: 'center'
-      });
-    }
+const go = (selector) => {
+  document.querySelector(selector).scrollIntoView({
+    // 不想要滚动动画,则设置为"instant"
+    behavior: 'smooth', // 滚动动画
+    block: 'center',
+  });
+};
 
 // 解决方案点击
 const solutClick = (index) => {
@@ -437,8 +371,8 @@ onMounted(() => {
   // console.dir(res)
   // new WOW().init()
   var wow = new WOW({
-    boxClass: "wow",
-    animateClass: "animated",
+    boxClass: 'wow',
+    animateClass: 'animated',
     offset: 0,
     mobile: true,
     live: true,
@@ -507,18 +441,21 @@ onMounted(() => {
       span {
         font-size: 16px;
         letter-spacing: 2px;
-        line-height: 50px;
+        line-height: 25px;
       }
     }
   }
 }
-
+.anewMap {
+  margin-top: 50px;
+}
 // 产品介绍
 .intor {
   h2 {
     font-size: 40px;
     color: #1f2429;
     line-height: 45px;
+    font-weight: bold;
   }
   &-title {
     font-size: 40px;
@@ -540,7 +477,7 @@ onMounted(() => {
     padding: 20px 0;
     position: relative;
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: -1px;
       left: 0;
@@ -571,7 +508,7 @@ onMounted(() => {
 
 .air {
   padding: 80px 0;
-  background: url("~/assets/images/bg_air.png") no-repeat center center;
+  background: url('~/assets/images/bg_air.png') no-repeat center center;
   background-size: cover;
 }
 
@@ -618,7 +555,7 @@ onMounted(() => {
           justify-content: space-between;
           align-items: center;
           font-size: 18px;
-          font-weight: 500;
+          font-weight: bold;
           list-style: none;
           color: #1f2429;
           cursor: pointer;
@@ -663,15 +600,12 @@ onMounted(() => {
         border: 2px solid rgba(255, 255, 255, 0.8);
         padding: 80px;
         height: 100%;
-        position: absolute;
-        left: 200%;
-        top: 0;
-
         transition: all 0.5s linear;
         -webkit-transition: all 0.5s linear;
+        display: none;
 
         &::after {
-          content: "";
+          content: '';
           width: 200px;
           height: 180px;
           display: block;
@@ -682,26 +616,22 @@ onMounted(() => {
         }
         &:nth-child(1) {
           &::after {
-            background: url("~/assets/images/icon_qzx.png") no-repeat center
-              center;
+            background: url('~/assets/images/icon_qzx.png') no-repeat center center;
           }
         }
         &:nth-child(2) {
           &::after {
-            background: url("~/assets/images/icon_data.png") no-repeat center
-              center;
+            background: url('~/assets/images/icon_data.png') no-repeat center center;
           }
         }
         &:nth-child(3) {
           &::after {
-            background: url("~/assets/images/icon_zouh.png") no-repeat center
-              center;
+            background: url('~/assets/images/icon_zouh.png') no-repeat center center;
           }
         }
         &:nth-child(4) {
           &::after {
-            background: url("~/assets/images/icon_yuanq.png") no-repeat center
-              center;
+            background: url('~/assets/images/icon_yuanq.png') no-repeat center center;
           }
         }
 
@@ -724,14 +654,18 @@ onMounted(() => {
             background: rgba(255, 255, 255, 0.3);
             margin-right: 14px;
             color: #637381;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
             i {
-              font-size: 14px;
-              color: #12CABA;
+              font-size: 22px;
+              color: #12caba;
+              margin-right: 10px;
             }
           }
         }
         &.current {
-          left: 0;
+          display: block;
         }
         &:hover {
           box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 20%), -8px -8px 20px 0 #fff;
@@ -749,19 +683,24 @@ onMounted(() => {
 
 // about
 .about {
-  background: #e5edf3;
+  background: #edfaf8;
   overflow: hidden;
+  .page_title {
+    font-size: 40px;
+    font-weight: bold;
+  }
   .about_tip {
     color: #1f2429;
     text-align: left;
     font-size: 18px;
     line-height: 46px;
     margin-bottom: 60px;
+    text-indent: 2em;
   }
 }
 
 .f_banner {
-  background: url("~/assets/images/f-banner2.jpg") no-repeat center center;
+  background: url('~/assets/images/f-banner2.jpg') no-repeat center center;
   padding: 10px;
   background-size: cover;
 }
@@ -868,7 +807,7 @@ onMounted(() => {
   }
 }
 </style>
-<style lang="less" >
+<style lang="less">
 .case_swiper_container {
   padding: 30px 0 100px;
   .swiper-slide {
@@ -888,7 +827,7 @@ onMounted(() => {
     .case_container {
       .img {
         border-radius: 8px 8px 0px 0px;
-        
+
         img {
           border-radius: 8px 8px 0px 0px;
           width: 100%;
@@ -981,7 +920,7 @@ onMounted(() => {
       -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
       box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
       &::after {
-        font-size: 25px;
+        // font-size: 25px;
         -webkit-transition: font-size 0.5s ease;
         transition: font-size 0.5s ease;
       }
@@ -999,8 +938,8 @@ onMounted(() => {
   }
 }
 .section .iconfont {
-    font-size: 30px;
-    color: #02C7B5;
-    vertical-align: middle;
+  font-size: 40px;
+  color: #02c7b5;
+  vertical-align: middle;
 }
 </style>
