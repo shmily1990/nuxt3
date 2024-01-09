@@ -4,7 +4,12 @@
        url('iconfont.woff?t=1703765868456') format('woff'),
        url('iconfont.ttf?t=1703765868456') format('truetype');
 }
-
+@font-face {
+  font-family: "Bebas Neue"; /* Project id 4374422 */
+  src: url('./BebasNeue-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 16px;

@@ -109,6 +109,7 @@ onUnmounted(() => {
   z-index: 999;
   height: 62px;
   // border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  background: linear-gradient(0deg, rgba(0, 4, 20, 0) 0%, rgba(0, 4, 20, 0.3) 100%);
   position: fixed;
   left: 0;
   top: 0;
@@ -146,7 +147,7 @@ onUnmounted(() => {
           transform: scale(1.1);
           color: #02c7b5;
           &::after {
-            height: 5px;
+            height: 2px;
           }
         }
       }
@@ -165,12 +166,16 @@ onUnmounted(() => {
         &.active {
           color: #02c7b5;
           &::after {
-            height: 5px;
+            height: 2px;
           }
         }
       }
     }
   }
+}
+// 透明
+.trnpant {
+  background: linear-gradient(0deg, rgba(0, 4, 20, 0) 0%, rgba(0, 4, 20, 0.3) 100%);
 }
 // 半透明
 .bg_blur {

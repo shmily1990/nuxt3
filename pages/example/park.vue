@@ -5,7 +5,7 @@
         <h2><i></i>方案背景<i></i></h2>
       </div>
       <div class="background container">
-        <img src="~/assets/images/solution/park1.jpg" />
+        <img src="~/assets/images/solution/park1.jpg" class="rounded-20" />
         <h2 class="flex center">园区现状：安全风险大！环境影响大！企业管理难！</h2>
         <p>
           近年来，园区的快速发展给相关部门带来了一系列监管难题：安全风险大、环境影响大、企业管理难。如何建立“日常不扰、无据不查、轻微不罚”的园区非现场监管模式，进一步减少对企业现场检查，在保障生态环境的前提下持续推动企业良性发展，是园区监管面临的重大挑战。
@@ -204,6 +204,14 @@
           color: #3d4f6a;
           font-size: 18px;
           line-height: 40px;
+        }
+      }
+      .img {
+        img {
+          background: #cceaf6;
+          border: 2px solid rgba(255, 255, 255, 0.64);
+          box-shadow: 0px 8px 32px 0px rgba(33, 193, 243, 0.22);
+          border-radius: 20px;
         }
       }
     }

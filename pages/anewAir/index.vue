@@ -10,12 +10,12 @@
               帮助环境管理者快速、全面了解大气污染发生发展的全时空变化信息，建立环境敏感区域与污染源之间的全证据链关联分析，分场景给出精准管控方案并动态评估管控效果。
             </div>
             <div class="btns flex">
-              <div class="btn_parmay btn_parmay_main" @click="jumpWechat">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
+              <div class="btn_parmay btn_parmay_main" @click="handleClick">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
               <div class="btn_parmay" @click="router.push('/case')">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
             </div>
           </div>
           <div class="relative videoPic overflow-hidden wow fadeInRight">
-            <img src="~/assets/images/map/air_pad.png" />
+            <img src="~/assets/images/map/air_pad.png" style="max-width: 73%" />
             <div class="playerBtn" @click="showVideo = true"><i class="iconfont icon-guankanshipin"></i>观看视频</div>
           </div>
         </div>
@@ -35,7 +35,7 @@
 
     <section class="page container">
       <div class="page_title font40">
-        <h2><i></i>核心优势<i></i></h2>
+        <h2 class="pr-4"><i></i>核心优势<i></i></h2>
       </div>
       <div class="page-content">
         <div class="info flex">
@@ -262,9 +262,7 @@ useHead({
 });
 const router = useRouter();
 const showVideo = ref(false);
-const jumpWechat = () => {
-  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank');
-};
+const handleClick = () => jumpWechat();
 const list = ref([
   {
     icon: '',
@@ -295,28 +293,12 @@ const list = ref([
 <style lang="less" scoped>
 .videoPic {
   .playerBtn {
-    height: 38px;
-    font-size: 16px;
-    color: #ffffff;
-    padding: 0px 20px;
-    border: 1px solid #03e8be;
-    border-radius: 19px;
-    background: #00041499;
     position: absolute;
     left: 57%;
     top: 33%;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    i {
-      color: #03e8be;
-    }
-  }
-  &:hover {
-    .playerBtn {
-      opacity: 1;
+    background: rgba(#000414, 0.64);
+    &:hover {
+      background: rgba(#02c7b5, 0.64);
     }
   }
 }
@@ -331,6 +313,7 @@ const list = ref([
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-left: 26px;
     .item-mid {
       display: flex;
       flex-wrap: nowrap;
@@ -424,18 +407,19 @@ const list = ref([
   background: url('~/assets/images/map/air_banner-bg.png') no-repeat center center;
   // background: linear-gradient(0deg, #FFFFFF 0%, #D6EEFE 40%, #B0D1F1 100%);
   overflow: hidden;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 .banner {
   padding-top: 168px;
   align-items: center;
-  overflow: hidden;
+  // overflow: hidden;
+  position: relative;
   img {
     float: right;
   }
   .left {
     position: absolute;
-    width: 30%;
+    width: 39%;
     top: 20%;
     z-index: 2;
     .name {
@@ -453,6 +437,9 @@ const list = ref([
       font-family: Source Han Sans CN;
       font-weight: bold;
       color: #000414;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-bottom: 30px;
     }
     .platform-description {
       font-size: 18px;
@@ -470,8 +457,10 @@ const list = ref([
   }
 }
 .scene {
-  background: url('~/assets/images/wenli.png') no-repeat center top;
-  background: 100% auto;
+  background: linear-gradient(0deg, #fbfdff 100%, #ffffff 100%);
+  background-image: url('~/assets/images/wenli.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 .bottom-card {
   justify-content: space-around;

@@ -1,10 +1,10 @@
 <template>
   <div class="right-side-bar">
-    <div class="button-item" @click="jumpWechat">
+    <div class="button-item" @click="handleClick('https://doc.weixin.qq.com/forms/AKIASgdJACwAaQAlwa_ANAMhEg0A6uTEf')">
       <i class="iconfont icon-shangwuzixun"></i>
       <p>商务咨询</p>
     </div>
-    <div class="button-item relative" @click="jumpWechat">
+    <div class="button-item relative" @click="handleClick('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692')">
       <i class="iconfont icon-kefu"></i>
       <p>在线客服</p>
     </div>
@@ -29,9 +29,7 @@
   </div>
 </template>
 <script setup>
-const jumpWechat = () => {
-  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank');
-};
+const handleClick = (url) => jumpWechat(url);
 </script>
 <style lang="less" scoped>
 .right-side-bar {

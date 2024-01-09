@@ -5,7 +5,7 @@
         <h2><i></i>方案背景<i></i></h2>
       </div>
       <div class="background container">
-        <img src="~/assets/images/solution/bigData1.jpg" />
+        <img src="~/assets/images/solution/bigData1.jpg" class="rounded-20" />
         <h2 class="flex center">传统信息化产品难以支撑不断变化的客户需求！</h2>
         <p>
           随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时代背景下不断变化的客户需求。后疫情时代，需要通过科学精准手段平衡环保考核与经济发展双重发展，以数字技术赋能生态环境治理，全面提升大气环境一网统管能力。

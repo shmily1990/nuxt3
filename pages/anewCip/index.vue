@@ -9,7 +9,7 @@
               实现园区有毒有害及恶臭异味态势感知、预警监控、污染研判、企业评价、档案管理、移动互联等场景应用，<br />助力园区以最小的管理成本实现环境管理与企业经济协同发展
             </div>
             <div class="btns flex p-4">
-              <div class="btn_parmay btn_parmay_main" @click="jumpWechat">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
+              <div class="btn_parmay btn_parmay_main" @click="handleAsk">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
               <div class="btn_parmay" @click="router.push('/case')">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
             </div>
           </div>
@@ -180,9 +180,7 @@ useHead({
 });
 const router = useRouter();
 const showVideo = ref(false);
-const jumpWechat = () => {
-  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank');
-};
+const handleAsk = () => jumpWechat();
 const list = ref([
   {
     icon: '',
@@ -204,23 +202,12 @@ const list = ref([
 </script>
 <style lang="less" scoped>
 .playerBtn {
-  height: 38px;
-  font-size: 16px;
-  color: #ffffff;
-  padding: 0px 20px;
-  border: 1px solid #03e8be;
-  background: #00041499;
-  border-radius: 19px;
   position: absolute;
   left: 47%;
   bottom: 26%;
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  i {
-    color: #03e8be;
+  background: rgba(#000414, 0.64);
+  &:hover {
+    background: rgba(#02c7b5, 0.64);
   }
 }
 .m-t-140 {
@@ -363,9 +350,11 @@ const list = ref([
       margin-left: 38px;
     }
   }
+
   .screen-bottom-list {
     flex-wrap: wrap;
     margin-top: 20px;
+    margin-bottom: 70px;
     &-item {
       width: 50%;
       line-height: 40px;

@@ -7,9 +7,14 @@
             'background-image': 'url(/images/index_banner.gif)',
           }"
         >
-          <div class="bannerwen color_white wow zoomIn" data-wow-delay=".1s" data-wow-duration="2s">
+          <div class="posBg"></div>
+          <div class="bannerwen color_white wow zoomIn absolute" data-wow-delay=".1s" data-wow-duration="2s">
             <p>用AIoT和SaaS推动环保行业数字化变革</p>
             <span>已稳定服务近百家生态环境局、监测中心、工业园区、大气管控服务商、<br />运维商等政府、企业客户</span>
+            <div class="statis">
+              <h2 class="count"><count-to :end="1896" /></h2>
+              <span class="count-txt">用户使用次数</span>
+            </div>
           </div>
         </swiper-slide>
         <!-- <swiper-slide
@@ -126,7 +131,7 @@
           <div class="solution_introduction col-md-12 wow fadeInRight">
             <!--轻咨询-->
             <div :class="['solution_introduction_detial', 'solut_detail1', { current: solutNum == 1 }]">
-              <h1 class="wow fadeInLeft">空气质量改善轻咨询服务解决方案</h1>
+              <h1 class="">空气质量改善轻咨询服务解决方案</h1>
               <p>
                 在空气质量持续改善的时代背景下，城市环境管理者面临经济增长与空气质量达标的双重压力。传统的劳动密集型服务难以满足环境管理者日益提升的精准治污、科学治污需求，以标准化机制、数字化平台、智能化算法、指标化评估为核心的轻咨询服务，为您提供了更高性价比的解决方案，让您能够体验更专业、更高效、更管用的新一代空气质量改善服务！
               </p>
@@ -141,7 +146,7 @@
             </div>
             <!--AnewData-->
             <div :class="['solution_introduction_detial', 'solut_detail2', { current: solutNum == 2 }]">
-              <h1 class="wow fadeInLeft">城市（区县）大气大数据平台解决方案</h1>
+              <h1 class="">城市（区县）大气大数据平台解决方案</h1>
               <p>
                 为加强城市空气质量达标管理，生态环境部门建设了众多业务系统，从而也形成了众多的业务孤岛、数据烟囱，随着生态环境数字化转型的不断深入，数据融合、业务闭环的要求越来越迫切，新禾大气大数据平台解决方案，结合十数年的城市大气管理业务经验，通过最新的云计算、大数据及人工智能技术，有效联通业务系统、打通数据孤岛，实现城市（区县）大气大数据的数字孪生应用！
               </p>
@@ -156,7 +161,7 @@
             </div>
             <!--移动走航-->
             <div :class="['solution_introduction_detial', 'solut_detail3', { current: solutNum == 3 }]">
-              <h1 class="wow fadeInLeft">移动走航与溯源评估数字化解决方案</h1>
+              <h1 class="">移动走航与溯源评估数字化解决方案</h1>
               <p>
                 近年来，走航监测作为颗粒物及臭氧污染排查的重要手段，得到广泛应用，但传统的走航监测仅能识别高值、生成简单走航报告，难以满足精准溯源及评估污染贡献占比等精准、量化的管控需求。新禾结合走航监测数据、气象数据、污染源清单、源谱库数据等，应用机器学习算法及环境模型，实现了科学规划走航路线，智能识别异常点、生成疑似污染源清单、定量评估污染贡献占比，助您构建数字化精准走航溯源创新应用！
               </p>
@@ -171,7 +176,7 @@
             </div>
             <!--智慧园区-->
             <div :class="['solution_introduction_detial', 'solut_detail4', { current: solutNum == 4 }]">
-              <h1 class="wow fadeInLeft">智慧园区精细化监管及风险预警解决方案</h1>
+              <h1 class="">智慧园区精细化监管及风险预警解决方案</h1>
               <p>
                 目前，工业园区快速发展过程中带来的安全风险大、环境影响大等问题越来越突出，新禾智慧园区精细化监管及风险预警解决方案助您建立“日常不扰、无据不查、轻微不罚”的园区非现场监管模式，减少对企业现场检查，在保障生态环境的前提下持续推动企业良性发展，最终助您打造国家级安全园区、绿色园区、零碳园区！
               </p>
@@ -301,7 +306,7 @@
         </h2>
         <p class="wow fadeInDown">新品发布，抢先<span>免费试用</span></p>
         <div class="btn_more btn_gradient">
-          <span @click="jumpWechat">立即试用</span>
+          <span @click="handleTrial">立即试用</span>
         </div>
       </div>
     </section>
@@ -327,9 +332,7 @@ useHead({
     },
   ],
 });
-const jumpWechat = () => {
-  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank');
-};
+const handleTrial = () => jumpWechat();
 const jumpCaseDetail = (url) => {
   window.open(url, '_blank');
 };
@@ -389,7 +392,7 @@ onMounted(() => {
   font-size: 70px;
   color: #fff;
   position: absolute;
-  bottom: 90px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
@@ -443,6 +446,25 @@ onMounted(() => {
         letter-spacing: 2px;
         line-height: 25px;
       }
+      // 统计
+      .statis {
+        padding-top: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        gap: 9px;
+        .count {
+          font-size: 60px;
+          font-weight: 400;
+          color: #ffffff;
+        }
+        .count-txt {
+          font-size: 16px;
+          font-family: Source Han Sans CN;
+          font-weight: 400;
+          color: #ffffff;
+        }
+      }
     }
   }
 }
@@ -487,6 +509,9 @@ onMounted(() => {
       background: #32dbc0;
       border-radius: 1px;
     }
+  }
+  .intor-title {
+    font-weight: bold;
   }
   .txt {
     font-size: 16px;
@@ -577,11 +602,17 @@ onMounted(() => {
             transition: all 0.5s;
           }
 
-          &.current,
-          &:hover {
+          &.current {
             border: 2px solid rgba(2, 199, 181, 0.28);
             box-shadow: 0px 2px 14px 0px rgba(2, 199, 181, 0.24);
             color: #02c7b5;
+            .tableq {
+              opacity: 1;
+            }
+          }
+          &:hover {
+            border: 2px solid rgba(2, 199, 181, 0.28);
+            box-shadow: 0px 2px 14px 0px rgba(2, 199, 181, 0.24);
             .tableq {
               opacity: 1;
             }
@@ -808,6 +839,12 @@ onMounted(() => {
 }
 </style>
 <style lang="less">
+.posBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 4, 20, 0.1) 0%, rgba(0, 4, 20, 0.4) 100%);
+}
 .case_swiper_container {
   padding: 30px 0 100px;
   .swiper-slide {

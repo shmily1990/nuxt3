@@ -195,7 +195,7 @@ body {
 }
 
 .bg_white {
-  background: #fff;
+  background: #fff !important;
 }
 
 .main_color {
@@ -319,4 +319,34 @@ color:#02C7B5;
   &:hover {
     color:#02C7B5;
   }
+}
+
+
+/* 视频按按钮 */
+.playerBtn{
+  height: 38px;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 0px 20px;
+  border: 1px solid #03e8be;
+  background: rgba(#000414, 0.64);
+  border-radius: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.playerBtn i {
+  color: #03e8be;
+}
+.playerBtn:hover{
+  background:rgba(#02C7B5, 0.64);
+  border: 1px solid #02C7B5;
+  color:#fff;
+}
+.playerBtn:hover i{
+  color: #FFFFFF;
+}
+.rounded-20 {
+  border-radius: 20px;
 }

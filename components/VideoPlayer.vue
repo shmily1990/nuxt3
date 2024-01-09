@@ -1,6 +1,6 @@
 <template>
   <a-modal v-model:open="visable" :footer="null" centered width="80%" @cancel="cancel" destroyOnClose>
-    <video width="100%" height="100%" controls>
+    <video width="100%" height="100%" controls controlslist="nodownload">
       <source :src="`/video/${url}.mp4`" type="video/mp4" />
     </video>
   </a-modal>

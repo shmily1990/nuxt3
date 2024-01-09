@@ -5,7 +5,7 @@
         <h2><i></i>方案背景<i></i></h2>
       </div>
       <div class="background container">
-        <img src="~/assets/images/solution/zh1.jpg" />
+        <img src="~/assets/images/solution/zh1.jpg" class="rounded-20" />
         <h2 class="flex center">传统的走航监测难以满足当前科学的、精细化的管控需求！</h2>
         <p>
           2019年生态环境部印发的《重点行业挥发性有机物综合治理方案》中，首次提出开展走航监测的要求，并作为VOCs污染问题排查的重要手段得到政府支持，但传统的走航监测难以满足当前科学的、精细化的管控需求。

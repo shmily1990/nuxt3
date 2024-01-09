@@ -11,7 +11,7 @@
             </div>
 
             <div class="btns flex">
-              <div class="btn_parmay btn_parmay_main" @click="jumpWechat">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
+              <div class="btn_parmay btn_parmay_main" @click="handleAsk">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
               <div class="btn_parmay" @click="router.push('/case')">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
             </div>
           </div>
@@ -181,9 +181,7 @@ useHead({
 });
 const router = useRouter();
 const showVideo = ref(false);
-const jumpWechat = () => {
-  window.open('https://work.weixin.qq.com/kfid/kfcb9bde46a45113692', '_blank');
-};
+const handleAsk = () => jumpWechat();
 const list = ref([
   {
     icon: '',
@@ -214,28 +212,13 @@ const list = ref([
 <style lang="less" scoped>
 .videoPic {
   .playerBtn {
-    height: 38px;
-    font-size: 16px;
-    color: #ffffff;
-    padding: 0px 20px;
-    border: 1px solid #03e8be;
-    background: #00041499;
-    border-radius: 19px;
     position: absolute;
     left: 63%;
     top: 26%;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    i {
-      color: #03e8be;
-    }
-  }
-  &:hover {
-    .playerBtn {
-      opacity: 1;
+    opacity: 1;
+    background: rgba(#000414, 0.64);
+    &:hover {
+      background: rgba(#02c7b5, 0.64);
     }
   }
 }
@@ -296,10 +279,10 @@ const list = ref([
 .banner {
   padding-top: 30px;
   align-items: center;
-
+  position: relative;
   .left {
     position: absolute;
-    width: 24%;
+    width: 40%;
     // top: 20%;
     z-index: 2;
     .name {

@@ -33,7 +33,7 @@
         <h2 class="wow fadeInDown color_white">新禾数科期待与您的合作</h2>
         <p class="wow fadeInDown color_white">新品发布，抢先免费试用！</p>
         <div class="pro_more wow fadeInDown">
-          <span @click="jumpWechat">产品试用</span>
+          <span @click="handleTrial">产品试用</span>
         </div>
       </div>
     </section>
@@ -57,6 +57,7 @@ useHead({
 });
 const tabIdx = ref(0);
 const tabData = ref(['空气质量改善轻咨询', '移动走航与溯源评估', '城市和区县大气大数据平台', '智慧园区精细化监管']);
+const handleTrial = () => jumpWechat();
 </script>
 <style lang="less">
 .tab-wrapper {
@@ -212,13 +213,14 @@ const tabData = ref(['空气质量改善轻咨询', '移动走航与溯源评估
       border: 2px solid #ffffff;
       transition: all 0.3s ease-in-out;
       position: relative;
+      font-weight: bold;
       cursor: pointer;
       &.active {
         background: linear-gradient(90deg, #12cfbe, #4db2f2);
         color: #fff;
-        font-weight: bold;
+        // font-weight: bold;
         cursor: pointer;
-        font-size: 20px;
+        // font-size: 20px;
       }
       &::after {
         width: 1px;
@@ -237,10 +239,10 @@ const tabData = ref(['空气质量改善轻咨询', '移动走航与溯源评估
           display: none;
         }
       }
-      &:hover {
+      &:hover:not(.active) {
         background: #f5f8fa;
         color: #1f2429;
-        font-weight: normal;
+        // font-weight: normal;
       }
     }
   }
