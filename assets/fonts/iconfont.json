@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "34336957",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "e73a",
+      "unicode_decimal": 59194
+    },
+    {
       "icon_id": "38747840",
       "name": "标准化机制",
       "font_class": "biaozhunhuajizhi",

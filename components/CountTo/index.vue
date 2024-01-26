@@ -59,7 +59,7 @@ export default {
      */
     delay: {
       type: Number,
-      default: 0,
+      default: 5,
     },
     /**
      * @description 是否禁用easing动画效果
@@ -73,7 +73,7 @@ export default {
      */
     usegroup: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     /**
      * @description 用于分组(usegroup)的符号
@@ -160,9 +160,10 @@ export default {
   mounted() {
     this.$nextTick(() => {
       let endVal = this.getValue(this.end);
+      console.log(this.useGroup);
       this.counter = new CountUp(this.counterId, this.startVal, endVal, this.decimals, this.duration, {
         useEasing: !this.uneasing,
-        useGrouping: this.useGroup,
+        useGrouping: true,
         separator: this.separator,
         decimal: this.decimal,
       });

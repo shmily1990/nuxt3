@@ -6,7 +6,7 @@
   </div>
 </template>
 <script setup>
-const layout = "default";
+const layout = 'default';
 // if (process.client) {
 //     const setRem = () => {
 //     // 1920 默认大小16px; 1920px = 120rem ;每个元素px基础上/16
@@ -28,10 +28,9 @@ const layout = "default";
 //     font-size: 13.33333333vw;
 //   }
 
-  // @media (min-width: 560px) {
-  //  html {
-  //     font-size: 74.66666666666667px;
-  //   }
-  // }
-
+@media (max-width: 750px) {
+  html {
+    font-size: 14px;
+  }
+}
 </style>

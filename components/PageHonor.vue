@@ -64,12 +64,25 @@ const router = useRouter();
 
 @media (max-width: 750px) {
   .honor {
-    ul {
-      flex-wrap: wrap;
-      li {
-        width: 33.33%;
+    .container {
+      ul {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // gap: 10px;
+        li {
+          width: 50%;
+          margin-bottom: 20px;
+          // padding: 10px;
+          // gap: 10px;
+          p {
+            font-size: 14px;
+          }
+        }
       }
     }
+  }
+  .page_title {
+    font-size: 26px;
   }
 }
 </style>

@@ -26,7 +26,7 @@
         </div>
         <div class="card-item">
           <div class="title">加入我们</div>
-          <img src="~/assets/images/contactUs/qr-1.png" />
+          <img src="~/assets/images/contactUs/qr-4.png" />
           <div class="des">扫描二维码<br />联系招聘人员</div>
         </div>
       </div>
@@ -91,9 +91,9 @@ onBeforeUnmount(() => {
   overflow: hidden;
   h2 {
     text-align: center;
-    padding: 70px 0 50px 0;
-    font-size: 34px;
-    font-weight: 500;
+    padding: 48px 0 40px 0;
+    font-size: 30px;
+    font-weight: bold;
     position: relative;
     &::after {
       content: '';
@@ -166,6 +166,25 @@ onBeforeUnmount(() => {
     font-family: Source Han Sans SC;
     font-weight: 400;
     color: #637381;
+  }
+}
+@media (max-width: 750px) {
+  .cards {
+    flex-wrap: wrap;
+    gap: 10px;
+    .card-item {
+      flex: none;
+      width: 48%;
+      img {
+        width: 120px;
+      }
+      .des {
+        font-size: 13px;
+      }
+    }
+  }
+  .banner {
+    height: 340px;
   }
 }
 </style>

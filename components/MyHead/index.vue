@@ -5,7 +5,7 @@
         <img src="~/assets/images/logo.png" class="logo-img logo1" alt="" />
       </nuxt-link>
       <nuxt-link class="logo dark_logo" to="/">
-        <img src="~/assets/images/logo-dark.png" class="logo-img logo1" alt="" />
+        <img src="~/assets/images/logo-dark.png" class="logo-img logo1 w120" alt="" />
       </nuxt-link>
     </div>
     <nav class="h_toubu">
@@ -18,24 +18,24 @@
       </div>
     </nav>
     <!--移动端的导航图标-->
-    <a href="javascript:void(0)" id="navToggle" @click="m_navClick">
+    <a href="javascript:void(0)" id="navToggle" @click="m_navClick" class="h-1/2">
       <span></span>
     </a>
   </header>
   <!--移动端的导航-->
   <div :class="['m_nav', { open: m_nav }]">
-    <div class="top_closed flex" @click="m_navOffClick">
-      <i>X</i>
-    </div>
-    <div class="logo">
-      <img src="~/assets/images/logo-dark.png" class="logo-img logo1" alt="" />
+    <div class="m_top_head flex">
+      <div class="logo">
+        <img src="~/assets/images/logo-dark.png" class="logo-img logo1 w120" alt="" />
+      </div>
+      <div class="top_closed flex" @click="m_navOffClick">
+        <i class="iconfont icon-guanbi" />
+      </div>
     </div>
     <ul class="ul" data-in="fadeInDown" data-out="fadeOutUp">
-      <li class=""><a href="/">首 页</a></li>
-      <li v-for="(nav, index) in navList" :key="index">
-        <nuxt-link :class="{ active: routePath == nav.link }" :to="nav.link">
-          {{ nav.name }}<span class="mark-lable">{{ nav.markLable }}</span></nuxt-link
-        >
+      <li><a href="/" :class="{ active: fullPath == '/' }">首 页</a></li>
+      <li v-for="(nav, index) in navList" :key="index" @click="m_nav = 0">
+        <nuxt-link :class="{ active: fullPath == nav.link }" :to="nav.link">{{ nav.name }}</nuxt-link>
       </li>
     </ul>
   </div>
@@ -99,6 +99,9 @@ onUnmounted(() => {
 </script>
 
 <style lang="less">
+.w120 {
+  width: 120px;
+}
 .mark-lable {
   display: inline-block;
   transform: translateY(-3px);
@@ -140,7 +143,6 @@ onUnmounted(() => {
     li {
       margin: 0 21px;
       position: relative;
-
       &:hover,
       .active {
         a {
@@ -238,26 +240,36 @@ onUnmounted(() => {
         opacity: 1;
         -webkit-transform: translateY(0);
         transform: translateY(0);
+        &:hover,
+        .active {
+          background: #f8f5fa;
+        }
       }
     }
   }
+  .m_top_head {
+    justify-content: space-between;
+    padding: 16px 20px;
+  }
   .top_closed {
-    height: 60px;
-    padding: 20px;
-    box-sizing: border-box;
-    justify-content: right;
+    cursor: pointer;
+    // height: 60px;
+    // padding: 20px;
+    // box-sizing: border-box;
+    // justify-content: right;
   }
-  .logo {
-    width: 100%;
-    margin: 0 auto;
-    img {
-      display: block;
-      margin: 30px auto;
-    }
-  }
+  // .logo {
+  //   width: 100%;
+  //   margin: 0 auto;
+  //   img {
+  //     display: block;
+  //     margin: 30px auto;
+  //   }
+  // }
   .ul {
+    padding: 0 20px;
     li {
-      padding: 0 20px;
+      // padding: 0 20px;
       display: block;
       border-bottom: 1px solid #f5f5f5;
       transform: translateY(0);
@@ -267,13 +279,24 @@ onUnmounted(() => {
       transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1) 0ms;
       opacity: 0;
       a {
+        padding: 0 20px;
         display: block;
         text-decoration: none;
-        color: #333;
+        // color: #02c7b5;
         font-size: 16px;
-        height: 50px;
-        line-height: 50px;
+        height: 56px;
+        line-height: 56px;
         width: 100%;
+        &:hover {
+          color: #333;
+        }
+      }
+      .active {
+        color: #02c7b5;
+      }
+      &:hover {
+        background: rgba(250, 189, 50, 0.1);
+        color: #333;
       }
       &:nth-child(1) {
         -webkit-transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1) 0ms;
@@ -313,14 +336,14 @@ onUnmounted(() => {
 
 @media screen and (max-width: 1060px) {
   .m_nav .ul li a {
-    font-size: 1em;
+    font-size: 16px;
   }
   .header {
     justify-content: space-between;
   }
   .header #navToggle {
     display: inline-block;
-    margin-right: 1%;
+    margin-right: 3.5%;
   }
   .header #navToggle span {
     position: relative;

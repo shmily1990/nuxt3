@@ -73,6 +73,10 @@ const tel = ref('18912483668');
 </script>
 
 <style lang="less">
+.mobile-kb {
+  height: 80px;
+  display: none;
+}
 .footer {
   background: #f0f4f7;
   padding: 60px 0 10px;
@@ -84,6 +88,7 @@ const tel = ref('18912483668');
     .left_col {
       display: flex;
       text-align: left;
+      flex-wrap: wrap;
       .item {
         padding-right: 5%;
         .title {
@@ -107,6 +112,9 @@ const tel = ref('18912483668');
             a:active {
               color: #01abab;
             }
+          }
+          .work-time {
+            margin-bottom: 8px;
           }
         }
       }
@@ -191,6 +199,24 @@ const tel = ref('18912483668');
     font-weight: 400;
     color: #637381;
     margin-top: 20px;
+  }
+}
+@media (max-width: 750px) {
+  .footer {
+    .container {
+      .left_col {
+        flex-wrap: wrap;
+        .item {
+          padding: 0 40px 0 10px;
+          .title {
+            font-size: 1.15rem;
+          }
+          .list li a {
+            font-size: 0.92rem;
+          }
+        }
+      }
+    }
   }
 }
 </style>

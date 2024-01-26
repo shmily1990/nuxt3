@@ -14,8 +14,12 @@
               <div class="btn_parmay" @click="router.push('/case')">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
             </div>
           </div>
-          <div class="relative videoPic overflow-hidden wow fadeInRight">
+          <div class="relative videoPic overflow-hidden wow fadeInRight pc">
             <img src="~/assets/images/map/air_pad.png" style="max-width: 73%" />
+            <div class="playerBtn" @click="showVideo = true"><i class="iconfont icon-guankanshipin"></i>观看视频</div>
+          </div>
+          <div class="relative videoPic overflow-hidden mobile">
+            <img src="~/assets/images/map/m_air-pad.png" />
             <div class="playerBtn" @click="showVideo = true"><i class="iconfont icon-guankanshipin"></i>观看视频</div>
           </div>
         </div>
@@ -144,13 +148,23 @@
       </div>
       <div class="page-content container">
         <div class="screen-item">
-          <div class="screen-head flex">
+          <div class="screen-head flex pc">
             <div class="order">01</div>
             <div class="screen-des flex">
               <div class="screen-title">日常场景</div>
               <div class="audio"><img src="~/assets/images/xs_img1.png" /></div>
               <div class="tips">今年考核<span>指标</span>怎么样？<span>排名</span>如何？污染<span>成因</span>？</div>
             </div>
+          </div>
+          <div class="screen-head flex mobile">
+            <div class="flex">
+              <div class="order">01</div>
+              <div class="screen-des flex">
+                <div class="screen-title">日常场景</div>
+                <div class="audio"><img src="~/assets/images/xs_img1.png" /></div>
+              </div>
+            </div>
+            <div class="tips">今年考核<span>指标</span>怎么样？<span>排名</span>如何？污染<span>成因</span>？</div>
           </div>
           <div class="srceen-content flex justify-content-end">
             <div class="introduction left-0">
@@ -175,11 +189,12 @@
                 <div class="col-right">轻咨询在线编制，领导关注随处分享</div>
               </div>
             </div>
-            <img src="~/assets/images/map/air_ys_01.png" />
+            <img src="~/assets/images/map/air_ys_01.png" class="pc" />
+            <img src="~/assets/images/map/m_air_ys_01.png" class="mobile" />
           </div>
         </div>
         <div class="screen-item">
-          <div class="screen-head flex">
+          <div class="screen-head flex pc">
             <div class="order">02</div>
             <div class="screen-des flex">
               <div class="screen-title">应急场景</div>
@@ -187,8 +202,19 @@
               <div class="tips">今天有没<span>超标风险</span>？管哪里？如何管？</div>
             </div>
           </div>
+          <div class="screen-head flex mobile">
+            <div class="flex">
+              <div class="order">02</div>
+              <div class="screen-des flex">
+                <div class="screen-title">应急场景</div>
+                <div class="audio"><img src="~/assets/images/xs_img2.png" /></div>
+              </div>
+            </div>
+            <div class="tips">今天有没<span>超标风险</span>？管哪里？如何管？</div>
+          </div>
           <div class="srceen-content flex">
-            <img src="~/assets/images/map/air_ys_02.png" />
+            <img src="~/assets/images/map/air_ys_02.png" class="pc" />
+            <img src="~/assets/images/map/m_air_ys_02.png" class="mobile" />
             <div class="introduction right-0">
               <div class="introduction-list-item flex">
                 <div class="sanjiao"></div>
@@ -214,13 +240,23 @@
           </div>
         </div>
         <div class="screen-item">
-          <div class="screen-head flex">
+          <div class="screen-head flex pc">
             <div class="order">03</div>
             <div class="screen-des flex">
               <div class="screen-title">通用场景</div>
               <div class="audio"><img src="~/assets/images/xs_img3.png" /></div>
               <div class="tips">如何轻松<span>掌握行业动态</span>?</div>
             </div>
+          </div>
+          <div class="screen-head flex mobile">
+            <div class="flex">
+              <div class="order">03</div>
+              <div class="screen-des flex">
+                <div class="screen-title">通用场景</div>
+                <div class="audio"><img src="~/assets/images/xs_img3.png" /></div>
+              </div>
+            </div>
+            <div class="tips">如何轻松<span>掌握行业动态</span>?</div>
           </div>
           <div class="srceen-content flex justify-content-end">
             <div class="introduction left-0">
@@ -232,7 +268,8 @@
                 <div class="col-right__last">热点资讯、政策法规、环保问答、帮助<br />管理者轻松掌握行业动态</div>
               </div>
             </div>
-            <img src="~/assets/images/map/air_ys_03.png" />
+            <img src="~/assets/images/map/air_ys_03.png" class="pc" />
+            <img src="~/assets/images/map/m_air_ys_03.png" class="mobile" />
           </div>
         </div>
       </div>
@@ -366,6 +403,8 @@ const list = ref([
       font-weight: bold;
       color: #363e45;
       margin-bottom: 5px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     p {
       color: #637381;
@@ -552,7 +591,7 @@ const list = ref([
     margin-top: 23px;
     .screen-title {
       width: 149px;
-      border: 2px solid rgba(220, 238, 219, 0.4);
+      border: 2px solid #dbeddb;
       border-radius: 25px;
       text-align: center;
       line-height: 50px;
@@ -638,6 +677,7 @@ const list = ref([
   &:nth-child(2) {
     .screen-title {
       color: #f47d4f;
+      border: 2px solid #f7d9c1;
     }
     .tips {
       background: #f47d4f;
@@ -662,6 +702,7 @@ const list = ref([
   &:nth-child(3) {
     .screen-title {
       color: #00a8ce;
+      border: 2px solid #b1e5e7;
     }
     .tips {
       background: #00a8ce;
@@ -704,6 +745,18 @@ const list = ref([
       font-family: Source Han Sans CN;
       font-weight: bold;
       color: #8cc54d;
+      position: relative;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      &::after {
+        content: '';
+        background: #e2e7ec;
+        width: 1px;
+        height: 18px;
+        right: -23px;
+        top: 12px;
+        position: absolute;
+      }
     }
     .col-right {
       margin-left: 50px;
@@ -711,16 +764,6 @@ const list = ref([
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: #3d4f6a;
-      position: relative;
-      &::before {
-        content: '';
-        background: #e2e7ec;
-        width: 1px;
-        height: 18px;
-        left: -23px;
-        top: 12px;
-        position: absolute;
-      }
     }
     .col-right__last {
       position: initial;
@@ -744,6 +787,155 @@ const list = ref([
     }
     color: #1f2429;
     font-size: 18px;
+  }
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 750px) {
+  .screen-item {
+    padding-top: 0;
+    .srceen-content {
+      flex-direction: column-reverse;
+      .introduction {
+        position: initial;
+        margin-top: 23px;
+      }
+    }
+    .introduction-list-item .col-right {
+      font-size: 16px;
+      line-height: 30px;
+    }
+    .introduction-list-item .col-left {
+      font-size: 18px;
+    }
+    .screen-head {
+      margin-bottom: 0;
+      padding-top: 40px;
+      margin-top: 0;
+      .screen-title {
+        font-size: 16px;
+        line-height: 40px;
+        width: 120px;
+      }
+      .order {
+        font-size: 30px;
+        position: inherit;
+        margin-bottom: 0;
+        width: auto;
+      }
+      .screen-des {
+        position: inherit;
+        margin-left: 10px;
+      }
+      .tips {
+        font-size: 16px;
+        margin: 20px 0;
+        line-height: unset;
+        padding: 9px 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &::before {
+          position: inherit;
+        }
+        span {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    &:nth-child(2) {
+      .srceen-content {
+        flex-direction: column;
+      }
+    }
+    &:nth-child(3) {
+      .srceen-content {
+        align-items: flex-start;
+      }
+    }
+  }
+  .info .info-col-mid {
+    width: 15%;
+    padding: 0;
+  }
+  .banner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 93px;
+    .left {
+      position: initial;
+      width: 100%;
+      .platform-name {
+        white-space: normal;
+      }
+    }
+    .videoPic {
+      margin-top: 20px;
+      .playerBtn {
+        left: 42%;
+      }
+      // transform: translateX(-20%) scale(1.2);
+      // transition: all 0.3s;
+    }
+  }
+  .feature-card {
+    flex-wrap: wrap;
+    margin-top: 40px;
+    .feature-item {
+      width: 30%;
+      font-size: inherit;
+    }
+  }
+  .banner .left {
+    .name {
+      font-size: 32px;
+    }
+    .platform-name {
+      font-size: 32px;
+    }
+    .platform-description {
+      font-size: 16px;
+    }
+  }
+  .banner .btns {
+    padding-top: 40px;
+  }
+  .page_title {
+    margin: 60px 0 40px 0;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .info .info-col-left h3,
+  .info .info-col-right h3 {
+    font-size: 16px;
+  }
+  .info .info-col-left p,
+  .info .info-col-right p {
+    font-size: 14px;
+    min-height: 44px;
+  }
+  .info .info-col-left,
+  .info .info-col-right {
+    padding-left: 0;
+  }
+  .mobile {
+    display: block;
+  }
+  .pc {
+    display: none;
+  }
+  .playerBtn {
+    height: 1.8rem;
+    font-size: 0.92rem;
+    padding: 0 0.8rem;
+  }
+  .introduction-list-item .col-right__last {
+    margin-bottom: 43px;
+  }
+  .scene {
+    background-size: cover;
   }
 }
 </style>

@@ -5,8 +5,10 @@
         <h2><i></i>方案背景<i></i></h2>
       </div>
       <div class="background container">
-        <img src="~/assets/images/solution/park1.jpg" class="rounded-20" />
-        <h2 class="flex center">园区现状：安全风险大！环境影响大！企业管理难！</h2>
+        <div class="relative">
+          <img src="~/assets/images/solution/park1.jpg" class="rounded-20" />
+          <h2 class="flex center">园区现状：安全风险大！环境影响大！企业管理难！</h2>
+        </div>
         <p>
           近年来，园区的快速发展给相关部门带来了一系列监管难题：安全风险大、环境影响大、企业管理难。如何建立“日常不扰、无据不查、轻微不罚”的园区非现场监管模式，进一步减少对企业现场检查，在保障生态环境的前提下持续推动企业良性发展，是园区监管面临的重大挑战。
           后疫情时代，园区需要通过精细化监管实现环境管理与企业经济协同发展
@@ -304,6 +306,53 @@
         }
       }
     }
+  }
+}
+@media (max-width: 750px) {
+  .goods {
+    flex-wrap: wrap;
+    dd {
+      flex: none;
+      width: 50%;
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+  .park {
+    .park-case {
+      flex-direction: column;
+    }
+    .solution-item {
+      .park-special {
+        flex-direction: column;
+        .text {
+          flex: none;
+        }
+      }
+    }
+    .solution-item:nth-child(4) {
+      .park-special {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+  .page_title {
+    margin: 60px 0 40px 0;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .park .park-case li .img .name {
+    width: 12rem;
+    transform: translateY(-80%) translateX(-46%);
+  }
+  .goods dd h3 {
+    margin: 12px 16px;
+  }
+  .park .solution-item .park-special {
+    gap: 1.8rem;
   }
 }
 </style>

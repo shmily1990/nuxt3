@@ -12,7 +12,10 @@
       <div class="solut-tab">
         <div class="page_title font40">数字化应用解决方案</div>
         <div class="container">
-          <ul class="name-wrapper flex center">
+          <ul class="name-wrapper flex center pc">
+            <li v-for="(item, idx) in tabData" :key="idx" @click="tabIdx = idx" :class="{ active: idx == tabIdx }">{{ item }}</li>
+          </ul>
+          <ul class="name-wrapper flex center mobile">
             <li v-for="(item, idx) in tabData" :key="idx" @click="tabIdx = idx" :class="{ active: idx == tabIdx }">{{ item }}</li>
           </ul>
         </div>
@@ -56,7 +59,7 @@ useHead({
   ],
 });
 const tabIdx = ref(0);
-const tabData = ref(['空气质量改善轻咨询', '移动走航与溯源评估', '城市和区县大气大数据平台', '智慧园区精细化监管']);
+const tabData = ref(['空气质量改善轻咨询服务', '移动走航与溯源评估方案', '城市和区县大气大数据平台', '智慧园区精细化监管方案']);
 const handleTrial = () => jumpWechat();
 </script>
 <style lang="less">
@@ -104,6 +107,7 @@ const handleTrial = () => jumpWechat();
     transition: transform 0.3s linear, -webkit-transform 0.3s linear;
     cursor: pointer;
     flex: 1;
+    width: 88%;
     img {
       border: 2px solid #cceaf6;
       border-radius: 8px;
@@ -145,6 +149,22 @@ const handleTrial = () => jumpWechat();
       // box-shadow: 0 8px 32px 0 rgba(20, 30, 49, 0.1);
       // -webkit-transform: translateY(-16px);
       // transform: translateY(-16px);
+    }
+  }
+}
+@media (max-width: 750px) {
+  .tab-wrapper {
+    .background {
+      h2 {
+        height: 32px;
+        font-size: 14px;
+      }
+      .rounded-20 {
+        border-radius: 0;
+      }
+    }
+    .person-case {
+      flex-direction: column;
     }
   }
 }
@@ -284,6 +304,59 @@ const handleTrial = () => jumpWechat();
       background: #01abab;
       color: #fff;
       border: 1px solid rgba(#fff, 0.4);
+    }
+  }
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 750px) {
+  .solution-wrapper .page_title {
+    font-size: 30px;
+  }
+  .solutin_f_banner h2 {
+    font-size: 30px;
+  }
+  .banner {
+    // height: 360px;
+    &-content {
+      .title {
+        font-size: 20px;
+      }
+      .sub-title {
+        font-size: inherit;
+      }
+      h2 {
+        font-size: 40px;
+      }
+    }
+  }
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+  }
+  .solution-wrapper .name-wrapper {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0 10px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 15px;
+    li {
+      font-size: 16px;
+      width: calc(50% - 10px);
+      flex: none;
+      box-shadow: 0px 3px 17px 0px rgba(99, 115, 129, 0.14);
+      line-height: 44px;
+      padding: 0;
+      &::after {
+        width: 0;
+      }
     }
   }
 }

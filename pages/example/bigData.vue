@@ -5,8 +5,10 @@
         <h2><i></i>方案背景<i></i></h2>
       </div>
       <div class="background container">
-        <img src="~/assets/images/solution/bigData1.jpg" class="rounded-20" />
-        <h2 class="flex center">传统信息化产品难以支撑不断变化的客户需求！</h2>
+        <div class="relative">
+          <img src="~/assets/images/solution/bigData1.jpg" class="rounded-20" />
+          <h2 class="flex center">传统信息化产品难以支撑不断变化的客户需求！</h2>
+        </div>
         <p>
           随着生态环境治理数字化转型的不断深入，为加强城市大气质量达标管理，环保系统建设了众多孤立的业务系统，传统信息化产品难以支撑新时代背景下不断变化的客户需求。后疫情时代，需要通过科学精准手段平衡环保考核与经济发展双重发展，以数字技术赋能生态环境治理，全面提升大气环境一网统管能力。
         </p>
@@ -56,12 +58,12 @@
       <div class="page_title font34">
         <h2><i></i>算法体系<i></i></h2>
       </div>
-      <div class="tip-title fontBold"><span>基于环境领域模型算法和大数据模型算法深度融合，辅助决策体系</span></div>
+      <div class="tip-title fontBold"><span>基于环境领域算法和人工智能算法深度融合，辅助决策体系</span></div>
       <div class="algorithm">
         <div class="l">
           <div class="name">
             <i><img src="~/assets/images/solution/jiantou.png" /></i>
-            <div class="tip-title"><span>环境领域模型算法</span></div>
+            <div class="tip-title"><span>环境领域算法</span></div>
           </div>
           <ul class="flex column">
             <li>
@@ -77,7 +79,7 @@
         <div class="r">
           <div class="name">
             <i><img src="~/assets/images/solution/jiantou2.png" /></i>
-            <div class="tip-title"><span>大数据模型算法</span></div>
+            <div class="tip-title"><span>人工智能算法</span></div>
           </div>
           <ul class="flex column">
             <li>
@@ -165,15 +167,15 @@
         position: relative;
         z-index: 2;
         &::after {
-          width: 120%;
-          height: 10px;
+          width: 110%;
+          height: 8px;
           background: #fed0a4;
           opacity: 0.59;
           content: '';
           position: absolute;
           bottom: 0;
-          left: -10%;
-          z-index: 1;
+          left: -5%;
+          z-index: -1;
         }
       }
     }
@@ -241,6 +243,38 @@
         }
       }
     }
+  }
+}
+@media (max-width: 750px) {
+  .goods {
+    flex-wrap: wrap;
+    dd {
+      flex: none;
+      width: 50%;
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+  .bigData .solution-item .algorithm {
+    flex-direction: column;
+  }
+  .bigData .solution-item .tip-title span {
+    font-size: 18px;
+    &::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+  .page_title {
+    margin: 60px 0 40px 0;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .goods dd h3 {
+    margin: 12px 16px;
   }
 }
 </style>

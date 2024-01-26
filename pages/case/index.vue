@@ -218,4 +218,13 @@ const jumpCaseDetail = (url) => {
     }
   }
 }
+
+@media (max-width: 750px) {
+  .case-list {
+    flex-direction: column;
+  }
+  .case_container {
+    width: 100%;
+  }
+}
 </style>

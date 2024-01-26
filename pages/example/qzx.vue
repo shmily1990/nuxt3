@@ -5,8 +5,10 @@
         <h2><i></i>方案背景<i></i></h2>
       </div>
       <div class="background container">
-        <img src="~/assets/images/solution/qzx1.jpg" class="rounded-20" />
-        <h2 class="flex center">传统的综合服务难以满足当前形式下空气质量改善需求！</h2>
+        <div class="relative">
+          <img src="~/assets/images/solution/qzx1.jpg" class="rounded-20" />
+          <h2 class="flex center">传统的综合服务难以满足当前形式下空气质量改善需求！</h2>
+        </div>
         <p>
           后疫情时代，城市环境管理者面临经济增长与生态环境持续改善的双重压力。传统的综合服务难以满足当前形势下空气质量改善需求，如何花更少的钱，获取更专业、更高效、更管用的服务，成为环境管理者的强烈诉求。
         </p>
@@ -50,4 +52,13 @@
   </div>
 </template>
 <script setup></script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+@media (max-width: 750px) {
+  .page_title {
+    margin: 60px 0 40px 0;
+    h2 {
+      font-size: 30px;
+    }
+  }
+}
+</style>

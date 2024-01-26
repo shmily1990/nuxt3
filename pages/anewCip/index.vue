@@ -5,8 +5,11 @@
         <div class="banner">
           <div class="banner-tips">
             <div class="platform-name">园区精细化监管及预警平台-AnewCIP™</div>
-            <div class="platform-description">
+            <div class="platform-description pc">
               实现园区有毒有害及恶臭异味态势感知、预警监控、污染研判、企业评价、档案管理、移动互联等场景应用，<br />助力园区以最小的管理成本实现环境管理与企业经济协同发展
+            </div>
+            <div class="platform-description mobile">
+              实现园区有毒有害及恶臭异味态势感知、预警监控、污染研判、企业评价、档案管理、移动互联等场景应用，助力园区以最小的管理成本实现环境管理与企业经济协同发展
             </div>
             <div class="btns flex p-4">
               <div class="btn_parmay btn_parmay_main" @click="handleAsk">产品咨询<i class="iconfont icon-anniu-jiantou"></i></div>
@@ -42,13 +45,23 @@
       </div>
       <div class="page-content container">
         <div class="screen-item">
-          <div class="screen-head flex">
+          <div class="screen-head flex pc">
             <div class="order">01</div>
             <div class="screen-des flex">
               <div class="screen-title">日常场景</div>
               <div class="audio"><img src="~/assets/images/xs_img1.png" /></div>
               <div class="tips">园区企业<span>无组织排放</span>问题突出，恶臭异味<span>溯源</span>困难？</div>
             </div>
+          </div>
+          <div class="screen-head flex mobile">
+            <div class="flex">
+              <div class="order">01</div>
+              <div class="screen-des flex">
+                <div class="screen-title">日常场景</div>
+                <div class="audio"><img src="~/assets/images/xs_img1.png" /></div>
+              </div>
+            </div>
+            <div class="tips">园区企业<span>无组织排放</span>问题突出，恶臭异味<span>溯源</span>困难？</div>
           </div>
           <div class="srceen-content">
             <img src="~/assets/images/map/cip_cj_01.png" />
@@ -85,13 +98,23 @@
           </div>
         </div>
         <div class="screen-item m-t-140">
-          <div class="screen-head flex">
+          <div class="screen-head flex pc">
             <div class="order">02</div>
             <div class="screen-des flex">
               <div class="screen-title">应急防控</div>
               <div class="audio"><img src="~/assets/images/xs_img2.png" /></div>
               <div class="tips">园区企业<span>应急处置</span>能力薄弱，如何<span>应急调度</span>减少损失？</div>
             </div>
+          </div>
+          <div class="screen-head flex mobile">
+            <div class="flex">
+              <div class="order">02</div>
+              <div class="screen-des flex">
+                <div class="screen-title">应急防控</div>
+                <div class="audio"><img src="~/assets/images/xs_img2.png" /></div>
+              </div>
+            </div>
+            <div class="tips">园区企业<span>应急处置</span>能力薄弱，如何<span>应急调度</span>减少损失？</div>
           </div>
           <div class="srceen-content">
             <img src="~/assets/images/map/cip_cj_02.png" />
@@ -364,6 +387,18 @@ const list = ref([
         font-family: Source Han Sans CN;
         font-weight: bold;
         color: #8cc54d;
+        position: relative;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &::after {
+          content: '';
+          background: #e2e7ec;
+          width: 1px;
+          height: 18px;
+          right: -23px;
+          top: 12px;
+          position: absolute;
+        }
       }
       .col-right {
         margin-left: 50px;
@@ -371,25 +406,18 @@ const list = ref([
         font-family: Source Han Sans CN;
         font-weight: 400;
         color: #3d4f6a;
-        position: relative;
-        &::before {
-          content: '';
-          background: #e2e7ec;
-          width: 1px;
-          height: 18px;
-          left: -23px;
-          top: 12px;
-          position: absolute;
-        }
       }
     }
   }
   &:nth-child(2) {
     .screen-title {
       color: #f47d4f;
+      border: 2px solid rgba(249, 225, 191, 0.4);
     }
     .tips {
       background: #f47d4f;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       &::before {
         border-right: 10px solid #f47d4f; /* 右侧红色，可以根据需要修改颜色和大小 */
       }
@@ -449,7 +477,7 @@ const list = ref([
         color: #ffffff;
         font-size: 18px;
         display: inline-block;
-        width: 160px;
+        width: 190px;
         height: 40px;
         text-align: center;
         line-height: 40px;
@@ -517,6 +545,110 @@ const list = ref([
         }
       }
     }
+  }
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 750px) {
+  .banner {
+    padding-top: 120px;
+  }
+  .screen-item {
+    .screen-bottom-list-item {
+      width: 100%;
+    }
+  }
+  .screen-item {
+    margin-top: 0;
+    .screen-bottom-list {
+      margin-bottom: 30px;
+    }
+    .screen-bottom-list-item .col-right {
+      font-size: 16px;
+      line-height: 30px;
+    }
+    .screen-bottom-list-item .col-left {
+      font-size: 18px;
+    }
+    .screen-head {
+      margin-bottom: 0;
+      .screen-title {
+        font-size: 16px;
+        line-height: 40px;
+        width: 120px;
+      }
+      .order {
+        font-size: 30px;
+        position: inherit;
+        margin-bottom: 0;
+        width: auto;
+      }
+      .screen-des {
+        position: inherit;
+        margin-left: 10px;
+      }
+      .tips {
+        font-size: 16px;
+        margin: 20px 0;
+        line-height: unset;
+        padding: 9px 12px;
+        &::before {
+          position: inherit;
+        }
+        span {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  .park-case {
+    flex-direction: column;
+  }
+  .banner .banner-tips {
+    .platform-name {
+      font-size: 32px;
+      padding-bottom: 20px;
+    }
+    .platform-description {
+      font-size: 16px;
+    }
+  }
+  .mobile {
+    display: block;
+  }
+  .pc {
+    display: none;
+  }
+  .feature-card {
+    flex-wrap: wrap;
+    margin: 60px 0;
+    .feature-item {
+      font-size: inherit;
+      width: 50%;
+    }
+  }
+  .page_title {
+    margin: 60px 0 40px 0;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .park-case li p {
+    font-size: 16px;
+    span {
+      font-size: 1.2rem;
+    }
+  }
+  .playerBtn {
+    height: 1.8rem;
+    font-size: 0.92rem;
+    padding: 0 0.8rem;
+    margin-left: -50px;
+    left: 50%;
+  }
+  .adv-card {
+    height: inherit;
   }
 }
 </style>

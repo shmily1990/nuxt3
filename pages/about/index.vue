@@ -12,18 +12,22 @@
         <div class="know_xinhe">
           <div class="know_xinhe_t">
             <div class="flex wrap">
-              <img src="~/assets/images/text_logo.png" />
+              <img src="~/assets/images/text_logo.png" class="pc" />
               <span class="text-indent-2"
                 >新禾数字科技（无锡）有限公司，是生态环境行业资深产品研发及经营团队创办的数字化高科技公司，新禾数科致力于用AIoT和SaaS推动环保行业数字化变革，以SaaS方式提供端到端的软件及咨询服务，以订阅形成低成本、高质量、可持续交付，用AIoT收集最广泛的行业运行数据，将行业业务场景与物联网、大数据、AI技术深度融合，形成管用的行业数字化解决方案。</span
               >
             </div>
+            <img src="~/assets/images/text_logo.png" class="mobile m_text_logo" />
             <p class="text-indent-2">
-              新禾数字科技（无锡）有限公司由广州禾信仪器股份有限公司产业投资，广州禾信既是新禾数科投资人，也是新禾渠道商和产品服务客户之一。广州禾信仪器股份有限公司（2021年科创板上市，股票代码：688622）国家火炬计划重点高新技术企业，禾信公司专注于质谱仪的自主研发、国产化及产业化，掌握质谱核心技术并具有先进工艺装配能力，是国内质谱仪领域从事自主研发的少数企业之一，面向环境监测、医疗健康、食品安全、工业生产等领域，公司提供了多种质谱产品及技术服务解决方案。
+              新禾数字科技（无锡）有限公司坐落在“中国软件特色名城”、“物联网之都”——无锡经开区，紧邻无锡大数据产业园、长三角（雪浪小镇）数据创新中心、新发数字经济创新中心等，京东科技、浪潮在内的众多创新科技企业和行业龙头汇聚于此。依托无锡浓厚的高科技底蕴、人才氛围和政府大力支持，公司从创立之初就走上了发展的快车道，为未来成长为行业优质数字化高科技公司打下坚实基础。公司由广州禾信仪器股份有限公司（科创板上市，股票代码：688622）产业投资，广州禾信既是新禾数科投资人，也是新禾渠道商和产品服务客户之一。
+              新禾数科以客户价值为导向，以技术创新为驱动，在大气、水、双碳等生态环境领域，持续为国家、省市、区县、镇街、企业以及行业个人用户，提供更高质量、更低成本、更快交付，更好服务，努力为客户、员工、合作伙伴带来更加美好的体验和发展空间，成为生态环境领域优质数字化服务提供商。
             </p>
-            <img src="~/assets/images/nyabout1.jpg" />
+            <img src="~/assets/images/nyabout1.jpg" class="pc m10" />
+            <img src="~/assets/images/m_nyabout1.png" class="mobile m10" />
             <p class="text-indent-2">
-              为了建设“美丽中国”，打赢“生态环境保卫战”，全国数十万环境保护从业者投身于此，夜以继日、兢兢业业，降低一毫克、减少一个污染天……“新禾数科”致力于用数据智能改变环保行业的工作方式，让从业者的工作更轻松、更高效、更快乐，让全体国人的生活环境更清新、更健康、更美好！
+              新禾数科 —— 致力于用数据智能改变环保行业的工作方式，让从业者的工作更轻松、更高效、更快乐，让全体国人的生活环境更清新、更健康、更美好！
             </p>
+            <p class="text-indent-2">新禾数科 —— 致力于用环保+互联网的模式打通环境数据壁垒、联通环境业务系统，实现环境管理目标的高效达成！</p>
           </div>
         </div>
       </div>
@@ -33,7 +37,7 @@
     <!--新禾企业文化-->
     <section class="section culture">
       <div class="container">
-        <div class="page_title font40">新禾文化</div>
+        <div class="page_title font40 m_page_title">新禾文化</div>
         <div class="culture_box">
           <div class="item">
             <h3 class="flex"><img src="~/assets/images/yuan.png" /> <span>使命</span><em>MISSION</em></h3>
@@ -41,10 +45,12 @@
           </div>
           <div class="item">
             <h3 class="flex"><img src="~/assets/images/yuan.png" /> <span>愿景</span><em>VISION</em></h3>
-            <h2>打造<i>80万</i>环保从业者爱用的软件及咨询服务!</h2>
-            <div class="service flex">
-              <text>5年内服务</text>
-              <img src="~/assets/images/sanjiao.png" />
+            <h2>打造<i class="count">80万</i>环保从业者爱用的软件及咨询服务!</h2>
+            <div class="service flex gap30">
+              <div class="flex">
+                <text>5年内服务</text>
+                <img src="~/assets/images/sanjiao.png" />
+              </div>
               <dl class="flex">
                 <dt>
                   <p>政府租户</p>
@@ -131,6 +137,14 @@ useHead({
 });
 </script>
 <style lang="less" scoped>
+.count {
+  color: #208ac3;
+  font-size: 28px;
+  font-weight: bold;
+}
+.m10 {
+  margin: 10px 0;
+}
 #page_about {
   margin-bottom: 70px;
 }
@@ -316,6 +330,7 @@ useHead({
         flex-direction: column;
         justify-content: space-between;
         transform: translateX(-10px);
+        padding: 15px 0;
         dl {
           background: linear-gradient(0deg, #ffffff, #fbfdff);
           border: 1px solid rgba(99, 115, 129, 0.1);
@@ -340,15 +355,116 @@ useHead({
 @media (max-width: 1140px) {
   .culture {
     .culture_box {
+      gap: 20px;
       .item {
         p {
-          font-size: 12px;
+          font-size: 0.78rem;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
       }
     }
   }
   .technology ul li .text-wrapper dl {
-    font-size: 14px;
+    font-size: 16px;
+  }
+  .know_xinhe {
+    .know_xinhe_t {
+      div {
+        flex-direction: column;
+      }
+    }
+  }
+  .culture .culture_box .item {
+    .service {
+      // flex-direction: column;
+      dl dt {
+        margin: 0 16px;
+      }
+    }
+    ul {
+      flex-wrap: wrap;
+      gap: 13px;
+      li {
+        width: calc(50% - 7px);
+        .value_name {
+          font-size: 16px;
+          img {
+            transform: scale(0.8);
+          }
+        }
+      }
+    }
+  }
+  .technology ul {
+    flex-direction: column;
+    li {
+      align-items: center;
+      width: 100%;
+      span {
+        padding: 20px 0;
+      }
+      .text-wrapper {
+        padding: 15px 0;
+      }
+    }
+  }
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 750px) {
+  .culture {
+    background: url(~/assets/images/m_wenhua_bg.jpg) no-repeat center center;
+    .culture_box {
+      padding: 20px 15px;
+      .item h2 {
+        font-size: 1.15rem;
+      }
+      .item ul li {
+        padding: 12px 12px 16px;
+        min-height: inherit;
+      }
+      .item .gap30 {
+        gap: 30px;
+      }
+    }
+  }
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .m_text_logo {
+    margin: 32px auto;
+  }
+  .m_page_title {
+    // margin: 114px 0 75px 0;
+  }
+  .culture .culture_box .item .service dl dt strong {
+    font-size: 1.25rem;
+  }
+  .culture .culture_box .item .service dl dt {
+    margin: 0 10px;
+  }
+  .culture .culture_box .item .service {
+    text {
+      font-size: 15px;
+      margin-right: 12px;
+      padding: 0 15px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    img {
+      width: 24px;
+    }
+  }
+  .page_title {
+    font-size: 30px;
+  }
+  .count {
+    font-size: 1.25rem;
   }
 }
 </style>

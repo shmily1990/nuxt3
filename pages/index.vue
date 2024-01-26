@@ -1,19 +1,28 @@
 <template>
   <div id="container-full">
     <section class="home-container">
-      <swiper class="swiper-container" :autoplay="{ delay: 5000, disableOnInteraction: false }" :modules="mods">
+      <swiper class="swiper-container" :autoplay="{ delay: 0, disableOnInteraction: false }" :modules="mods">
         <swiper-slide
           :style="{
             'background-image': 'url(/images/index_banner.gif)',
           }"
         >
           <div class="posBg"></div>
-          <div class="bannerwen color_white wow zoomIn absolute" data-wow-delay=".1s" data-wow-duration="2s">
+          <div class="bannerwen color_white wow zoomIn absolute" data-wow-delay="0s" data-wow-duration="2s">
             <p>用AIoT和SaaS推动环保行业数字化变革</p>
-            <span>已稳定服务近百家生态环境局、监测中心、工业园区、大气管控服务商、<br />运维商等政府、企业客户</span>
+            <span class="banner-des">已稳定服务近百家生态环境局、监测中心、工业园区、大气管控服务商、运维商等政府、企业客户</span>
             <div class="statis">
-              <h2 class="count"><count-to :end="1896" /></h2>
-              <span class="count-txt">用户使用次数</span>
+              <div class="count-txt">用户累计使用</div>
+              <div class="items-baseline flex">
+                <h2 class="count"><count-to :end="count" :init="count" :usegroup="true" /></h2>
+                <span class="count-txt">次</span>
+              </div>
+              <div class="y_useinfo flex">
+                <span>昨日</span>
+                <h2>{{ yesterdayCount?.data || 0 }}</h2>
+                <span>次</span>
+                <img src="~/assets/images/up.png" />
+              </div>
             </div>
           </div>
         </swiper-slide>
@@ -51,9 +60,13 @@
     <section class="section air" id="section2">
       <div class="container flex wrap">
         <div class="intor col-lg-3 col-md-12 wow fadeInLeft">
-          <div style="width: max-content">
+          <div style="width: max-content" class="pc">
             <img align="left" class="intor-logo" src="~/assets/images/map/air_logo1.png" />
             <span class="intor-title p-l-2">大气污染智能管控<br />终端-AnewAir™</span>
+          </div>
+          <div class="mobile">
+            <img align="left" class="intor-logo" src="~/assets/images/map/air_logo1.png" />
+            <span class="intor-title p-l-2">大气污染智能管控终端<br />-AnewAir™</span>
           </div>
           <p>我们服务于</p>
           <h3><i class="iconfont icon-zhengfuguanlizhe"></i>政府部门环境管理者</h3>
@@ -63,7 +76,8 @@
           <a class="btn_more color_white"><span @click="router.push('/anewAir')">了解更多 >></span></a>
         </div>
         <div class="img-intor col-lg-9 col-md-12 wow flipInX" data-wow-infinite="true">
-          <img src="~/assets/images/air-pad.png" />
+          <img src="~/assets/images/air-pad.png" class="pc" />
+          <img src="~/assets/images/map/m_air-pad.png" class="mobile" />
         </div>
       </div>
     </section>
@@ -104,7 +118,7 @@
     </section>
     <section class="seciton solution" id="section5">
       <div class="container">
-        <div class="page_title font40 wow fadeInUp">提供覆盖<span>「 环保行业 」</span>各类场景的解决方案</div>
+        <div class="page_title font40 wow fadeInUp sm:text-3xl">提供覆盖<span>「 环保行业 」</span>各类场景的解决方案</div>
         <div class="index_solution_type flex wrap">
           <div class="solution_menu col-md-12 col-sm-12 wow fadeInLeft">
             <ul class="flex column center">
@@ -298,12 +312,21 @@
       <PageAbout />
     </section>
     <PageHonor />
-    <section class="seciton f_banner" id="section9">
+    <section class="seciton f_banner pc" id="section9">
       <div class="container">
         <h2 class="wow fadeInDown">
           免费试用空气质量改善服务智能云平台<br />
           - AnewMap™
         </h2>
+        <p class="wow fadeInDown">新品发布，抢先<span>免费试用</span></p>
+        <div class="btn_more btn_gradient">
+          <span @click="handleTrial">立即试用</span>
+        </div>
+      </div>
+    </section>
+    <section class="seciton f_banner mobile" id="section9">
+      <div class="container flex flex-col">
+        <h2 class="wow fadeInDown">免费试用空气质量改善服务<br />智能云平台 - AnewMap™</h2>
         <p class="wow fadeInDown">新品发布，抢先<span>免费试用</span></p>
         <div class="btn_more btn_gradient">
           <span @click="handleTrial">立即试用</span>
@@ -322,6 +345,8 @@ import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper';
 const mods = ref([Autoplay, Pagination, Navigation, EffectFade]);
 const router = useRouter();
 const showVideo = ref(false);
+const count = ref(0);
+let timer = null;
 useHead({
   // 外部引入js
   script: [
@@ -332,6 +357,10 @@ useHead({
     },
   ],
 });
+useLazyFetch('https://gateway3.anew.cloud/backstage/kanban/pageVisitTotal?wxType=2&wxName=').then(({ data }) => {
+  count.value = Number(data?.value?.data || 0);
+});
+const { data: yesterdayCount } = await useLazyFetch(`https://gateway3.anew.cloud/backstage/kanban/pageVisitTotal?dateTime=${getYesterDay()}`);
 const handleTrial = () => jumpWechat();
 const jumpCaseDetail = (url) => {
   window.open(url, '_blank');
@@ -341,7 +370,7 @@ let breakpoints = ref(null);
 breakpoints.value = {
   320: {
     //当屏幕宽度大于等于320
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 10,
   },
   768: {
@@ -381,9 +410,33 @@ onMounted(() => {
     live: true,
   });
   wow.init();
+  timer = setInterval(() => {
+    useFetch('https://gateway3.anew.cloud/backstage/kanban/pageVisitTotal?wxType=2&wxName=').then(({ data }) => {
+      count.value = Number(data?.value?.data || 0);
+    });
+  }, 5000);
+});
+onBeforeUnmount(() => {
+  if (timer) clearInterval(timer);
 });
 </script>
 <style scoped lang="less">
+@font-face {
+  font-family: 'Bebas Neue'; /* 字体名称 */
+  src: url('~/assets/fonts/BebasNeue-Regular.ttf'); /* 字体文件相对路径 */
+}
+.y_useinfo {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  h2 {
+    font-family: Bebas Neue !important;
+    font-size: 32px;
+  }
+  img {
+    width: 8px !important;
+  }
+}
 // banner
 .home-container {
   position: relative;
@@ -394,7 +447,8 @@ onMounted(() => {
   position: absolute;
   bottom: 0px;
   left: 50%;
-  transform: translateX(-50%);
+  // transform: translateX(-50%);
+  margin-left: -35px;
   z-index: 999;
   // transition:jump  0.5s;
   animation-name: jump;
@@ -416,6 +470,10 @@ onMounted(() => {
     transform: translateY(0);
     /* 回到最初位置 */
   }
+}
+.banner-des {
+  display: inline-block;
+  width: 580px;
 }
 .swiper-container {
   width: 100%;
@@ -451,18 +509,23 @@ onMounted(() => {
         padding-top: 80px;
         display: flex;
         justify-content: center;
-        align-items: baseline;
+        align-items: center;
         gap: 9px;
+        flex-direction: column;
         .count {
           font-size: 60px;
           font-weight: 400;
           color: #ffffff;
+          line-height: 50px;
         }
         .count-txt {
           font-size: 16px;
           font-family: Source Han Sans CN;
           font-weight: 400;
           color: #ffffff;
+        }
+        .items-baseline {
+          align-items: baseline;
         }
       }
     }
@@ -735,7 +798,12 @@ onMounted(() => {
   padding: 10px;
   background-size: cover;
 }
-
+.mobile-map-des {
+  display: none;
+}
+.mobile {
+  display: none;
+}
 @media (min-width: 992px) {
   .about {
     margin-top: 60px;
@@ -745,7 +813,7 @@ onMounted(() => {
 @media (max-width: 990px) {
   .air,
   .ei {
-    margin: 30px 0;
+    margin: 40px 0;
   }
   .solution {
     .index_solution_type {
@@ -755,6 +823,9 @@ onMounted(() => {
       .solution_introduction {
         .solution_introduction_detial {
           padding: 15px;
+          h1 {
+            font-size: 26px;
+          }
         }
       }
     }
@@ -783,41 +854,6 @@ onMounted(() => {
     }
   }
 }
-
-@media (max-width: 750px) {
-  .solution {
-    .index_solution_type {
-      .solution_menu {
-        width: 100%;
-        margin-bottom: 30px;
-        .name {
-          display: none;
-        }
-        ul {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          li {
-            width: 50%;
-          }
-        }
-      }
-      .solution_introduction {
-        width: 100%;
-
-        .solution_introduction_detial {
-          padding: 30px;
-        }
-      }
-    }
-  }
-  .about {
-    .about_tip {
-      margin-bottom: 50px;
-    }
-  }
-}
-
 .f_banner {
   margin-top: 80px;
   padding: 90px 0;
@@ -835,6 +871,130 @@ onMounted(() => {
   }
   .btn_gradient {
     margin-top: 40px;
+  }
+}
+@media (max-width: 750px) {
+  .solution {
+    .index_solution_type {
+      .solution_menu {
+        width: 100%;
+        margin-bottom: 20px;
+        .name {
+          display: none;
+        }
+        ul {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 15px;
+          li {
+            width: 47%;
+            font-size: 14px;
+            padding: 0 8px;
+            margin-top: 0px;
+            .item_name {
+              img {
+                width: 32px;
+              }
+              span {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+      }
+      .solution_introduction {
+        width: 100%;
+        ul {
+          flex-wrap: wrap;
+          justify-content: space-around;
+          gap: 10px;
+          li {
+            // width: 45%;
+            width: 48%;
+            margin-right: 0 !important;
+          }
+        }
+        .solution_introduction_detial {
+          padding: 20px;
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .about {
+    .about_tip {
+      margin-bottom: 50px;
+      font-size: 16px;
+    }
+    .page_title {
+      font-size: 28px;
+    }
+  }
+  .bannerwen {
+    transform: scale(0.9);
+  }
+  .banner-des {
+    width: 91%;
+  }
+  .intor {
+    h2 {
+      font-size: 30px;
+    }
+    p {
+      margin: 20px 0 0 0;
+    }
+  }
+  #section2 .wrap,
+  #section4 .wrap {
+    flex-direction: column-reverse;
+    .intor .intor-title {
+      font-size: 30px;
+      padding-top: 9px;
+      display: inline-block;
+    }
+  }
+  .case_swiper_container .swiper-slide-active {
+    width: 90% !important;
+    margin: 0 5%;
+  }
+  .case_swiper_container .swiper-slide-prev {
+    left: 5%;
+  }
+  .swiper-slide-next {
+    // left: -8%;
+  }
+  .pc-map-des {
+    display: none;
+  }
+  .mobile-map-des {
+    display: block;
+  }
+  .f_banner h2 {
+    font-size: 26px !important;
+    // width: 80%;
+  }
+
+  .page_title {
+    font-size: 28px;
+  }
+  .intor .intor-title {
+    font-size: 30px;
+  }
+  .mobile {
+    display: block;
+  }
+  .pc {
+    display: none;
+  }
+  .f_banner {
+    padding: 35px 0 195px 0;
+    background: url(~/assets/images/m_f-banner2.jpg) no-repeat center center;
+    background-size: cover;
   }
 }
 </style>

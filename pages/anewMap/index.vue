@@ -4,8 +4,9 @@
       <div class="container">
         <div class="banner flex">
           <div class="left">
-            <div class="name">AnewMap™</div>
-            <div class="platform-name">空气质量改善服务智能云平台</div>
+            <div class="name pc">AnewMap™</div>
+            <div class="platform-name pc">空气质量改善服务智能云平台</div>
+            <div class="platform-name mobile">空气质量改善服务智能云平台-AnewMap™</div>
             <div class="platform-description">
               为第三方服务商和政府客户量身定做，实现了数智化决策模型与业务场景的深度融合，超越经验系统，提升决策效率，降低决策成本，以全新的认知能力，赋能平台助您更智能地处理复杂业务。
             </div>
@@ -15,7 +16,11 @@
               <div class="btn_parmay" @click="router.push('/case')">应用案例<i class="iconfont icon-anniu-jiantou"></i></div>
             </div>
           </div>
-          <div class="relative videoPic wow fadeInRight">
+          <div class="relative videoPic wow fadeInRight pc">
+            <img src="~/assets/images/map-banner-img.png" />
+            <div class="playerBtn" @click="showVideo = true"><i class="iconfont icon-guankanshipin"></i>观看视频</div>
+          </div>
+          <div class="relative videoPic mobile">
             <img src="~/assets/images/map-banner-img.png" />
             <div class="playerBtn" @click="showVideo = true"><i class="iconfont icon-guankanshipin"></i>观看视频</div>
           </div>
@@ -94,7 +99,7 @@
         </div>
         <div class="item item4 relative">
           <div class="container">
-            <div class="introduction" style="width: 25%">
+            <div class="introduction">
               <div class="title"><span class="order">04</span><span>高值分析</span></div>
               <div class="sub-title">模板中心、数据修订、人工审核</div>
               <div class="desrciption">
@@ -495,6 +500,100 @@ const list = ref([
   &.item6 {
     .p-bg {
       background: linear-gradient(-90deg, #d6f1ff 0%, #d6f1ff 100%);
+    }
+  }
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 750px) {
+  .item {
+    margin-bottom: 70px;
+    .container {
+      flex-direction: column;
+    }
+    .introduction {
+      // padding-top: 3%;
+      width: 100%;
+      padding: 0 16px;
+      .sub-title {
+        padding: 20px 0;
+      }
+      .title {
+        font-size: 30px;
+        padding: 0 0 12px 0;
+        .order {
+          font-size: unset;
+        }
+      }
+    }
+    &:nth-child(even) {
+      .container {
+        flex-direction: column-reverse;
+      }
+    }
+    &:last-child {
+      .container {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  .case-list {
+    ul {
+      flex-direction: column;
+    }
+  }
+  .banner {
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-top: 94px;
+    .left {
+      position: initial;
+      width: 100%;
+      .platform-name {
+        white-space: normal;
+        padding-bottom: 20px;
+        font-size: 32px;
+      }
+      .platform-description {
+        padding-bottom: 40px;
+        font-size: 16px;
+      }
+    }
+    .videoPic {
+      transform: translateX(-36%);
+      transition: all 1.3s;
+      img {
+        transform: scale(1.7);
+      }
+    }
+  }
+  .feature-card {
+    flex-wrap: wrap;
+    .feature-item {
+      width: 30%;
+      font-size: inherit;
+    }
+  }
+  .page_title {
+    margin: 60px 0 40px 0;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .mobile {
+    display: block;
+  }
+  .pc {
+    display: none;
+  }
+  .videoPic {
+    margin: 60px 0;
+    .playerBtn {
+      height: 1.8rem;
+      font-size: 0.92rem;
+      padding: 0 0.8rem;
+      left: 73%;
     }
   }
 }

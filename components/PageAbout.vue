@@ -1,7 +1,7 @@
 <template>
   <div class="about_cards">
     <div class="container">
-      <ul class="flex between wow fadeInUp">
+      <ul class="flex between wow fadeInUp pc">
         <li>
           <div class="li_bg"><img src="~/assets/images/box1.png" /></div>
           <div class="li_item">
@@ -32,10 +32,72 @@
           </div>
         </li>
       </ul>
+      <ul class="flex between wow fadeInUp mobile">
+        <swiper class="case_swiper_container2" :autoplay="{ delay: 5000, disableOnInteraction: false }" :modules="mods">
+          <swiper-slide key="1" class="flex justify-center">
+            <li>
+              <div class="li_bg"><img src="~/assets/images/box1.png" /></div>
+              <div class="li_item">
+                <div class="name">
+                  <img src="~/assets/images/box_title1.png" />
+                </div>
+                <p>环保行业，深耕20年产品研发及经营团队创办的高科技公司，致力于用<span>AIoT和SaaS推动环保行业数字化变革！</span></p>
+              </div>
+            </li>
+          </swiper-slide>
+          <swiper-slide key="2" class="flex justify-center">
+            <li>
+              <div class="li_bg"><img src="~/assets/images/box2.png" /></div>
+              <div class="li_item">
+                <div class="name">
+                  <img src="~/assets/images/box_title2.png" />
+                </div>
+                <p>环保行业，<span>首家成功</span>构建“SaaS软件服务”体系，并实现商业化运行，<span>累计服务数百家</span>政府及企业客户!</p>
+              </div>
+            </li>
+          </swiper-slide>
+          <swiper-slide key="3" class="flex justify-center">
+            <li>
+              <div class="li_bg"><img src="~/assets/images/box3.png" /></div>
+              <div class="li_item">
+                <div class="name">
+                  <img src="~/assets/images/box_title3.png" />
+                </div>
+                <p>
+                  环保行业，<span>首家成功</span>构建”数智化咨询服务”体系，将人工智能算法深度应用于<span>“咨-测-析-管-治-评”全场景</span>环境质量达标业务!
+                </p>
+              </div>
+            </li>
+          </swiper-slide>
+        </swiper>
+      </ul>
     </div>
   </div>
 </template>
-
+<script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper';
+const mods = ref([Autoplay, Pagination, Navigation, EffectFade]);
+/** 断点 */
+let breakpoints = ref(null);
+breakpoints.value = {
+  320: {
+    //当屏幕宽度大于等于320
+    slidesPerView: 1,
+  },
+  768: {
+    //当屏幕宽度大于等于768
+    slidesPerView: 1,
+  },
+  900: {
+    //当屏幕宽度大于等于1280
+    slidesPerView: 1,
+  },
+};
+</script>
 <style lang="less" scoped>
 // about
 
@@ -133,17 +195,28 @@
       }
     }
   }
+  .mobile {
+    display: none;
+  }
 }
 
 @media (max-width: 750px) {
   .about_cards {
     padding: 50px 0;
+    .pc {
+      display: none;
+    }
+
     ul {
       flex-wrap: wrap;
+      justify-content: center;
       li {
-        max-width: 50%;
+        width: 100%;
         margin-bottom: 20px;
       }
+    }
+    .mobile {
+      display: flex;
     }
   }
 }
