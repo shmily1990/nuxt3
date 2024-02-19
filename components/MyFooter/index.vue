@@ -46,10 +46,15 @@
           <div>扫描二维码<br />联系在线客服</div>
         </div>
       </div>
-      <div class="foot_copyRright flex center">
+      <div class="foot_copyRright flex center pc">
         <a>©2023 新禾数字科技 anew.cloud</a>
         <a href="https://beian.miit.gov.cn" target="_blank">苏ICP备2022033295号-1</a>
         <a>版权所有 新禾数字科技(无锡)有限公司</a>
+      </div>
+      <div class="foot_copyRright flex center mobile">
+        <a>©2023 新禾数字科技<br />anew.cloud</a>
+        <a href="https://beian.miit.gov.cn" target="_blank">苏ICP备<br />2022033295号-1</a>
+        <a>版权所有<br />新禾数字科技(无锡)有限公司</a>
       </div>
     </div>
   </footer>
@@ -201,11 +206,15 @@ const tel = ref('18912483668');
     margin-top: 20px;
   }
 }
+.mobile {
+  display: none;
+}
 @media (max-width: 750px) {
   .footer {
     .container {
       .left_col {
         flex-wrap: wrap;
+        padding-left: 1.2rem;
         .item {
           padding: 0 40px 0 10px;
           .title {
@@ -215,6 +224,28 @@ const tel = ref('18912483668');
             font-size: 0.92rem;
           }
         }
+      }
+    }
+  }
+  .mobile {
+    display: flex;
+  }
+  .pc {
+    display: none;
+  }
+  .footer .container .foot_copyRright {
+    margin-bottom: 60px;
+    justify-content: space-between;
+    font-size: 11px;
+    padding: 0;
+    line-height: 20px;
+    a {
+      font-size: 12px;
+      padding: 0;
+      text-align: center;
+      &::after {
+        right: -12px;
+        top: 10px;
       }
     }
   }

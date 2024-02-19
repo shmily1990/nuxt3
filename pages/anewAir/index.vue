@@ -42,7 +42,7 @@
         <h2 class="pr-4"><i></i>核心优势<i></i></h2>
       </div>
       <div class="page-content">
-        <div class="info flex">
+        <div class="info flex pc">
           <div class="info-col-left">
             <div>
               <h3>数据孤岛，业务壁垒</h3>
@@ -90,9 +90,49 @@
             </div>
           </div>
         </div>
+        <div class="info flex mobile_f">
+          <div class="info-col-left">
+            <h3>数据孤岛，业务壁垒</h3>
+            <img src="~/assets/images/map/m_map_ys_left.png" />
+            <p>业务系统林立，信息无法打通</p>
+          </div>
+          <div class="info-col-mid">
+            <div class="item-mid">
+              <div class="name-nav">
+                <span><i>业务</i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-col-right">
+            <h3>场景闭环，真正管用</h3>
+            <img src="~/assets/images/map/m_map_ys_right.png" />
+            <p>聚焦高频、高价值业务场景，更落地</p>
+          </div>
+        </div>
+        <div class="info flex mobile_f">
+          <div class="info-col-left">
+            <h3>感知局限，交互复杂</h3>
+            <img src="~/assets/images/map/m_map_ys_left.png" />
+            <p>无法实时感知，用户体验欠佳</p>
+          </div>
+          <div class="info-col-mid">
+            <div class="item-mid">
+              <div class="name-nav">
+                <span><i>产品</i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-col-right">
+            <h3>掌上办公，一触即达</h3>
+            <img src="~/assets/images/map/m_map_ys_right.png" />
+            <p>移动式体验，领导关注随处分享</p>
+          </div>
+        </div>
 
         <img src="~/assets/images/map/air_vs.png" />
-        <div class="info flex">
+        <div class="info flex pc">
           <div class="info-col-left">
             <div>
               <h3>周期难控，成本高昂</h3>
@@ -138,6 +178,48 @@
               <h3>客户成功，专业咨询</h3>
               <p>以客户为中心，持续运营，协同共创</p>
             </div>
+          </div>
+        </div>
+        <div class="info flex mobile_f">
+          <div class="info-col-left">
+            <h3>周期难控，成本高昂</h3>
+            <img src="~/assets/images/map/m_map_ys_left.png" />
+            <p>采购流程复杂，实施周期漫长</p>
+          </div>
+
+          <div class="info-col-mid">
+            <div class="item-mid">
+              <div class="name-nav">
+                <span><i>交付</i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-col-right">
+            <h3>无需部署，开箱即用</h3>
+            <img src="~/assets/images/map/m_map_ys_right.png" />
+            <p>采购路径短，产品快速交付</p>
+          </div>
+        </div>
+        <div class="info flex mobile_f">
+          <div class="info-col-left">
+            <h3>运维为主，升级困难</h3>
+            <img src="~/assets/images/map/m_map_ys_left.png" />
+            <p>售后体验一般，项目验收即结束</p>
+          </div>
+
+          <div class="info-col-mid">
+            <div class="item-mid">
+              <div class="name-nav">
+                <span><i>服务</i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-col-right">
+            <h3>客户成功，专业咨询</h3>
+            <img src="~/assets/images/map/m_map_ys_right.png" />
+            <p>以客户为中心，持续运营，协同共创</p>
           </div>
         </div>
       </div>
@@ -792,6 +874,9 @@ const list = ref([
 .mobile {
   display: none;
 }
+.mobile_f {
+  display: none;
+}
 @media (max-width: 750px) {
   .screen-item {
     padding-top: 0;
@@ -855,8 +940,23 @@ const list = ref([
     }
   }
   .info .info-col-mid {
-    width: 15%;
+    background: #f9fff2;
+    border: 1px solid rgb(143 203 108 / 32%);
+    border-radius: 11px;
     padding: 0;
+    .name-nav {
+      width: unset;
+      span {
+        font-size: 14px;
+        color: #73bf3e;
+        width: 23px;
+        line-height: 16px;
+        padding: 10px 0;
+        &::before {
+          width: 0;
+        }
+      }
+    }
   }
   .banner {
     display: flex;
@@ -905,16 +1005,20 @@ const list = ref([
     margin: 60px 0 40px 0;
     h2 {
       font-size: 30px;
+      padding-right: 0;
     }
   }
   .info .info-col-left h3,
   .info .info-col-right h3 {
     font-size: 16px;
+    margin-bottom: 0;
+    text-align: center;
   }
   .info .info-col-left p,
   .info .info-col-right p {
-    font-size: 14px;
-    min-height: 44px;
+    font-size: 10px;
+    text-align: center;
+    // min-height: 44px;
   }
   .info .info-col-left,
   .info .info-col-right {
@@ -922,6 +1026,9 @@ const list = ref([
   }
   .mobile {
     display: block;
+  }
+  .mobile_f {
+    display: flex;
   }
   .pc {
     display: none;
@@ -936,6 +1043,15 @@ const list = ref([
   }
   .scene {
     background-size: cover;
+  }
+  .info {
+    margin-bottom: 23px;
+    // &:nth-child(2) {
+    //   margin-bottom: 0;
+    // }
+    &:nth-child(3) {
+      margin-bottom: 0;
+    }
   }
 }
 </style>

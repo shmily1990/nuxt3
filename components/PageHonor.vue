@@ -74,9 +74,9 @@ const router = useRouter();
           margin-bottom: 20px;
           // padding: 10px;
           // gap: 10px;
-          p {
-            font-size: 14px;
-          }
+          // p {
+          //   font-size: 16px;
+          // }
         }
       }
     }

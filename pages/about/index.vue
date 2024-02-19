@@ -466,5 +466,11 @@ useHead({
   .count {
     font-size: 1.25rem;
   }
+  .zhuanli-wrapper {
+    width: 100%;
+  }
+  .technology ul li .text-wrapper {
+    flex: 1;
+  }
 }
 </style>

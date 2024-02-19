@@ -288,14 +288,14 @@ const list = ref([
   .left {
     position: absolute;
     width: 40%;
-    // top: 20%;
+    top: 17%;
     z-index: 2;
     .name {
       font-size: 36px;
       font-weight: bold;
       color: #000414;
       font-family: HarmonyOS Sans SC;
-      padding: 25px 0;
+      padding: 0 0 25px 0;
     }
     .platform-name {
       font-size: 40px;

@@ -8,6 +8,17 @@
       </div>
     </section>
     <section class="container">
+      <div class="chart_map">
+        <div class="chart_map_title text-center">服务全国65个地市及区县客户</div>
+        <div class="chart_map_content">
+          <p>
+            新禾SaaS平台产品及环境咨询服务，已稳定<span>服务近100家</span>政府生态环境局、监测中心、环保集团、
+            工业园区、空气管控服务商和运维商等客户，分布在<span>全国65个地市及区县</span>，为各地的空气质量持续 改善贡献力量
+          </p>
+          <img src="~/assets/images/case_map_bg.png" />
+        </div>
+      </div>
+      <div class="page_title font40">客户案例</div>
       <div class="flex flex-wrap case-list">
         <div class="case_container" @click="jumpCaseDetail('https://mp.weixin.qq.com/s/wGnkvnSP1z4X9Fte4CpB4A')">
           <div class="img"><img src="~/assets/images/img1.jpg" /></div>
@@ -136,7 +147,7 @@ const jumpCaseDetail = (url) => {
   }
 }
 .case-list {
-  padding: 72px 0;
+  padding-bottom: 72px;
   justify-content: space-between;
 }
 .case_container {
@@ -218,13 +229,61 @@ const jumpCaseDetail = (url) => {
     }
   }
 }
-
+.chart_map {
+  &_title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000414;
+    padding: 70px 0 59px 0;
+  }
+  &_content {
+    // background: url('~/assets/images/case_map_bg.png') no-repeat center center;
+    // background-size: cover;
+    font-size: 16px;
+    span {
+      font-size: 18px;
+      color: #21a1e6;
+      font-weight: bold;
+    }
+    p {
+      background: #c5e9fb;
+      opacity: 0.8;
+      border-radius: 8px;
+      padding: 25px 20px;
+      line-height: 35px;
+    }
+    img {
+      margin-top: -125px;
+    }
+  }
+}
 @media (max-width: 750px) {
   .case-list {
     flex-direction: column;
   }
   .case_container {
     width: 100%;
+  }
+  .chart_map {
+    &_title {
+      font-size: 30px;
+    }
+    &_content {
+      font-size: 14px;
+      p {
+        padding: 20px 15px;
+        line-height: 30px;
+      }
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+  .page_title {
+    font-size: 30px;
+  }
+  .chart_map_content img {
+    margin-top: -40px;
   }
 }
 </style>

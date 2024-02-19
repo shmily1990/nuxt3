@@ -51,7 +51,7 @@ const navList = ref([
   { name: 'AnewAir™', link: '/anewAir' },
   { name: 'AnewCIP™', link: '/anewCip' },
   { name: '解决方案', link: '/example' },
-  { name: '客户案例', link: '/case' },
+  { name: '客户成功', link: '/case' },
   { name: '了解新禾', link: '/about' },
   { name: '联系我们', link: '/contactUs' },
 ]);
