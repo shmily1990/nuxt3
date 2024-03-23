@@ -2,7 +2,7 @@
   <div class="about_cards">
     <div class="container">
       <ul class="flex between wow fadeInUp pc">
-        <li>
+        <li class="dh">
           <div class="li_bg"><img src="~/assets/images/box1.png" /></div>
           <div class="li_item">
             <div class="name">
@@ -11,7 +11,7 @@
             <p>环保行业，深耕20年产品研发及经营团队创办的高科技公司，致力于用<span>AIoT和SaaS推动环保行业数字化变革！</span></p>
           </div>
         </li>
-        <li>
+        <li class="sass">
           <div class="li_bg"><img src="~/assets/images/box2.png" /></div>
           <div class="li_item">
             <div class="name">
@@ -20,7 +20,7 @@
             <p>环保行业，<span>首家成功</span>构建“SaaS软件服务”体系，并实现商业化运行，<span>累计服务数百家</span>政府及企业客户!</p>
           </div>
         </li>
-        <li>
+        <li class="zn">
           <div class="li_bg"><img src="~/assets/images/box3.png" /></div>
           <div class="li_item">
             <div class="name">
@@ -35,7 +35,7 @@
       <ul class="flex between wow fadeInUp mobile">
         <swiper class="case_swiper_container2" :autoplay="{ delay: 5000, disableOnInteraction: false }" :modules="mods">
           <swiper-slide key="1" class="flex justify-center">
-            <li>
+            <li class="dh">
               <div class="li_bg"><img src="~/assets/images/box1.png" /></div>
               <div class="li_item">
                 <div class="name">
@@ -46,7 +46,7 @@
             </li>
           </swiper-slide>
           <swiper-slide key="2" class="flex justify-center">
-            <li>
+            <li class="sass">
               <div class="li_bg"><img src="~/assets/images/box2.png" /></div>
               <div class="li_item">
                 <div class="name">
@@ -57,7 +57,7 @@
             </li>
           </swiper-slide>
           <swiper-slide key="3" class="flex justify-center">
-            <li>
+            <li class="zn">
               <div class="li_bg"><img src="~/assets/images/box3.png" /></div>
               <div class="li_item">
                 <div class="name">
@@ -213,6 +213,34 @@ breakpoints.value = {
       li {
         width: 100%;
         margin-bottom: 20px;
+      }
+      line-height: 45px;
+      li.dh {
+        .li_item {
+          .name {
+            &::before {
+              content: '懂行';
+            }
+          }
+        }
+      }
+      li.sass {
+        .li_item {
+          .name {
+            &::before {
+              content: 'SaaS';
+            }
+          }
+        }
+      }
+      li.zn {
+        .li_item {
+          .name {
+            &::before {
+              content: '智能';
+            }
+          }
+        }
       }
     }
     .mobile {

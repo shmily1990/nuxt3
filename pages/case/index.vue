@@ -7,17 +7,21 @@
         <div class="sub-title">Anew Customer Success Stories</div>
       </div>
     </section>
-    <section class="container">
-      <div class="chart_map">
-        <div class="chart_map_title text-center">服务全国65个地市及区县客户</div>
-        <div class="chart_map_content">
-          <p>
-            新禾SaaS平台产品及环境咨询服务，已稳定<span>服务近100家</span>政府生态环境局、监测中心、环保集团、
-            工业园区、空气管控服务商和运维商等客户，分布在<span>全国65个地市及区县</span>，为各地的空气质量持续 改善贡献力量
-          </p>
-          <img src="~/assets/images/case_map_bg.png" />
+    <section class="case-map">
+      <div class="container">
+        <div class="chart_map">
+          <div class="chart_map_title text-center">服务全国65个地市及区县客户</div>
+          <div class="chart_map_content">
+            <p>
+              新禾SaaS平台产品及环境咨询服务，已稳定<span>服务近100家</span>政府生态环境局、监测中心、环保集团、
+              工业园区、空气管控服务商和运维商等客户，分布在<span>全国65个地市及区县</span>，为各地的空气质量持续 改善贡献力量
+            </p>
+            <img src="~/assets/images/case_map_bg.png" />
+          </div>
         </div>
       </div>
+    </section>
+    <section class="container">
       <div class="page_title font40">客户案例</div>
       <div class="flex flex-wrap case-list">
         <div class="case_container" @click="jumpCaseDetail('https://mp.weixin.qq.com/s/wGnkvnSP1z4X9Fte4CpB4A')">
@@ -107,6 +111,10 @@ const jumpCaseDetail = (url) => {
 };
 </script>
 <style lang="less" scoped>
+.case-map {
+  background: url('~/assets/images/case-map-bg.png') no-repeat;
+  background-size: cover;
+}
 .banner {
   width: 100%;
   height: 480px;
@@ -251,9 +259,10 @@ const jumpCaseDetail = (url) => {
       border-radius: 8px;
       padding: 25px 20px;
       line-height: 35px;
+      color: #1f2429;
     }
     img {
-      margin-top: -125px;
+      margin-top: 0;
     }
   }
 }
@@ -283,7 +292,7 @@ const jumpCaseDetail = (url) => {
     font-size: 30px;
   }
   .chart_map_content img {
-    margin-top: -40px;
+    // margin-top: -40px;
   }
 }
 </style>

@@ -53,6 +53,7 @@ const navList = ref([
   { name: '解决方案', link: '/example' },
   { name: '客户成功', link: '/case' },
   { name: '了解新禾', link: '/about' },
+  { name: '新闻动态', link: '/news' },
   { name: '联系我们', link: '/contactUs' },
 ]);
 const fullPath = computed(() => {

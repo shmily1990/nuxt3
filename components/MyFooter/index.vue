@@ -72,6 +72,7 @@ const caseList = ref([
 ]);
 const aboutList = ref([
   { name: '了解新禾', link: '/about' },
+  { name: '新闻动态', link: '/news' },
   { name: '联系我们', link: '/contactUs' },
 ]);
 const tel = ref('18912483668');

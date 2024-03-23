@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4374422 */
-  src: url('iconfont.woff2?t=1706012583750') format('woff2'),
-       url('iconfont.woff?t=1706012583750') format('woff'),
-       url('iconfont.ttf?t=1706012583750') format('truetype');
+  src: url('iconfont.woff2?t=1708601260513') format('woff2'),
+       url('iconfont.woff?t=1708601260513') format('woff'),
+       url('iconfont.ttf?t=1708601260513') format('truetype');
 }
 @font-face {
   font-family: "Bebas Neue"; /* Project id 4374422 */
@@ -10,12 +10,17 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jiezhishijian:before {
+  content: "\e7d0";
 }
 
 .icon-guanbi:before {

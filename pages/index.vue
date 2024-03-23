@@ -312,6 +312,38 @@
       <PageAbout />
     </section>
     <PageHonor />
+    <section class="section case" id="section6">
+      <div class="wow fadeInUp">
+        <div class="page_title font40">新闻动态</div>
+        <swiper
+          class="case_swiper_container"
+          :autoplay="{ delay: 2500, disableOnInteraction: false }"
+          :modules="mods"
+          :speed="2000"
+          :breakpoints="breakpoints"
+          :navigation="true"
+          :spaceBetween="30"
+          :observer="true"
+          :observeparents="true"
+        >
+          <swiper-slide v-for="item in newList" :key="item.id">
+            <div class="case_container" @click="jumpNewDetail(item)">
+              <div class="img"><img :src="`/images/${item.name}.png`" /></div>
+              <div class="des">
+                <!-- <div class="name">数据推送</div> -->
+                <p class="newsInfo">{{ item.title }}</p>
+                <div class="bom flex between">
+                  <div class="tip">
+                    <span style="color: #637381"><i class="iconfont icon-jiezhishijian" style="font-size: 18px" /> {{ item.time }}</span>
+                  </div>
+                  <a>详情></a>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+    </section>
     <section class="seciton f_banner pc" id="section9">
       <div class="container">
         <h2 class="wow fadeInDown">
@@ -346,6 +378,106 @@ const mods = ref([Autoplay, Pagination, Navigation, EffectFade]);
 const router = useRouter();
 const showVideo = ref(false);
 const count = ref(0);
+const newList = reactive([
+  {
+    title: '新禾喜获ISO20000和ISO27001双认证',
+    name: 'new14',
+    time: '2024-03-15',
+    id: 14,
+    href: 'https://mp.weixin.qq.com/s/m7SRWUdGDSy9f1hEwvqi5Q',
+  },
+  {
+    title: '获颁发明专利证书！一种基于机器学习的O3余量预测方法',
+    name: 'new13',
+    time: '2024-03-01',
+    id: 13,
+    href: 'https://mp.weixin.qq.com/s/EKOgiOH-a9vf9psnKT7RQQ',
+  },
+  {
+    title: '喜报！新禾团队入选无锡经开区2023年度“尚贤人才计划”',
+    name: 'new1',
+    time: '2024-02-18',
+    id: '0',
+    href: 'https://mp.weixin.qq.com/s/PEu3m7k-lrRgK1nc8rSfKg',
+  },
+  {
+    title: '新禾副总盛世杰受邀为广州禾信营销团队培训',
+    name: 'new2',
+    time: '2024-01-26',
+    id: 1,
+    href: 'https://mp.weixin.qq.com/s/QaGgLYmytyjyhDyT1xBdvA',
+  },
+  {
+    title: '江苏省常州环境监测中心一行至新禾探讨臭氧短临预报构建新路径',
+    name: 'new3',
+    time: '2023-11-24',
+    id: 2,
+    href: 'https://mp.weixin.qq.com/s/Ptmc9TrXYxEPuCFBbDVsXw',
+  },
+  {
+    title: '省钱·省心·真智能 | AnewMap™ 3.0 新品直播发布会圆满举办',
+    name: 'new4',
+    time: '2023-11-10',
+    id: 3,
+    href: 'https://mp.weixin.qq.com/s/syOP6x_-MeEP0n06l5TLCQ',
+  },
+  {
+    title: '第二批省星级上云企业名单公布，新禾上榜！',
+    name: 'new5',
+    time: '2023-11-10',
+    id: 4,
+    href: 'https://mp.weixin.qq.com/s/fzgSftHAjmkxJHOv2AqjQQ',
+  },
+  {
+    title: '喜报！新禾数科顺利获得“双软”认证',
+    name: 'new6',
+    time: '2023-10-13',
+    id: 5,
+    href: 'https://mp.weixin.qq.com/s/mFxhgUXDTn6jrQU9y_dnhg',
+  },
+  {
+    title: '广东省科技进步一等奖！恭喜禾信，共荣共誉',
+    name: 'new7',
+    time: '2023-09-28',
+    id: 6,
+    href: 'https://mp.weixin.qq.com/s/8qzWaJVhfATiS_sfXqrrOg',
+  },
+  {
+    title: '新禾亮相第二十届北京分析测试学术报告会暨展览会（BCEIA 2023）',
+    name: 'new8',
+    time: '2023-09-08',
+    id: 7,
+    href: 'https://mp.weixin.qq.com/s/Pv4k9gVO3efCQt_B9OR0SA',
+  },
+  {
+    title: '新禾入选“江苏省科技型中小企业”，科技创新实力再获肯定！',
+    name: 'new9',
+    time: '2023-08-25',
+    id: 8,
+    href: 'https://mp.weixin.qq.com/s/s9tKQEN5-bgsZLoQhivcYw',
+  },
+  {
+    title: '新禾出席“江南大学-无锡经开区科技成果与技术需求对接会”',
+    name: 'new10',
+    time: '2023-08-25',
+    id: 9,
+    href: 'https://mp.weixin.qq.com/s/TlM0_i3z9dFO3apuesOZow',
+  },
+  {
+    title: '新禾顺利通过ISO三项体系认证！”',
+    name: 'new11',
+    time: '2023-08-09',
+    id: 10,
+    href: 'https://mp.weixin.qq.com/s/VXeBYX2-iUMz_rSsthod2g',
+  },
+  {
+    title: '南信大无锡研究院专家莅临新禾数科调研交流”',
+    name: 'new12',
+    time: '2023-07-19',
+    id: 11,
+    href: 'https://mp.weixin.qq.com/s/M-T227TIUuctZE7wtLm4HA',
+  },
+]);
 let timer = null;
 useHead({
   // 外部引入js
@@ -364,6 +496,9 @@ const { data: yesterdayCount } = await useLazyFetch(`https://gateway3.anew.cloud
 const handleTrial = () => jumpWechat();
 const jumpCaseDetail = (url) => {
   window.open(url, '_blank');
+};
+const jumpNewDetail = (item) => {
+  window.open(item.href, '_blank');
 };
 /** 断点 */
 let breakpoints = ref(null);
@@ -1048,6 +1183,13 @@ onBeforeUnmount(() => {
           font-weight: 400;
           color: #637381;
           height: 50px;
+        }
+        // 新闻页
+        .newsInfo {
+          color: #000414;
+          font-size: 20px;
+          font-weight: bold;
+          height: 60px;
         }
         .bom {
           border-top: 1px solid #f0f4f7;

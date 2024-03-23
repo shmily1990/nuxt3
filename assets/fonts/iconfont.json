@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "37776756",
+      "name": "截止时间",
+      "font_class": "jiezhishijian",
+      "unicode": "e7d0",
+      "unicode_decimal": 59344
+    },
+    {
       "icon_id": "34336957",
       "name": "关闭",
       "font_class": "guanbi",
